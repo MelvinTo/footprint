@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Footprint.PathCreateViewController.loadImage (Footprint.PathCreateViewController)(Footprint.PhotoCollectionCell, photo : Footprint.PhotoMetadata) -&gt; ():PathCreateViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.FootprintViewController.prepareForSegue (Footprint.FootprintViewController)(ObjectiveC.UIStoryboardSegue, sender : Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ():FootprintViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.PhotoCollectionCell.init (Footprint.PhotoCollectionCell.Type)(coder : ObjectiveC.NSCoder) -&gt; Footprint.PhotoCollectionCell:PhotoCollectionCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "NSBundle.mainBundle()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.PathCreateViewController.viewDidLoad (Footprint.PathCreateViewController)() -&gt; ():PathCreateViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.FootprintViewController.(assetsPickerController (Footprint.FootprintViewController) -&gt; (Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.GMImagePickerController&gt;, didFinishPickingAssets : Swift.ImplicitlyUnwrappedOptional&lt;Swift.Array&lt;Swift.AnyObject&gt;&gt;) -&gt; ()).(closure #1):FootprintViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "asset.location">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

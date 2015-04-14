@@ -1,0 +1,6 @@
+framework module GMImagePicker {
+  umbrella header "Pods-GMImagePicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

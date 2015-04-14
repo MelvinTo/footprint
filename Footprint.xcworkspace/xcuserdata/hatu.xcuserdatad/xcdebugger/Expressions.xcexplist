@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Footprint.Path.toFootprint (Footprint.Path)() -&gt; Footprint.Footprint:Path.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.timestamp">
+            </PersistentString>
+            <PersistentString
+               value = "self.name">
+            </PersistentString>
+            <PersistentString
+               value = "self.location">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.FootprintViewController.configureCell (Footprint.FootprintViewController)(Footprint.FootprintCell, indexPath : ObjectiveC.NSIndexPath) -&gt; ():FootprintViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "path.timestamp">
+            </PersistentString>
+            <PersistentString
+               value = "self.fetchedResultsController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.FootprintViewController.controller (Footprint.FootprintViewController)(ObjectiveC.NSFetchedResultsController, didChangeObject : Swift.AnyObject, atIndexPath : ObjectiveC.NSIndexPath, forChangeType : C.NSFetchedResultsChangeType, newIndexPath : ObjectiveC.NSIndexPath) -&gt; ():FootprintViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tableView.cellForRowAtIndexPath(NSIndexPath(0,2))">
+            </PersistentString>
+            <PersistentString
+               value = "self.tableView.cellForRowAtIndexPath(indexPath)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

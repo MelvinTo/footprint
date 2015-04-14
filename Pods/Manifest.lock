@@ -1,0 +1,10 @@
+PODS:
+  - GMImagePicker (0.0.1)
+
+DEPENDENCIES:
+  - GMImagePicker (~> 0.0.1)
+
+SPEC CHECKSUMS:
+  GMImagePicker: e9c726e514c275c914c1b3390d6bb7c3c3e87ead
+
+COCOAPODS: 0.36.3

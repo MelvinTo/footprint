@@ -1,0 +1,35 @@
+
+/* Class = "UIButton"; normalTitle = "扫描照片库"; ObjectID = "348-Km-Td2"; */
+"348-Km-Td2.normalTitle" = "扫描照片库";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "AKh-5y-TJs"; */
+"AKh-5y-TJs.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "APe-fX-SUu"; */
+"APe-fX-SUu.text" = "Label";
+
+/* Class = "UILabel"; text = "Loaded by SecondViewController"; ObjectID = "NDk-cv-Gan"; */
+"NDk-cv-Gan.text" = "Loaded by SecondViewController";
+
+/* Class = "UILabel"; text = "名字"; ObjectID = "SjH-cB-1Qd"; */
+"SjH-cB-1Qd.text" = "名字";
+
+/* Class = "UILabel"; text = "照片"; ObjectID = "bXh-va-mj6"; */
+"bXh-va-mj6.text" = "照片";
+
+/* Class = "UIButton"; normalTitle = "Count"; ObjectID = "dfu-yc-Hky"; */
+"dfu-yc-Hky.normalTitle" = "Count";
+
+/* Class = "UILabel"; text = "足迹"; ObjectID = "hY6-SP-RzB"; */
+"hY6-SP-RzB.text" = "Foot print";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "odu-nA-4cX"; */
+"odu-nA-4cX.normalTitle" = "Reset";
+
+/* Class = "UINavigationItem"; title = "足迹"; ObjectID = "tei-QC-OrK"; */
+"tei-QC-OrK.title" = "足迹";
+
+/* Class = "UILabel"; text = "Second View"; ObjectID = "zEq-FU-wV5"; */
+"zEq-FU-wV5.text" = "Second View";
+
+
