@@ -35,7 +35,7 @@ public struct Footprint {
                 map.addAnnotation(annotation)
             }
             
-            let locations : [CLLocation] = photos.map({CLLocation(latitude: $0.latitude.doubleValue, longitude: $0.longitude.doubleValue)})
+            let locations : [CLLocation] = photos.map {CLLocation(latitude: $0.latitude.doubleValue, longitude: $0.longitude.doubleValue)}
             let centralLocation = getCentralPoint(locations)
             let span = getSpan(locations)
             

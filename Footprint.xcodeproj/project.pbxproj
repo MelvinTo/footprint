@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3703363D1ADFFF8800EF9FE4 /* PhotoMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3703363C1ADFFF8800EF9FE4 /* PhotoMapViewController.swift */; };
+		3703363F1AE003A700EF9FE4 /* MiscTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3703363E1AE003A700EF9FE4 /* MiscTests.swift */; };
 		372B58DB1AD03142000D2483 /* PhotoStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372B58DA1AD03142000D2483 /* PhotoStoreTests.swift */; };
 		372B58E11AD036F9000D2483 /* PhotoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372B58E01AD036F9000D2483 /* PhotoLoader.swift */; };
 		372B58E41AD03AAF000D2483 /* PhotoMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372B58E31AD03AAF000D2483 /* PhotoMetadata.swift */; };
@@ -54,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		334BBD94344676C6D804E17E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3703363C1ADFFF8800EF9FE4 /* PhotoMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoMapViewController.swift; sourceTree = "<group>"; };
+		3703363E1AE003A700EF9FE4 /* MiscTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscTests.swift; sourceTree = "<group>"; };
 		372B58DA1AD03142000D2483 /* PhotoStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStoreTests.swift; sourceTree = "<group>"; };
 		372B58E01AD036F9000D2483 /* PhotoLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLoader.swift; sourceTree = "<group>"; };
 		372B58E31AD03AAF000D2483 /* PhotoMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoMetadata.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 				37BDB4CF1ACED65500F73513 /* Supporting Files */,
 				372B58DA1AD03142000D2483 /* PhotoStoreTests.swift */,
 				3738AE9C1ADC0014003375ED /* HelpersTest.swift */,
+				3703363E1AE003A700EF9FE4 /* MiscTests.swift */,
 			);
 			path = FootprintTests;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 				37DFF2FA1AD420B900686E74 /* PhotoCollectionCell.swift */,
 				41A2E8E41AD70B6600240EB5 /* FootprintCell.swift */,
 				3738AE9F1ADC1A44003375ED /* PathViewController.swift */,
+				3703363C1ADFFF8800EF9FE4 /* PhotoMapViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -462,6 +468,7 @@
 				37BDB4DC1ACED72B00F73513 /* PhotoStore.swift in Sources */,
 				37BDB4BC1ACED65500F73513 /* FootprintViewController.swift in Sources */,
 				37DFF2F21AD1C47500686E74 /* Path.swift in Sources */,
+				3703363D1ADFFF8800EF9FE4 /* PhotoMapViewController.swift in Sources */,
 				37364ACB1AD1245900A3396E /* Helpers.swift in Sources */,
 				3738AEA01ADC1A44003375ED /* PathViewController.swift in Sources */,
 				37DFF2FB1AD420B900686E74 /* PhotoCollectionCell.swift in Sources */,
@@ -479,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				372B58DB1AD03142000D2483 /* PhotoStoreTests.swift in Sources */,
+				3703363F1AE003A700EF9FE4 /* MiscTests.swift in Sources */,
 				3738AE9E1ADC01AB003375ED /* Helpers.swift in Sources */,
 				3738AE9D1ADC0014003375ED /* HelpersTest.swift in Sources */,
 			);

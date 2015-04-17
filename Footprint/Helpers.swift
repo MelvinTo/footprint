@@ -111,8 +111,8 @@ public func getCentralPoint(locations: [CLLocation]) -> CLLocation {
 }
 
 public func getSpan(locations: [CLLocation]) -> MKCoordinateSpan {
-    let latitudes = locations.map({ $0.coordinate.latitude })
-    let longitudes = locations.map({ $0.coordinate.longitude })
+    let latitudes = locations.map { $0.coordinate.latitude }
+    let longitudes = locations.map { $0.coordinate.longitude }
     
     let maxLatitude = latitudes.reduce(-90.0, combine: {max($0, $1)})
     let maxLongitude = longitudes.reduce(-180.0, combine: {max($0, $1)})
@@ -124,4 +124,5 @@ public func getSpan(locations: [CLLocation]) -> MKCoordinateSpan {
     
     return MKCoordinateSpan(latitudeDelta: latitudeDelta, longitudeDelta: longitudeDelta)
 }
+
 

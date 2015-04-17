@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct PhotoMetadata {
+public struct PhotoMetadata :  Hashable, Equatable {
     public var latitude: NSNumber
     public var longitude: NSNumber
     public var timestamp: NSDate
@@ -21,7 +21,15 @@ public struct PhotoMetadata {
         url = ""
     }
     
-    func description() -> String {
+    var description : String {
         return url
     }
+    
+    public var hashValue: Int {
+        return url.hashValue
+    }
+}
+
+public func == (lhs: PhotoMetadata, rhs: PhotoMetadata) -> Bool {
+    return lhs.url == rhs.url
 }

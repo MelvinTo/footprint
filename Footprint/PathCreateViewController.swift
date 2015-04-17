@@ -51,6 +51,14 @@ class PathCreateViewController : UIViewController, UICollectionViewDelegate, UIC
         self.collectionView.alwaysBounceHorizontal = true
         
         println("nav frame height: \(self.navigationController?.navigationBar.frame.size.height)")
+        
+        let photos = fp?.photos
+        if photos!.count > 0 {
+            let p = photos![0]
+            getPlaceMark(CLLocation(latitude: p.latitude.doubleValue, longitude: p.longitude.doubleValue))
+        }
+        
+        aggregatePhotos(photos!)
     }
     
     override func viewDidLayoutSubviews() {
@@ -101,6 +109,25 @@ class PathCreateViewController : UIViewController, UICollectionViewDelegate, UIC
         loadImage(cell, fp!.photos[index])
 
         return cell
+    }
+    
+    func getPlaceMark(location: CLLocation) {
+        CLGeocoder().reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+            println(location)
+            
+            if error != nil {
+                println("Reverse geocoder failed with error" + error.localizedDescription)
+                return
+            }
+            
+            for placemark in placemarks {
+                let pm = placemarks[0] as! CLPlacemark
+                println(pm.locality)
+                println(pm.subLocality)
+                println(pm.region)
+                println(pm.thoroughfare)
+            }
+        })
     }
     
     @IBAction func save() {
