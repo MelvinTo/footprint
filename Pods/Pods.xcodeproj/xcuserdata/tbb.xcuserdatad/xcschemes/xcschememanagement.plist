@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-OCMapView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>87A03CCC84E7528FD6B9B8EF</key>
+		<key>5186CC0E1B176460D6018C06</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F8333A6D627ECF20EAB19E3E</key>
+		<key>74CF1D9F3E91F884AE111C6B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A58E7C17375EDA4CF8285A01</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -9,12 +9,17 @@
 import Foundation
 import MapKit
 
-class PhotoMapViewController : UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class PhotoMapViewController : UITableViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var collectionView: UICollectionView!
+    var allPhotosMapView: MKMapView = MKMapView(frame: CGRectZero)
+
     let reuseIdentifier = "photoCell"
+    let shanghaiLocation = CLLocation(latitude: 31.222587, longitude: 121.468513)
     var fetchAssetsResult: PHFetchResult? = nil
     var imageManager: PHCachingImageManager? = nil
+    var queue = dispatch_queue_create("me.hatu.getAnnotations", DISPATCH_QUEUE_SERIAL)
+
     
     deinit {
         resetCachedAssets()
@@ -29,10 +34,13 @@ class PhotoMapViewController : UITableViewController, UICollectionViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.collectionView.registerNib(UINib(nibName: "CollectionCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
-        self.collectionView.bounces = true
-        self.collectionView.alwaysBounceVertical = true
+//        self.collectionView.registerNib(UINib(nibName: "CollectionCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView.bounces = true
+//        self.collectionView.alwaysBounceVertical = true
 
+        let newRegion = MKCoordinateRegionMake(shanghaiLocation.coordinate, MKCoordinateSpanMake(5.0, 5.0))
+        self.mapView.region = newRegion
+        self.mapView.delegate = self
         
         var options = PHFetchOptions()
         var sortDescriptors = NSSortDescriptor(key: "creationDate", ascending: false)
@@ -40,6 +48,166 @@ class PhotoMapViewController : UITableViewController, UICollectionViewDelegate, 
         println(fetchAssetsResult!.count)
         
         imageManager = PHCachingImageManager()
+        
+//        allPhotosMapView = MKMapView(frame: CGRectZero)
+        
+        dispatch_async(queue, {
+            self.getAllAnnotations()
+        })
+    }
+    
+    func getAllAnnotations() {
+        var annotations : [PhotoAnnotation] = []
+        var indexSet = NSIndexSet(indexesInRange: NSMakeRange(0, fetchAssetsResult!.count))
+        fetchAssetsResult!.enumerateObjectsAtIndexes(indexSet, options: nil, usingBlock: { object, index, stop in
+            if let p = object as? PHAsset {
+                if let l = p.location {
+                    let pa = PhotoAnnotation(location: l)
+                    annotations.append(pa)
+                } else {
+                    println("No location info for photo \(p.description)")
+                }
+            }
+        })
+        
+        allPhotosMapView.addAnnotations(annotations)
+        updateVisibleAnnotations()
+    }
+    
+    func updateVisibleAnnotations() {
+        // This value to controls the number of off screen annotations are displayed.
+        // A bigger number means more annotations, less chance of seeing annotation views pop in but decreased performance.
+        // A smaller number means fewer annotations, more chance of seeing annotation views pop in but better performance.
+        let marginFactor = 2.0
+        
+        // Adjust this roughly based on the dimensions of your annotations views.
+        // Bigger numbers more aggressively coalesce annotations (fewer annotations displayed but better performance).
+        // Numbers too small result in overlapping annotations views and too many annotations on screen.
+        let bucketSize = 60.0
+
+        // find all the annotations in the visible area + a wide margin to avoid popping annotation views in and out while panning the map.
+        let visibleMapRect = self.mapView.visibleMapRect
+        let adjustedVisibleMapRect = MKMapRectInset(visibleMapRect,
+                                                    -marginFactor * visibleMapRect.size.width,
+                                                    -marginFactor * visibleMapRect.size.height)
+
+        // determine how wide each bucket will be, as a MKMapRect square
+        let leftCoordinate = self.mapView.convertPoint(CGPointZero, toCoordinateFromView: self.view)
+        let rightCoorindate = self.mapView.convertPoint(CGPointMake(CGFloat(bucketSize), 0), toCoordinateFromView: self.view)
+        let gridSize = MKMapPointForCoordinate(rightCoorindate).x - MKMapPointForCoordinate(leftCoordinate).x
+        var gridMapRect = MKMapRectMake(0, 0, gridSize, gridSize)
+        
+        // condense annotations, with a padding of two squares, around the visibleMapRect
+        let startX = floor(MKMapRectGetMinX(adjustedVisibleMapRect) / gridSize) * gridSize
+        let startY = floor(MKMapRectGetMinY(adjustedVisibleMapRect) / gridSize) * gridSize
+        let endX = floor(MKMapRectGetMaxX(adjustedVisibleMapRect) / gridSize) * gridSize
+        let endY = floor(MKMapRectGetMaxY(adjustedVisibleMapRect) / gridSize) * gridSize
+        
+        // for each square in our grid, pick one annotation to show
+        gridMapRect.origin.y = startY
+        while (MKMapRectGetMinY(gridMapRect) <= endY) {
+            gridMapRect.origin.x = startX
+            while (MKMapRectGetMinX(gridMapRect) <= endX) {
+                clusterAnnotations(gridMapRect)
+                gridMapRect.origin.x += gridSize
+            }
+            gridMapRect.origin.y += gridSize
+        }
+        
+    }
+    
+    // for each square, pick one annotation to show
+    func clusterAnnotations(rect: MKMapRect) {
+//        println("call clusterAnnotations")
+        
+        let allAnnotationsInRect = self.allPhotosMapView.annotationsInMapRect(rect)
+        if allAnnotationsInRect == nil {
+            return
+        }
+        
+        let photoAnnotations = Array(allAnnotationsInRect).filter() { $0 is PhotoAnnotation } as! [PhotoAnnotation]
+        let visibleAnnotationsInRect = self.mapView.annotationsInMapRect(rect)
+        
+        if photoAnnotations.count > 0 {
+            let annotation = createClusteredAnnotation(rect, annotations: photoAnnotations)
+            self.mapView.addAnnotation(annotation)
+            
+            // give the annotationForGrid a reference to all the annotations it will represent
+            let otherAnnotations = photoAnnotations.filter { $0 !== annotation }
+            
+            annotation.containedAnnotations = otherAnnotations
+            
+            for eachAnnotation in otherAnnotations {
+                eachAnnotation.clusterAnnocation = annotation
+                eachAnnotation.containedAnnotations = nil
+                
+                // remove annotations which we've decided to cluster
+                if visibleAnnotationsInRect.contains(eachAnnotation) {
+                    let actualCoordinate = eachAnnotation.coordinate
+                    UIView.animateWithDuration(0.3, animations: {
+                        eachAnnotation.coordinate = eachAnnotation.clusterAnnocation!.coordinate
+                        }, completion: { finished in
+                            eachAnnotation.coordinate = actualCoordinate
+                            self.mapView.removeAnnotation(eachAnnotation)
+                    })
+                }
+
+            }
+        }
+    }
+    
+    func createClusteredAnnotation(rect: MKMapRect, annotations: [PhotoAnnotation]) -> PhotoAnnotation {
+        let visibleAnnotationsInRect = self.mapView.annotationsInMapRect(rect)
+        let matchedAnnotations = annotations.filter() { visibleAnnotationsInRect.contains($0) }
+        
+        if matchedAnnotations.count > 0 {
+            return matchedAnnotations[0]
+        }
+        
+        // otherwise, sort the annotations based on their distance from the center of the grid square,
+        // then choose the one closest to the center to show
+        let centerMapPoint = MKMapPointMake(MKMapRectGetMidX(rect), MKMapRectGetMidY(rect))
+        
+        let sortedAnnotations = annotations.sorted {
+            let point0 = MKMapPointForCoordinate($0.coordinate)
+            let point1 = MKMapPointForCoordinate($1.coordinate)
+            let distance0 = MKMetersBetweenMapPoints(point0, centerMapPoint)
+            let distance1 = MKMetersBetweenMapPoints(point1, centerMapPoint)
+            return distance0 < distance1
+        }
+        
+        return sortedAnnotations[0]
+    }
+    
+    func refreshAnnotations() {
+        dispatch_async(queue, { // concurrently check and add photo in the queue
+            let result = PhotoUtility.getAggregatedLocations(self.fetchAssetsResult!)
+            println("number of locations: \(result.count)")
+            
+            for (location, photoArray) in result {
+                var annotation = MKPointAnnotation()
+                annotation.coordinate = location.coordinate
+                
+                CLGeocoder().reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+                    if error != nil {
+                        println("Reverse geocoder failed with error" + error.localizedDescription)
+                        return
+                    }
+                    
+                    for placemark in placemarks {
+                        let pm = placemarks[0] as! CLPlacemark
+                        println(pm.locality)
+                        println(pm.subLocality)
+                        println(pm.region)
+                        println(pm.thoroughfare)
+                        annotation.title = pm.locality
+                    }
+                })
+
+                annotation.subtitle = "\(photoArray.count) photos"
+                self.mapView.addAnnotation(annotation)
+            }
+        })
     }
     
     func loadImage(cell: PhotoCollectionCell, indexPath: NSIndexPath) {
@@ -62,28 +230,96 @@ class PhotoMapViewController : UITableViewController, UICollectionViewDelegate, 
         })
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            println(fetchAssetsResult!.count)
-            return fetchAssetsResult!.count
-        } else {
-            return 0
+    func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
+        println("regionDidChangeAnimated is called with animated \(animated)")
+        dispatch_async(queue) {
+            self.updateVisibleAnnotations()
         }
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        NSLog("calling numberOfSectionsInCollectionView")
-        return 1
+    func mapView(mapView: MKMapView!, didAddAnnotationViews views: [AnyObject]!) {
+        for annotationView in views {
+            if annotationView.annotation is PhotoAnnotation {
+                let annotation = annotationView.annotation as! PhotoAnnotation
+                
+                // animate the annotation from it's old container's coordinate, to its actual coordinate
+
+                if let ca = annotation.clusterAnnocation {
+                    let actual = annotation.coordinate
+                    let cluster = ca.coordinate
+                    
+                    // since it's displayed on the map, it is no longer contained by another annotation,
+                    // (We couldn't reset this in -updateVisibleAnnotations because we needed the reference to it here
+                    // to get the containerCoordinate)
+                    
+                    annotation.clusterAnnocation = nil
+                    annotation.coordinate = cluster
+                    UIView.animateWithDuration(0.3, animations: {
+                        annotation.coordinate = actual
+                    })
+                }
+            }
+        }
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! PhotoCollectionCell
-        loadImage(cell, indexPath: indexPath)
-        return cell
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        let annotationIdentifier = "PhotoAnnotation"
+        
+        if mapView != self.mapView {
+            return nil
+        }
+        
+        if annotation is PhotoAnnotation {
+            var annotationView = self.mapView.dequeueReusableAnnotationViewWithIdentifier(annotationIdentifier)
+            if annotationView == nil {
+                annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            }
+            
+            annotationView.canShowCallout = true
+            
+            let button: AnyObject = UIButton.buttonWithType(.DetailDisclosure)
+            annotationView.rightCalloutAccessoryView = button as! UIView
+            
+            return annotationView
+        }
+        
+        return nil
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let index = indexPath.indexAtPosition(1)
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+        println("do nothing")
     }
+    
+    func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
+        println("annotation selected")
+        if view.annotation is PhotoAnnotation {
+            let annotation = view.annotation as! PhotoAnnotation
+            annotation.updateTitleIfNeeded()
+        }
+    }
+    
+//    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        if section == 0 {
+//            println(fetchAssetsResult!.count)
+//            return fetchAssetsResult!.count
+//        } else {
+//            return 0
+//        }
+//    }
+//    
+//    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+//        NSLog("calling numberOfSectionsInCollectionView")
+//        return 1
+//    }
+//    
+//    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! PhotoCollectionCell
+//        loadImage(cell, indexPath: indexPath)
+//        return cell
+//    }
+//    
+//    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+//        let index = indexPath.indexAtPosition(1)
+//    }
 }
 

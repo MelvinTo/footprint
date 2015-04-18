@@ -155,7 +155,7 @@ public class PhotoUtility {
                     tmpAssetArray = [p]
                 } else {
                     let distance = tmpLocation?.distanceFromLocation(location)
-                    if distance < 1000.0 {
+                    if distance < 100000.0 {
                         tmpAssetArray?.append(p)
                     } else {
                         result[tmpLocation!] = tmpAssetArray

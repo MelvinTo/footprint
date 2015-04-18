@@ -13,6 +13,7 @@ class PathViewController : UITableViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var collectionView: UICollectionView!
+    
     let reuseIdentifier = "PhotoCollectionCell"
 
     var fp : Footprint? = nil

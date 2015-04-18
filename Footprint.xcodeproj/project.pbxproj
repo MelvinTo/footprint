@@ -12,6 +12,7 @@
 		372B58DB1AD03142000D2483 /* PhotoStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372B58DA1AD03142000D2483 /* PhotoStoreTests.swift */; };
 		372B58E11AD036F9000D2483 /* PhotoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372B58E01AD036F9000D2483 /* PhotoLoader.swift */; };
 		372B58E41AD03AAF000D2483 /* PhotoMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372B58E31AD03AAF000D2483 /* PhotoMetadata.swift */; };
+		372D1E1A1AE28F46009D113D /* PhotoAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372D1E191AE28F46009D113D /* PhotoAnnotation.swift */; };
 		37364ACB1AD1245900A3396E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37364ACA1AD1245900A3396E /* Helpers.swift */; };
 		37364AD21AD19DA900A3396E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37364AD11AD19DA900A3396E /* Images.xcassets */; };
 		37364AD41AD1B18100A3396E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37364AD31AD1B18100A3396E /* Photos.framework */; };
@@ -61,6 +62,7 @@
 		372B58DA1AD03142000D2483 /* PhotoStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStoreTests.swift; sourceTree = "<group>"; };
 		372B58E01AD036F9000D2483 /* PhotoLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLoader.swift; sourceTree = "<group>"; };
 		372B58E31AD03AAF000D2483 /* PhotoMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoMetadata.swift; sourceTree = "<group>"; };
+		372D1E191AE28F46009D113D /* PhotoAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAnnotation.swift; sourceTree = "<group>"; };
 		37364ACA1AD1245900A3396E /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		37364AD11AD19DA900A3396E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		37364AD31AD1B18100A3396E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
@@ -242,6 +244,7 @@
 				41A2E8E41AD70B6600240EB5 /* FootprintCell.swift */,
 				3738AE9F1ADC1A44003375ED /* PathViewController.swift */,
 				3703363C1ADFFF8800EF9FE4 /* PhotoMapViewController.swift */,
+				372D1E191AE28F46009D113D /* PhotoAnnotation.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				37BDB4BC1ACED65500F73513 /* FootprintViewController.swift in Sources */,
 				37DFF2F21AD1C47500686E74 /* Path.swift in Sources */,
 				3703363D1ADFFF8800EF9FE4 /* PhotoMapViewController.swift in Sources */,
+				372D1E1A1AE28F46009D113D /* PhotoAnnotation.swift in Sources */,
 				37364ACB1AD1245900A3396E /* Helpers.swift in Sources */,
 				3738AEA01ADC1A44003375ED /* PathViewController.swift in Sources */,
 				37DFF2FB1AD420B900686E74 /* PhotoCollectionCell.swift in Sources */,
