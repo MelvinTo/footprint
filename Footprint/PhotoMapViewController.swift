@@ -309,7 +309,9 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
             let photoViewController = PhotoViewController()
             photoViewController.photos = photos
             photoViewController.theStoryboard = self.storyboard
-            self.navigationController?.pushViewController(photoViewController, animated: true)
+            self.showDetailViewController(photoViewController, sender: self)
+//            self.showViewController(photoViewController, sender: self)
+//            self.navigationController?.pushViewController(photoViewController, animated: true)
         }
     }
     

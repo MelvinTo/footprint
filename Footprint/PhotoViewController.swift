@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 class PhotoModelController : NSObject, UIPageViewControllerDataSource {
     var pageData : [PHAsset] = []
@@ -71,6 +72,7 @@ class PhotoModelController : NSObject, UIPageViewControllerDataSource {
 
 class PhotoDataViewController : UIViewController {
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var location: UILabel!
 
     var dataObject : PHAsset? = nil
     
@@ -79,6 +81,7 @@ class PhotoDataViewController : UIViewController {
         
         self.title = dataObject?.localIdentifier
         self.loadImage()
+        self.updateLocation()
     }
     
     func loadImage() {
@@ -92,8 +95,23 @@ class PhotoDataViewController : UIViewController {
             var manager = PHImageManager.defaultManager()
             manager.requestImageForAsset(self.dataObject, targetSize: retinaSquare, contentMode: PHImageContentMode.AspectFit, options: nil, resultHandler: { (image : UIImage!, info:[NSObject : AnyObject]!) -> Void in
                     self.imageView.image = image
+                    self.imageView.clipsToBounds = true
+
             })
         })
+    }
+    
+    func updateLocation() {
+        if let l = dataObject?.location {
+            CLGeocoder().reverseGeocodeLocation(l, completionHandler: { (placemarks, error) -> Void in
+                if placemarks.count > 0 {
+                    let placemark = placemarks[0] as! CLPlacemark
+//                    let aoi = placemark!.areasOfInterest
+                    self.location.text = "\(placemark.administrativeArea) \(placemark.thoroughfare)"
+                    self.location.hidden = false
+                }
+            })
+        }
     }
 
 }
@@ -109,7 +127,7 @@ class PhotoViewController : UIViewController, UIPageViewControllerDelegate {
     override func viewDidLoad() {
         NSLog("viewDidLoad is called with \(photos!.count) photos")
         
-        self.pageViewController = UIPageViewController(transitionStyle: .PageCurl, navigationOrientation: .Horizontal, options: nil)
+        self.pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
         self.pageViewController!.delegate = self
         
         self.modelController.pageData = self.photos!
@@ -129,6 +147,17 @@ class PhotoViewController : UIViewController, UIPageViewControllerDelegate {
         // add the page view controller's gesture recognizers to the book view controller's view
         // so that the gestures are started more easily
         self.view.gestureRecognizers = self.pageViewController?.gestureRecognizers
+        
+        // add tap gesture
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: "respondToTapGesture:")
+        tapRecognizer.numberOfTapsRequired = 1
+        self.view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    func respondToTapGesture(tr: UITapGestureRecognizer) {
+        let curPhoto = self.modelController.pageData[modelController.currentIndex]
+        NSLog("Tap on photo \(curPhoto.localIdentifier)")
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func updateNavBarTitle() {

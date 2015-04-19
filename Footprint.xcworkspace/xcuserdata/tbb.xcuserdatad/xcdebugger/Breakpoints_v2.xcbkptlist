@@ -358,12 +358,12 @@
                   moduleName = "Footprint"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tbb/Dropbox/workspace/Footprint/Footprint/PhotoAnnotation.swift"
-                  timestampString = "451139666.754289"
+                  timestampString = "451151866.866223"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "12">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -373,12 +373,12 @@
                   moduleName = "Footprint"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tbb/Dropbox/workspace/Footprint/Footprint/PhotoAnnotation.swift"
-                  timestampString = "451139666.754427"
+                  timestampString = "451151866.866336"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
                   endingLineNumber = "12"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -647,11 +647,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/PhotoViewController.swift"
-            timestampString = "451139666.651613"
+            timestampString = "451150887.18999"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>

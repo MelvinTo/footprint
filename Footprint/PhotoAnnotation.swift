@@ -80,7 +80,7 @@ class PhotoAnnotation : NSObject, MKAnnotation {
                     self.placemark = placemarks[0] as? CLPlacemark
                     let identifier = self.photo!.localIdentifier
                     let shortIdentifier = identifier.substringToIndex(advance(identifier!.startIndex, 8))
-                    self.title = "\(self.placemarkString!) photo: \(shortIdentifier))"
+                    self.title = "\(self.placemarkString!)"
                 }
                 
             })
