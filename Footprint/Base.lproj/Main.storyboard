@@ -420,24 +420,41 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YzP-ik-pyw">
-                                <rect key="frame" x="251" y="517" width="99" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rtc-bk-8E6">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJx-bH-wvg">
+                                <rect key="frame" x="216" y="561" width="168" height="31"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="vhR-Gh-bVo" userLabel="I">
+                                    <rect key="frame" x="0.0" y="0.0" width="168" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YzP-ik-pyw">
+                                            <rect key="frame" x="13" y="14" width="215" height="33"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="YzP-ik-pyw" secondAttribute="centerY" id="GBI-Y0-CWp"/>
+                                        <constraint firstAttribute="centerX" secondItem="YzP-ik-pyw" secondAttribute="centerX" id="ro4-Ca-xsw"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="08K-Fl-ODI"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Rtc-bk-8E6" firstAttribute="leading" secondItem="mce-ng-lsR" secondAttribute="leadingMargin" constant="-16" id="Je9-JL-JW5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Rtc-bk-8E6" secondAttribute="trailing" constant="-16" id="RfN-ar-cNH"/>
                             <constraint firstItem="Rtc-bk-8E6" firstAttribute="top" secondItem="mce-ng-lsR" secondAttribute="topMargin" constant="5" id="dym-I2-gO9"/>
-                            <constraint firstItem="Pgc-4r-Orr" firstAttribute="top" secondItem="YzP-ik-pyw" secondAttribute="bottom" constant="50" id="fSo-cs-fEW"/>
-                            <constraint firstAttribute="centerX" secondItem="YzP-ik-pyw" secondAttribute="centerX" id="nXt-tC-NsF"/>
                             <constraint firstItem="Pgc-4r-Orr" firstAttribute="top" secondItem="Rtc-bk-8E6" secondAttribute="bottom" constant="5" id="qnd-db-Mwu"/>
+                            <constraint firstItem="Pgc-4r-Orr" firstAttribute="top" secondItem="fJx-bH-wvg" secondAttribute="bottom" constant="8" id="rCg-cT-Tgn"/>
+                            <constraint firstAttribute="centerX" secondItem="fJx-bH-wvg" secondAttribute="centerX" id="szV-C2-JC7"/>
                         </constraints>
                     </view>
                     <connections>
