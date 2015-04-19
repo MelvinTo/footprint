@@ -107,7 +107,7 @@ class PhotoDataViewController : UIViewController {
                 if placemarks.count > 0 {
                     let placemark = placemarks[0] as! CLPlacemark
 //                    let aoi = placemark!.areasOfInterest
-                    self.location.text = "\(placemark.administrativeArea) \(placemark.thoroughfare)"
+                    self.location.text = "\(placemark.administrativeArea) \(placemark.locality) \(placemark.thoroughfare)"
                     self.location.hidden = false
 //                    self.applyBlurOnLabel()
                 }
@@ -177,8 +177,8 @@ class PhotoViewController : UIViewController, UIPageViewControllerDelegate {
     }
     
     func respondToTapGesture(tr: UITapGestureRecognizer) {
-        let curPhoto = self.modelController.pageData[modelController.currentIndex]
-        NSLog("Tap on photo \(curPhoto.localIdentifier)")
+//        let curPhoto = self.modelController.pageData[modelController.currentIndex]
+//        NSLog("Tap on photo \(curPhoto.localIdentifier)")
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
