@@ -12,11 +12,12 @@ import MapKit
 class PhotoAnnotation : NSObject, MKAnnotation {
     var latitude : Double
     var longitude : Double
-    var photo: UIImage? = nil
+    var photo: PHAsset? = nil
     var clusterAnnocation : PhotoAnnotation? = nil
     var containedAnnotations : [PhotoAnnotation]? = nil
     var placemark: CLPlacemark? = nil
-    var title: String? = nil
+    var title: String = "default title"
+    var subtitle: String = "default subtitle"
     
     init(latitude: Double, longitude: Double) {
         self.latitude = latitude
@@ -24,9 +25,10 @@ class PhotoAnnotation : NSObject, MKAnnotation {
         super.init()
     }
     
-    init(location: CLLocation) {
+    init(location: CLLocation, photo: PHAsset) {
         self.latitude = location.coordinate.latitude
         self.longitude = location.coordinate.longitude
+        self.photo = photo
     }
     
     var coordinate : CLLocationCoordinate2D {
@@ -43,12 +45,10 @@ class PhotoAnnotation : NSObject, MKAnnotation {
         return CLLocation(latitude: latitude, longitude: longitude)
     }
     
-    var subtitle: String! {
-        if containedAnnotations?.count > 0 {
-            return "\(containedAnnotations!.count + 1) photos"
-        } else {
-            return "one photo"
-        }
+    override var description: String {
+        let identifier = self.photo?.localIdentifier
+        let shortIdentifier = identifier!.substringToIndex(advance(identifier!.startIndex, 8))
+        return "photo: \(shortIdentifier) title: \(title) subtitle: \(subtitle) clustered: \(clusterAnnocation != nil)"
     }
     
     var placemarkString: String? {
@@ -72,15 +72,24 @@ class PhotoAnnotation : NSObject, MKAnnotation {
     }
 
     func updateTitleIfNeeded() {
-        if self.title == nil {
+        if self.title == "default title" {
+            println("getting real title for location \(self.location)")
             CLGeocoder().reverseGeocodeLocation(self.location, completionHandler: { (placemarks, error) -> Void in
                 
                 if placemarks.count > 0 {
                     self.placemark = placemarks[0] as? CLPlacemark
-                    self.title = self.placemarkString
+                    let identifier = self.photo!.localIdentifier
+                    let shortIdentifier = identifier.substringToIndex(advance(identifier!.startIndex, 8))
+                    self.title = "\(self.placemarkString!) photo: \(shortIdentifier))"
                 }
                 
             })
+        }
+        
+        if containedAnnotations?.count > 0 {
+            self.subtitle = "\(containedAnnotations!.count + 1) photos"
+        } else {
+            self.subtitle = "default subtitle"
         }
     }
 }

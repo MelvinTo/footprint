@@ -13,6 +13,7 @@
 		372B58E11AD036F9000D2483 /* PhotoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372B58E01AD036F9000D2483 /* PhotoLoader.swift */; };
 		372B58E41AD03AAF000D2483 /* PhotoMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372B58E31AD03AAF000D2483 /* PhotoMetadata.swift */; };
 		372D1E1A1AE28F46009D113D /* PhotoAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372D1E191AE28F46009D113D /* PhotoAnnotation.swift */; };
+		372D1E1C1AE3ADC4009D113D /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372D1E1B1AE3ADC4009D113D /* PhotoViewController.swift */; };
 		37364ACB1AD1245900A3396E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37364ACA1AD1245900A3396E /* Helpers.swift */; };
 		37364AD21AD19DA900A3396E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37364AD11AD19DA900A3396E /* Images.xcassets */; };
 		37364AD41AD1B18100A3396E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37364AD31AD1B18100A3396E /* Photos.framework */; };
@@ -63,6 +64,7 @@
 		372B58E01AD036F9000D2483 /* PhotoLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLoader.swift; sourceTree = "<group>"; };
 		372B58E31AD03AAF000D2483 /* PhotoMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoMetadata.swift; sourceTree = "<group>"; };
 		372D1E191AE28F46009D113D /* PhotoAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAnnotation.swift; sourceTree = "<group>"; };
+		372D1E1B1AE3ADC4009D113D /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		37364ACA1AD1245900A3396E /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		37364AD11AD19DA900A3396E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		37364AD31AD1B18100A3396E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
@@ -245,6 +247,7 @@
 				3738AE9F1ADC1A44003375ED /* PathViewController.swift */,
 				3703363C1ADFFF8800EF9FE4 /* PhotoMapViewController.swift */,
 				372D1E191AE28F46009D113D /* PhotoAnnotation.swift */,
+				372D1E1B1AE3ADC4009D113D /* PhotoViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				37BDB4EB1ACF10E400F73513 /* CoreDataStore.swift in Sources */,
 				37BDB4E41ACF0B8700F73513 /* PathOrganizer.swift in Sources */,
 				3738AEA21ADC1E54003375ED /* PhotoUtility.swift in Sources */,
+				372D1E1C1AE3ADC4009D113D /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,6 +615,7 @@
 			baseConfigurationReference = ABE0EC7F05163E06438BB204 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Footprint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -623,6 +628,7 @@
 			baseConfigurationReference = 37B3DB17CB302B2C9EDDAC23 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Footprint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
