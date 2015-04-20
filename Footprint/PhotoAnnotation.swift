@@ -31,7 +31,7 @@ class PhotoAnnotation : NSObject, MKAnnotation {
         self.photo = photo
     }
     
-    var coordinate : CLLocationCoordinate2D {
+    dynamic var coordinate : CLLocationCoordinate2D {
         get {
             return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         }
