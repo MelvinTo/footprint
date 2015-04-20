@@ -1,13 +1,10 @@
 PODS:
   - GMImagePicker (0.0.1)
-  - OCMapView (0.1.0)
 
 DEPENDENCIES:
   - GMImagePicker (~> 0.0.1)
-  - OCMapView
 
 SPEC CHECKSUMS:
   GMImagePicker: e9c726e514c275c914c1b3390d6bb7c3c3e87ead
-  OCMapView: baa3a385659fd786c9c8e683d48c5af514f427af
 
 COCOAPODS: 0.36.3

@@ -49,9 +49,7 @@ code_sign() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'GMImagePicker.framework'
-  install_framework 'OCMapView.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'GMImagePicker.framework'
-  install_framework 'OCMapView.framework'
 fi
