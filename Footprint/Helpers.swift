@@ -125,4 +125,29 @@ public func getSpan(locations: [CLLocation]) -> MKCoordinateSpan {
     return MKCoordinateSpan(latitudeDelta: latitudeDelta, longitudeDelta: longitudeDelta)
 }
 
+extension CLPlacemark {
+    
+    func toString() -> String {
+        var text = ""
+        
+        if let aois = self.areasOfInterest {
+            if aois.count > 0 {
+                text = aois[0] as! String
+                return text
+            }
+        }
+        
+        if let x = self.administrativeArea {
+            text += self.administrativeArea
+        }
+        if let x = self.locality {
+            text += x
+        }
+        if let x = self.thoroughfare {
+            text += x
+        }
+        return text
+    }
+    
+}
 

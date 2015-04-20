@@ -16,8 +16,8 @@ class PhotoAnnotation : NSObject, MKAnnotation {
     var clusterAnnocation : PhotoAnnotation? = nil
     var containedAnnotations : [PhotoAnnotation]? = nil
     var placemark: CLPlacemark? = nil
-    var title: String = "default title"
-    var subtitle: String = "default subtitle"
+    var title: String = "..."
+    var subtitle: String = "..."
     
     init(latitude: Double, longitude: Double) {
         self.latitude = latitude
@@ -50,29 +50,9 @@ class PhotoAnnotation : NSObject, MKAnnotation {
         let shortIdentifier = identifier!.substringToIndex(advance(identifier!.startIndex, 8))
         return "photo: \(shortIdentifier) title: \(title) subtitle: \(subtitle) clustered: \(clusterAnnocation != nil)"
     }
-    
-    var placemarkString: String? {
-        var str = ""
-        if let l = placemark?.locality {
-            str += l
-        }
-        
-        if let a = placemark?.administrativeArea {
-            if !str.isEmpty {
-                str += ", "
-                str += a
-            }
-        }
-        
-        if str.isEmpty && placemark!.name != nil {
-            str = placemark!.name
-        }
-        
-        return str
-    }
 
     func updateTitleIfNeeded() {
-        if self.title == "default title" {
+        if self.title == "..." {
             println("getting real title for location \(self.location)")
             CLGeocoder().reverseGeocodeLocation(self.location, completionHandler: { (placemarks, error) -> Void in
                 
@@ -80,7 +60,9 @@ class PhotoAnnotation : NSObject, MKAnnotation {
                     self.placemark = placemarks[0] as? CLPlacemark
                     let identifier = self.photo!.localIdentifier
                     let shortIdentifier = identifier.substringToIndex(advance(identifier!.startIndex, 8))
-                    self.title = "\(self.placemarkString!)"
+                    self.title = "\(self.placemark!.toString())"
+                } else {
+                    self.title = "Unknown places"
                 }
                 
             })
@@ -89,7 +71,7 @@ class PhotoAnnotation : NSObject, MKAnnotation {
         if containedAnnotations?.count > 0 {
             self.subtitle = "\(containedAnnotations!.count + 1) photos"
         } else {
-            self.subtitle = "default subtitle"
+            self.subtitle = "1 photo"
         }
     }
 }

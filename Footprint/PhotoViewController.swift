@@ -107,9 +107,9 @@ class PhotoDataViewController : UIViewController {
                 if placemarks.count > 0 {
                     let placemark = placemarks[0] as! CLPlacemark
 //                    let aoi = placemark!.areasOfInterest
-                    self.location.text = "\(placemark.administrativeArea) \(placemark.locality) \(placemark.thoroughfare)"
+                    
+                    self.location.text = placemark.toString()
                     self.location.hidden = false
-//                    self.applyBlurOnLabel()
                 }
             })
         }

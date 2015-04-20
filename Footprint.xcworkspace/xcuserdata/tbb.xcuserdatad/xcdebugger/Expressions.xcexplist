@@ -3,12 +3,7 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "Footprint.FootprintViewController.(assetsPickerController (Footprint.FootprintViewController) -&gt; (Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.GMImagePickerController&gt;, didFinishPickingAssets : Swift.ImplicitlyUnwrappedOptional&lt;Swift.Array&lt;Swift.AnyObject&gt;&gt;) -&gt; ()).(closure #1):FootprintViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "asset.location">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "Footprint.PathCreateViewController.loadImage (Footprint.PathCreateViewController)(Footprint.PhotoCollectionCell, photo : Footprint.PhotoMetadata) -&gt; ():PathCreateViewController.swift">
       </ContextState>
       <ContextState
          contextName = "Footprint.FootprintViewController.prepareForSegue (Footprint.FootprintViewController)(ObjectiveC.UIStoryboardSegue, sender : Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ():FootprintViewController.swift">
@@ -31,12 +26,20 @@
                value = "self.pageViewController?.gestureRecognizers">
             </PersistentString>
             <PersistentString
+               value = "self.modelController">
+            </PersistentString>
+            <PersistentString
                value = "self.view.gestureRecognizers">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "Footprint.PathCreateViewController.loadImage (Footprint.PathCreateViewController)(Footprint.PhotoCollectionCell, photo : Footprint.PhotoMetadata) -&gt; ():PathCreateViewController.swift">
+         contextName = "Footprint.FootprintViewController.(assetsPickerController (Footprint.FootprintViewController) -&gt; (Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.GMImagePickerController&gt;, didFinishPickingAssets : Swift.ImplicitlyUnwrappedOptional&lt;Swift.Array&lt;Swift.AnyObject&gt;&gt;) -&gt; ()).(closure #1):FootprintViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "asset.location">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>
