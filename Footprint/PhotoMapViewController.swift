@@ -89,7 +89,7 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
                 if let l = p.location {
                     let pa = PhotoAnnotation(location: l, photo: p)
                     annotations.append(pa)
-                    NSLog("Adding annotation to hidden map: \(pa)")
+//                    NSLog("Adding annotation to hidden map: \(pa)")
                 } else {
                     NSLog("No location info for photo \(p.description)")
                 }
@@ -120,6 +120,11 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
         let leftCoordinate = self.mapView.convertPoint(CGPointZero, toCoordinateFromView: self.view)
         let rightCoorindate = self.mapView.convertPoint(CGPointMake(CGFloat(bucketSize), 0), toCoordinateFromView: self.view)
         let gridSize = MKMapPointForCoordinate(rightCoorindate).x - MKMapPointForCoordinate(leftCoordinate).x
+        
+        if gridSize < 0 { // it's a bug if gridSize is less than zero
+            return
+        }
+        
         var gridMapRect = MKMapRectMake(0, 0, gridSize, gridSize)
         
         // condense annotations, with a padding of two squares, around the visibleMapRect
@@ -154,9 +159,9 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
         let visibleAnnotationsInRect = self.mapView.annotationsInMapRect(rect)
         let visiblePhotoAnnotations = Array(visibleAnnotationsInRect).filter() { $0 is PhotoAnnotation } as! [PhotoAnnotation]
         
-        for visibleAnnotation in visiblePhotoAnnotations {
-            NSLog("visible: \(visibleAnnotation)")
-        }
+//        for visibleAnnotation in visiblePhotoAnnotations {
+//            NSLog("visible: \(visibleAnnotation)")
+//        }
         
         if photoAnnotations.count > 0 {
             let annotation = createClusteredAnnotation(rect, annotations: photoAnnotations)
@@ -164,7 +169,7 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
             let findResult = mapView.annotations.find { $0 as! NSObject === annotation }
             
             if findResult == nil {
-                NSLog("Add annotation to map: \(annotation)")
+//                NSLog("Add annotation to map: \(annotation)")
                 self.mapView.addAnnotation(annotation)
             }
             
@@ -183,12 +188,12 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
 //                    self.mapView.removeAnnotation(eachAnnotation)
                     
                     let actualCoordinate = eachAnnotation.coordinate
-                    NSLog("animating removing annotation: \(eachAnnotation)")
+//                    NSLog("animating removing annotation: \(eachAnnotation)")
                     UIView.animateWithDuration(0.3, animations: {
                         eachAnnotation.coordinate = eachAnnotation.clusterAnnocation!.coordinate
                         }, completion: { finished in
                             eachAnnotation.coordinate = actualCoordinate
-                            NSLog("Remove annotation from map: \(annotation)")
+//                            NSLog("Remove annotation from map: \(annotation)")
                             self.mapView.removeAnnotation(eachAnnotation)
                     })
                 }
@@ -202,7 +207,7 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
         let matchedAnnotations = annotations.filter() { visibleAnnotationsInRect.contains($0) }
         
         if matchedAnnotations.count > 0 {
-            NSLog("annotation \(matchedAnnotations[0]) is already visible")
+//            NSLog("annotation \(matchedAnnotations[0]) is already visible")
             return matchedAnnotations[0]
         }
         
@@ -218,7 +223,7 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
             return distance0 < distance1
         }
         
-        NSLog("annotation \(sortedAnnotations[0]) is selected to represent this cluster")
+//        NSLog("annotation \(sortedAnnotations[0]) is selected to represent this cluster")
         return sortedAnnotations[0]
     }
     
@@ -243,9 +248,10 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
     }
     
     func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
+        NSLog("regionDidChangeAnimated is called")
         dispatch_async(dispatch_get_main_queue()) {
             self.updateVisibleAnnotations()
-            self.mapView.setRegion(self.mapView.region, animated: false)
+//            self.mapView.setRegion(self.mapView.region, animated: false)
         }
     }
     
@@ -277,7 +283,7 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
     }
     
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
-        NSLog("viewForAnnotation is called")
+//        NSLog("viewForAnnotation is called")
         
         let annotationIdentifier = "PhotoAnnotation"
         
@@ -316,7 +322,7 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
     }
     
     func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
-        NSLog("annotation selected")
+        NSLog("annotation \(view.annotation) selected")
         if view.annotation is PhotoAnnotation {
             let annotation = view.annotation as! PhotoAnnotation
             annotation.updateTitleIfNeeded()

@@ -53,7 +53,7 @@ class PhotoAnnotation : NSObject, MKAnnotation {
 
     func updateTitleIfNeeded() {
         if self.title == "..." {
-            println("getting real title for location \(self.location)")
+            NSLog("getting real title for location \(self.location)")
             CLGeocoder().reverseGeocodeLocation(self.location, completionHandler: { (placemarks, error) -> Void in
                 
                 if placemarks.count > 0 {
