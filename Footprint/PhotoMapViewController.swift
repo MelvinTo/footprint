@@ -22,6 +22,7 @@ extension Array {
 
 class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var locationButton: UIButton!
     var allPhotosMapView: MKMapView = MKMapView(frame: CGRectZero)
 
     let reuseIdentifier = "photoCell"
@@ -43,8 +44,22 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
         }
     }
     
+    func checkAccess() -> Bool {
+        let status = PHPhotoLibrary.authorizationStatus()
+        
+        if status != .Authorized {
+            let alert = UIAlertView(title: "Attention", message: "Please give this app permission to access your photo library in your settings app!", delegate: nil, cancelButtonTitle: "Close")
+            alert.show()
+            return false
+        }
+        
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        checkAccess()
         
         // request to get user location
         userLocation = CLLocation()
@@ -75,12 +90,23 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
                 
 //        allPhotosMapView = MKMapView(frame: CGRectZero)
         
+        // setup location button
+        
         dispatch_async(dispatch_get_main_queue(), {
             self.getAllAnnotations()
             self.updateVisibleAnnotations()
         })
     }
     
+    @IBAction func locationButtonTapped() {
+        NSLog("zoom back to user current location")
+        if let l = userLocation {
+            mapView.setRegion(MKCoordinateRegionMake(l.coordinate, MKCoordinateSpanMake(0.5, 0.5)), animated: true)
+        } else {
+            NSLog("user location is not available")
+        }
+    }
+ 
     func getAllAnnotations() {
         var annotations : [PhotoAnnotation] = []
         var indexSet = NSIndexSet(indexesInRange: NSMakeRange(0, fetchAssetsResult!.count))

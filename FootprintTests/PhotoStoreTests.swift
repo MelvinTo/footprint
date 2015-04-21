@@ -8,7 +8,7 @@
 
 import UIKit
 import XCTest
-import Footprint
+import 足迹地图
 import CoreData
 
 class PhotoStoreTests: XCTestCase {

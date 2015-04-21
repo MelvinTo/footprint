@@ -56,22 +56,27 @@ class PhotoAnnotation : NSObject, MKAnnotation {
             NSLog("getting real title for location \(self.location)")
             CLGeocoder().reverseGeocodeLocation(self.location, completionHandler: { (placemarks, error) -> Void in
                 
-                if placemarks.count > 0 {
-                    self.placemark = placemarks[0] as? CLPlacemark
-                    let identifier = self.photo!.localIdentifier
-                    let shortIdentifier = identifier.substringToIndex(advance(identifier!.startIndex, 8))
-                    self.title = "\(self.placemark!.toString())"
+                if let pms = placemarks {
+                    if placemarks.count > 0 {
+                        self.placemark = placemarks[0] as? CLPlacemark
+                        let identifier = self.photo!.localIdentifier
+                        let shortIdentifier = identifier.substringToIndex(advance(identifier!.startIndex, 8))
+                        self.title = "\(self.placemark!.toString())"
+                    } else {
+                        self.title = "Unknown places"
+                    }
                 } else {
-                    self.title = "Unknown places"
+                    NSLog("Error when reverse geocode: \(error)")
                 }
+
                 
             })
         }
         
         if containedAnnotations?.count > 0 {
-            self.subtitle = "\(containedAnnotations!.count + 1) photos"
+            self.subtitle = "\(containedAnnotations!.count + 1)张照片"
         } else {
-            self.subtitle = "1 photo"
+            self.subtitle = "1张照片"
         }
     }
 }

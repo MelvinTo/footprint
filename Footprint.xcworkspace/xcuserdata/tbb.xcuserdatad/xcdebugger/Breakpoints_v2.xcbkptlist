@@ -322,7 +322,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/PhotoUtility.swift"
@@ -354,31 +354,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Footprint.PhotoAnnotation.__deallocating_deinit"
-                  moduleName = "Footprint"
+                  symbolName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;.PhotoAnnotation.__deallocating_deinit"
+                  moduleName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tbb/Dropbox/workspace/Footprint/Footprint/PhotoAnnotation.swift"
-                  timestampString = "451317605.853351"
+                  timestampString = "451324370.303723"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "12">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Footprint.PhotoAnnotation.init (Footprint.PhotoAnnotation.Type)() -&gt; Footprint.PhotoAnnotation"
-                  moduleName = "Footprint"
+                  symbolName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;.PhotoAnnotation.init (&#x8db3;&#x8ff9;&#x5730;&#x56fe;.PhotoAnnotation.Type)() -&gt; &#x8db3;&#x8ff9;&#x5730;&#x56fe;.PhotoAnnotation"
+                  moduleName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tbb/Dropbox/workspace/Footprint/Footprint/PhotoAnnotation.swift"
-                  timestampString = "451317605.853446"
+                  timestampString = "451324370.303829"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
                   endingLineNumber = "12"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -390,11 +390,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/PhotoMapViewController.swift"
-            timestampString = "451124024.369802"
+            timestampString = "451323011.192215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
             <Locations>
@@ -438,11 +438,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/PhotoMapViewController.swift"
-            timestampString = "451124299.58213"
+            timestampString = "451323011.192215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "getAllAnnotations()"
             landmarkType = "5">
          </BreakpointContent>
@@ -454,11 +454,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/PhotoMapViewController.swift"
-            timestampString = "451317793.018507"
+            timestampString = "451323011.192215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "clusterAnnotations(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -470,11 +470,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/PhotoMapViewController.swift"
-            timestampString = "451124024.369802"
+            timestampString = "451323011.192215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "updateVisibleAnnotations()"
             landmarkType = "5">
          </BreakpointContent>
@@ -486,11 +486,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/PhotoMapViewController.swift"
-            timestampString = "451124299.58213"
+            timestampString = "451323011.192215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "getAllAnnotations()"
             landmarkType = "5">
          </BreakpointContent>
@@ -502,11 +502,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/PhotoMapViewController.swift"
-            timestampString = "451317793.018507"
+            timestampString = "451323011.192215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "clusterAnnotations(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -518,11 +518,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/PhotoAnnotation.swift"
-            timestampString = "451239200.079173"
+            timestampString = "451322231.789581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "updateTitleIfNeeded()"
             landmarkType = "5">
             <Locations>
@@ -567,11 +567,11 @@
             condition = "photoAnnotations.count != 0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/PhotoMapViewController.swift"
-            timestampString = "451317793.018507"
+            timestampString = "451323011.192215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "clusterAnnotations(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -583,11 +583,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/PhotoMapViewController.swift"
-            timestampString = "451317793.018507"
+            timestampString = "451323011.192215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "createClusteredAnnotation(_:annotations:)"
             landmarkType = "5">
             <Locations>
@@ -631,11 +631,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/PhotoMapViewController.swift"
-            timestampString = "451317793.018507"
+            timestampString = "451323011.192215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "clusterAnnotations(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -675,15 +675,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/PhotoMapViewController.swift"
-            timestampString = "451317793.018507"
+            timestampString = "451323011.192215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
             landmarkName = "mapView(_:regionDidChangeAnimated:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -695,11 +695,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/PhotoMapViewController.swift"
-            timestampString = "451317793.018507"
+            timestampString = "451323011.192215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "updateVisibleAnnotations()"
             landmarkType = "5">
          </BreakpointContent>
@@ -711,12 +711,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/PhotoMapViewController.swift"
-            timestampString = "451317793.018507"
+            timestampString = "451323011.192215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "updateVisibleAnnotations()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FootprintTests/MiscTests.swift"
+            timestampString = "451324344.781327"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "testGettingAddress()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FootprintTests/MiscTests.swift"
+            timestampString = "451324303.084321"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "testGettingAddress2()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -265,9 +265,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		37BDB4B31ACED65500F73513 /* Footprint */ = {
+		37BDB4B31ACED65500F73513 /* 足迹地图 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 37BDB4D51ACED65500F73513 /* Build configuration list for PBXNativeTarget "Footprint" */;
+			buildConfigurationList = 37BDB4D51ACED65500F73513 /* Build configuration list for PBXNativeTarget "足迹地图" */;
 			buildPhases = (
 				8196DFD5594D216CF1C2112C /* Check Pods Manifest.lock */,
 				37BDB4B01ACED65500F73513 /* Sources */,
@@ -280,7 +280,7 @@
 			);
 			dependencies = (
 			);
-			name = Footprint;
+			name = "足迹地图";
 			productName = Footprint;
 			productReference = 37BDB4B41ACED65500F73513 /* Footprint.app */;
 			productType = "com.apple.product-type.application";
@@ -325,7 +325,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 37BDB4AF1ACED65500F73513 /* Build configuration list for PBXProject "Footprint" */;
+			buildConfigurationList = 37BDB4AF1ACED65500F73513 /* Build configuration list for PBXProject "足迹地图" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -338,7 +338,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				37BDB4B31ACED65500F73513 /* Footprint */,
+				37BDB4B31ACED65500F73513 /* 足迹地图 */,
 				37BDB4CA1ACED65500F73513 /* FootprintTests */,
 			);
 		};
@@ -505,7 +505,7 @@
 /* Begin PBXTargetDependency section */
 		37BDB4CD1ACED65500F73513 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 37BDB4B31ACED65500F73513 /* Footprint */;
+			target = 37BDB4B31ACED65500F73513 /* 足迹地图 */;
 			targetProxy = 37BDB4CC1ACED65500F73513 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -565,7 +565,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -602,7 +602,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -617,6 +617,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Footprint/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Footprint/Footprint-Bridging-Header.h";
@@ -630,6 +631,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Footprint/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Footprint/Footprint-Bridging-Header.h";
@@ -652,7 +654,7 @@
 				INFOPLIST_FILE = FootprintTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Footprint.app/Footprint";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/足迹地图.app/足迹地图";
 			};
 			name = Debug;
 		};
@@ -668,14 +670,14 @@
 				INFOPLIST_FILE = FootprintTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Footprint.app/Footprint";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/足迹地图.app/足迹地图";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		37BDB4AF1ACED65500F73513 /* Build configuration list for PBXProject "Footprint" */ = {
+		37BDB4AF1ACED65500F73513 /* Build configuration list for PBXProject "足迹地图" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				37BDB4D31ACED65500F73513 /* Debug */,
@@ -684,7 +686,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		37BDB4D51ACED65500F73513 /* Build configuration list for PBXNativeTarget "Footprint" */ = {
+		37BDB4D51ACED65500F73513 /* Build configuration list for PBXNativeTarget "足迹地图" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				37BDB4D61ACED65500F73513 /* Debug */,

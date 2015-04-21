@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "37BDB4B31ACED65500F73513"
-               BuildableName = "Footprint.app"
-               BlueprintName = "Footprint"
-               ReferencedContainer = "container:Footprint.xcodeproj">
+               BuildableName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;.app"
+               BlueprintName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;"
+               ReferencedContainer = "container:&#x8db3;&#x8ff9;&#x5730;&#x56fe;.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "37BDB4CA1ACED65500F73513"
                BuildableName = "FootprintTests.xctest"
                BlueprintName = "FootprintTests"
-               ReferencedContainer = "container:Footprint.xcodeproj">
+               ReferencedContainer = "container:&#x8db3;&#x8ff9;&#x5730;&#x56fe;.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,7 +49,7 @@
                BlueprintIdentifier = "37BDB4CA1ACED65500F73513"
                BuildableName = "FootprintTests.xctest"
                BlueprintName = "FootprintTests"
-               ReferencedContainer = "container:Footprint.xcodeproj">
+               ReferencedContainer = "container:&#x8db3;&#x8ff9;&#x5730;&#x56fe;.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "37BDB4B31ACED65500F73513"
-            BuildableName = "Footprint.app"
-            BlueprintName = "Footprint"
-            ReferencedContainer = "container:Footprint.xcodeproj">
+            BuildableName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;.app"
+            BlueprintName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;"
+            ReferencedContainer = "container:&#x8db3;&#x8ff9;&#x5730;&#x56fe;.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "37BDB4B31ACED65500F73513"
-            BuildableName = "Footprint.app"
-            BlueprintName = "Footprint"
-            ReferencedContainer = "container:Footprint.xcodeproj">
+            BuildableName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;.app"
+            BlueprintName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;"
+            ReferencedContainer = "container:&#x8db3;&#x8ff9;&#x5730;&#x56fe;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "37BDB4B31ACED65500F73513"
-            BuildableName = "Footprint.app"
-            BlueprintName = "Footprint"
-            ReferencedContainer = "container:Footprint.xcodeproj">
+            BuildableName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;.app"
+            BlueprintName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;"
+            ReferencedContainer = "container:&#x8db3;&#x8ff9;&#x5730;&#x56fe;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
