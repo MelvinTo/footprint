@@ -338,8 +338,9 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
         if let annotation = view.annotation as? PhotoAnnotation {
             let photos = [annotation.photo!] + annotation.containedAnnotations!.map { $0.photo! }
+            let sortedPhotos = photos.sorted { $0.creationDate.isLessThanDate($1.creationDate) }
             let photoViewController = PhotoViewController()
-            photoViewController.photos = photos
+            photoViewController.photos = sortedPhotos
             photoViewController.theStoryboard = self.storyboard
             self.showDetailViewController(photoViewController, sender: self)
 //            self.showViewController(photoViewController, sender: self)

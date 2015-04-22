@@ -80,7 +80,6 @@ class PhotoDataViewController : UIViewController {
         super.viewWillAppear(animated)
         
         self.title = dataObject?.localIdentifier
-        self.loadImage()
         self.updateLocation()
     }
     
@@ -108,7 +107,6 @@ class PhotoDataViewController : UIViewController {
                     let placemark = placemarks[0] as! CLPlacemark
 //                    let aoi = placemark!.areasOfInterest
                     
-                    self.location.text = placemark.toString()
                     self.location.hidden = false
                 }
             })

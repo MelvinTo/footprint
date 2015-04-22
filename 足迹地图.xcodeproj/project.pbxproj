@@ -72,7 +72,7 @@
 		3738AE9F1ADC1A44003375ED /* PathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathViewController.swift; sourceTree = "<group>"; };
 		3738AEA11ADC1E54003375ED /* PhotoUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoUtility.swift; sourceTree = "<group>"; };
 		37B3DB17CB302B2C9EDDAC23 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		37BDB4B41ACED65500F73513 /* Footprint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Footprint.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37BDB4B41ACED65500F73513 /* 足迹地图.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "足迹地图.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37BDB4B81ACED65500F73513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37BDB4B91ACED65500F73513 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37BDB4BB1ACED65500F73513 /* FootprintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootprintViewController.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 		37BDB4B51ACED65500F73513 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				37BDB4B41ACED65500F73513 /* Footprint.app */,
+				37BDB4B41ACED65500F73513 /* 足迹地图.app */,
 				37BDB4CB1ACED65500F73513 /* FootprintTests.xctest */,
 			);
 			name = Products;
@@ -282,7 +282,7 @@
 			);
 			name = "足迹地图";
 			productName = Footprint;
-			productReference = 37BDB4B41ACED65500F73513 /* Footprint.app */;
+			productReference = 37BDB4B41ACED65500F73513 /* 足迹地图.app */;
 			productType = "com.apple.product-type.application";
 		};
 		37BDB4CA1ACED65500F73513 /* FootprintTests */ = {
