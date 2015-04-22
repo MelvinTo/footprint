@@ -11,6 +11,7 @@ import MapKit
 
 class PhotoModelController : NSObject, UIPageViewControllerDataSource {
     var pageData : [PHAsset] = []
+    var currentController : PhotoDataViewController? = nil
     var currentIndex: Int = 0
     
     func viewControllerAtIndex(index: Int, storyboard: UIStoryboard) -> PhotoDataViewController? {
@@ -26,6 +27,7 @@ class PhotoModelController : NSObject, UIPageViewControllerDataSource {
     func indexOfViewController(viewController : PhotoDataViewController) -> Int {
         return pageData.find { $0 == viewController.dataObject! }!
     }
+    
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         let photoViewController = pageViewController.delegate as! PhotoViewController
@@ -80,7 +82,16 @@ class PhotoDataViewController : UIViewController {
         super.viewWillAppear(animated)
         
         self.title = dataObject?.localIdentifier
+//        self.loadImage()
         self.updateLocation()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.loadImage()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
     func loadImage() {
@@ -100,14 +111,35 @@ class PhotoDataViewController : UIViewController {
         })
     }
     
+    func enableActivityViewController() {
+        // display an activity view controller
+        var controller = UIActivityViewController(activityItems: [self.imageView.image!], applicationActivities: nil)
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
+    
     func updateLocation() {
+        let time = self.dataObject?.creationDate
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        //                    dateFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+        let timestamp = dateFormatter.stringFromDate(time!)
+
         if let l = dataObject?.location {
+            
             CLGeocoder().reverseGeocodeLocation(l, completionHandler: { (placemarks, error) -> Void in
-                if placemarks.count > 0 {
-                    let placemark = placemarks[0] as! CLPlacemark
-//                    let aoi = placemark!.areasOfInterest
-                    
+                if let pp = placemarks {
+                    if placemarks.count > 0 {
+                        let placemark = placemarks[0] as! CLPlacemark
+                        self.location.text = "\(timestamp) \(placemark.toString())"
+                        self.location.hidden = false
+                    } else {
+                        self.location.text = "\(timestamp)"
+                        self.location.hidden = false
+                    }
+                } else {
+                    self.location.text = "\(timestamp)"
                     self.location.hidden = false
+                    NSLog("meet error when getting locatino for (\(l.coordinate.latitude),\(l.coordinate.longitude)): \(error)")
                 }
             })
         }
@@ -154,6 +186,7 @@ class PhotoViewController : UIViewController, UIPageViewControllerDelegate {
         
         let startingViewController = self.modelController.viewControllerAtIndex(0, storyboard: theStoryboard!)! as UIViewController
         var viewControllers = [startingViewController]
+        self.modelController.currentController = startingViewController as! PhotoDataViewController
         pageViewController!.setViewControllers(viewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         
         self.updateNavBarTitle()
@@ -172,12 +205,28 @@ class PhotoViewController : UIViewController, UIPageViewControllerDelegate {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: "respondToTapGesture:")
         tapRecognizer.numberOfTapsRequired = 1
         self.view.addGestureRecognizer(tapRecognizer)
+        
+        // add long press gesture
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "respondToTapHoldGesture:")
+        self.view.addGestureRecognizer(longPressRecognizer)
+        
+        // add double tap gesture, same action with long press
+        let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: "respondToTapHoldGesture:")
+        doubleTapRecognizer.numberOfTapsRequired = 2
+        self.view.addGestureRecognizer(doubleTapRecognizer)
+        tapRecognizer.requireGestureRecognizerToFail(doubleTapRecognizer)
+
     }
     
     func respondToTapGesture(tr: UITapGestureRecognizer) {
 //        let curPhoto = self.modelController.pageData[modelController.currentIndex]
 //        NSLog("Tap on photo \(curPhoto.localIdentifier)")
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    func respondToTapHoldGesture(tr: UITapGestureRecognizer) {
+        let controller = self.modelController.currentController
+        controller?.enableActivityViewController()
     }
     
     func updateNavBarTitle() {
@@ -195,6 +244,11 @@ class PhotoViewController : UIViewController, UIPageViewControllerDelegate {
         self.updateNavBarTitle()
         
         self.pageAnimationFinished = true
+        
+        if completed == true {
+            let controller: AnyObject = pageViewController.viewControllers[0]
+            self.modelController.currentController = (controller as! PhotoDataViewController)
+        }
     }
     
     func pageViewController(pageViewController: UIPageViewController, spineLocationForInterfaceOrientation orientation: UIInterfaceOrientation) -> UIPageViewControllerSpineLocation {
