@@ -16,8 +16,8 @@ class PhotoAnnotation : NSObject, MKAnnotation {
     var clusterAnnocation : PhotoAnnotation? = nil
     var containedAnnotations : [PhotoAnnotation]? = nil
     var placemark: CLPlacemark? = nil
-    var title: String = "..."
-    var subtitle: String = "..."
+    dynamic var title: String = "Loading..."
+    dynamic var subtitle: String = "Loading..."
     
     init(latitude: Double, longitude: Double) {
         self.latitude = latitude
@@ -52,7 +52,7 @@ class PhotoAnnotation : NSObject, MKAnnotation {
     }
 
     func updateTitleIfNeeded() {
-        if self.title == "..." {
+        if self.title == "Loading..." {
             NSLog("getting real title for location \(self.location)")
             CLGeocoder().reverseGeocodeLocation(self.location, completionHandler: { (placemarks, error) -> Void in
                 
@@ -62,8 +62,10 @@ class PhotoAnnotation : NSObject, MKAnnotation {
                         let identifier = self.photo!.localIdentifier
                         let shortIdentifier = identifier.substringToIndex(advance(identifier!.startIndex, 8))
                         self.title = "\(self.placemark!.toString())"
+                        NSLog("got title: \(self.title)")
                     } else {
                         self.title = "Unknown places"
+                        NSLog("got title: \(self.title)")
                     }
                 } else {
                     NSLog("Error when reverse geocode: \(error)")
