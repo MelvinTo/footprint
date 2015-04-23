@@ -14,6 +14,7 @@
 		372B58E41AD03AAF000D2483 /* PhotoMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372B58E31AD03AAF000D2483 /* PhotoMetadata.swift */; };
 		372D1E1A1AE28F46009D113D /* PhotoAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372D1E191AE28F46009D113D /* PhotoAnnotation.swift */; };
 		372D1E1C1AE3ADC4009D113D /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372D1E1B1AE3ADC4009D113D /* PhotoViewController.swift */; };
+		3734887C1AE943960068FC73 /* MapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734887B1AE943960068FC73 /* MapHelper.swift */; };
 		37364ACB1AD1245900A3396E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37364ACA1AD1245900A3396E /* Helpers.swift */; };
 		37364AD21AD19DA900A3396E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37364AD11AD19DA900A3396E /* Images.xcassets */; };
 		37364AD41AD1B18100A3396E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37364AD31AD1B18100A3396E /* Photos.framework */; };
@@ -65,6 +66,7 @@
 		372B58E31AD03AAF000D2483 /* PhotoMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoMetadata.swift; sourceTree = "<group>"; };
 		372D1E191AE28F46009D113D /* PhotoAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAnnotation.swift; sourceTree = "<group>"; };
 		372D1E1B1AE3ADC4009D113D /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		3734887B1AE943960068FC73 /* MapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapHelper.swift; sourceTree = "<group>"; };
 		37364ACA1AD1245900A3396E /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		37364AD11AD19DA900A3396E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		37364AD31AD1B18100A3396E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
@@ -195,6 +197,7 @@
 				37DFF2F51AD22B4000686E74 /* ViewControllers */,
 				37DFF2FC1AD42A4000686E74 /* XIBs */,
 				3738AEA11ADC1E54003375ED /* PhotoUtility.swift */,
+				3734887B1AE943960068FC73 /* MapHelper.swift */,
 			);
 			path = Footprint;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				3738AEA01ADC1A44003375ED /* PathViewController.swift in Sources */,
 				37DFF2FB1AD420B900686E74 /* PhotoCollectionCell.swift in Sources */,
 				37DFF2F41AD22AD600686E74 /* PathCreateViewController.swift in Sources */,
+				3734887C1AE943960068FC73 /* MapHelper.swift in Sources */,
 				37BDB4F71ACF72A800F73513 /* Photo.swift in Sources */,
 				37BDB4ED1ACF11A200F73513 /* CoreDataHelper.swift in Sources */,
 				37BDB4EB1ACF10E400F73513 /* CoreDataStore.swift in Sources */,

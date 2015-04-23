@@ -26,8 +26,13 @@ class PhotoAnnotation : NSObject, MKAnnotation {
     }
     
     init(location: CLLocation, photo: PHAsset) {
-        self.latitude = location.coordinate.latitude
-        self.longitude = location.coordinate.longitude
+        let ll = wgs2gcj(location.coordinate)
+        self.latitude = ll.latitude
+        self.longitude = ll.longitude
+//        self.latitude = location.coordinate.latitude
+//        self.longitude = location.coordinate.longitude
+        
+        
         self.photo = photo
     }
     
