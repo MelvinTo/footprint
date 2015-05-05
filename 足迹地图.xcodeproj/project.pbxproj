@@ -42,6 +42,11 @@
 		37DFF2F91AD41F1F00686E74 /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37DFF2F81AD41F1F00686E74 /* CollectionCell.xib */; };
 		37DFF2FB1AD420B900686E74 /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DFF2FA1AD420B900686E74 /* PhotoCollectionCell.swift */; };
 		3F9642BAFA38590DF95641BA /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334BBD94344676C6D804E17E /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		410469781AF7D36F00EC71B4 /* NewPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410469771AF7D36F00EC71B4 /* NewPhoto.swift */; };
+		41660D3F1AF7C272002FEE8B /* DropboxConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41660D3E1AF7C272002FEE8B /* DropboxConnector.swift */; };
+		41660D411AF7C27D002FEE8B /* Connector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41660D401AF7C27D002FEE8B /* Connector.swift */; };
+		41660D431AF7C411002FEE8B /* PhotosConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41660D421AF7C411002FEE8B /* PhotosConnector.swift */; };
+		41660D451AF7C457002FEE8B /* ConnectorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41660D441AF7C457002FEE8B /* ConnectorManager.swift */; };
 		4175A56A1AD9036B0033745A /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4175A5691AD9036B0033745A /* en.lproj */; };
 		41A2E8E51AD70B6600240EB5 /* FootprintCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A2E8E41AD70B6600240EB5 /* FootprintCell.swift */; };
 		BD35A53862890ED8B8E3B5F8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334BBD94344676C6D804E17E /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -98,6 +103,11 @@
 		37DFF2F31AD22AD600686E74 /* PathCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathCreateViewController.swift; sourceTree = "<group>"; };
 		37DFF2F81AD41F1F00686E74 /* CollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
 		37DFF2FA1AD420B900686E74 /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
+		410469771AF7D36F00EC71B4 /* NewPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPhoto.swift; sourceTree = "<group>"; };
+		41660D3E1AF7C272002FEE8B /* DropboxConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropboxConnector.swift; sourceTree = "<group>"; };
+		41660D401AF7C27D002FEE8B /* Connector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connector.swift; sourceTree = "<group>"; };
+		41660D421AF7C411002FEE8B /* PhotosConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosConnector.swift; sourceTree = "<group>"; };
+		41660D441AF7C457002FEE8B /* ConnectorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectorManager.swift; sourceTree = "<group>"; };
 		4175A5651AD8FFC20033745A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		4175A5691AD9036B0033745A /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
 		41A2E8E41AD70B6600240EB5 /* FootprintCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootprintCell.swift; sourceTree = "<group>"; };
@@ -180,6 +190,8 @@
 		37BDB4B61ACED65500F73513 /* Footprint */ = {
 			isa = PBXGroup;
 			children = (
+				410469771AF7D36F00EC71B4 /* NewPhoto.swift */,
+				41660D3D1AF7C265002FEE8B /* Connector */,
 				37DFF2EE1AD1B9BA00686E74 /* Footprint-Bridging-Header.h */,
 				37BDB4B91ACED65500F73513 /* AppDelegate.swift */,
 				37BDB4EC1ACF11A200F73513 /* CoreDataHelper.swift */,
@@ -263,6 +275,17 @@
 				37DFF2F81AD41F1F00686E74 /* CollectionCell.xib */,
 			);
 			name = XIBs;
+			sourceTree = "<group>";
+		};
+		41660D3D1AF7C265002FEE8B /* Connector */ = {
+			isa = PBXGroup;
+			children = (
+				41660D3E1AF7C272002FEE8B /* DropboxConnector.swift */,
+				41660D401AF7C27D002FEE8B /* Connector.swift */,
+				41660D421AF7C411002FEE8B /* PhotosConnector.swift */,
+				41660D441AF7C457002FEE8B /* ConnectorManager.swift */,
+			);
+			name = Connector;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,15 +496,20 @@
 				37BDB4BE1ACED65500F73513 /* SecondViewController.swift in Sources */,
 				37BDB4BA1ACED65500F73513 /* AppDelegate.swift in Sources */,
 				372B58E11AD036F9000D2483 /* PhotoLoader.swift in Sources */,
+				41660D431AF7C411002FEE8B /* PhotosConnector.swift in Sources */,
 				372B58E41AD03AAF000D2483 /* PhotoMetadata.swift in Sources */,
 				37BDB4DC1ACED72B00F73513 /* PhotoStore.swift in Sources */,
+				410469781AF7D36F00EC71B4 /* NewPhoto.swift in Sources */,
+				41660D411AF7C27D002FEE8B /* Connector.swift in Sources */,
 				37BDB4BC1ACED65500F73513 /* FootprintViewController.swift in Sources */,
 				37DFF2F21AD1C47500686E74 /* Path.swift in Sources */,
+				41660D3F1AF7C272002FEE8B /* DropboxConnector.swift in Sources */,
 				3703363D1ADFFF8800EF9FE4 /* PhotoMapViewController.swift in Sources */,
 				372D1E1A1AE28F46009D113D /* PhotoAnnotation.swift in Sources */,
 				37364ACB1AD1245900A3396E /* Helpers.swift in Sources */,
 				3738AEA01ADC1A44003375ED /* PathViewController.swift in Sources */,
 				37DFF2FB1AD420B900686E74 /* PhotoCollectionCell.swift in Sources */,
+				41660D451AF7C457002FEE8B /* ConnectorManager.swift in Sources */,
 				37DFF2F41AD22AD600686E74 /* PathCreateViewController.swift in Sources */,
 				3734887C1AE943960068FC73 /* MapHelper.swift in Sources */,
 				37BDB4F71ACF72A800F73513 /* Photo.swift in Sources */,

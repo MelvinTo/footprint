@@ -109,6 +109,20 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
  
     func getAllAnnotations() {
         var annotations : [PhotoAnnotation] = []
+//        if let photos = fetchAssetsResult {
+//            for photo in photos {
+//                if let p = photo as? PHAsset {
+//                    if let l = p.location {
+//                        let pa = PhotoAnnotation(location: l, photo: p)
+//                        annotations.append(pa)
+//                        //                    NSLog("Adding annotation to hidden map: \(pa)")
+//                    } else {
+//                        NSLog("No location info for photo \(p.description)")
+//                    }
+//                }
+//            }
+//        }
+        
         var indexSet = NSIndexSet(indexesInRange: NSMakeRange(0, fetchAssetsResult!.count))
         fetchAssetsResult!.enumerateObjectsAtIndexes(indexSet, options: nil, usingBlock: { object, index, stop in
             if let p = object as? PHAsset {
