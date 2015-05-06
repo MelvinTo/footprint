@@ -354,31 +354,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;.PhotoAnnotation.__deallocating_deinit"
-                  moduleName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;"
+                  symbolName = "Footprint.PhotoAnnotation.__deallocating_deinit"
+                  moduleName = "Footprint"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tbb/Dropbox/workspace/Footprint/Footprint/PhotoAnnotation.swift"
-                  timestampString = "451495713.93929"
+                  timestampString = "452626940.079886"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "12">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;.PhotoAnnotation.init (&#x8db3;&#x8ff9;&#x5730;&#x56fe;.PhotoAnnotation.Type)() -&gt; &#x8db3;&#x8ff9;&#x5730;&#x56fe;.PhotoAnnotation"
-                  moduleName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;"
+                  symbolName = "Footprint.PhotoAnnotation.init (Footprint.PhotoAnnotation.Type)() -&gt; Footprint.PhotoAnnotation"
+                  moduleName = "Footprint"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tbb/Dropbox/workspace/Footprint/Footprint/PhotoAnnotation.swift"
-                  timestampString = "451495713.939431"
+                  timestampString = "452626940.080004"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
                   endingLineNumber = "12"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -459,7 +459,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "180"
             endingLineNumber = "180"
-            landmarkName = "clusterAnnotations(_:)"
+            landmarkName = "updateVisibleAnnotations()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -475,7 +475,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "132"
             endingLineNumber = "132"
-            landmarkName = "updateVisibleAnnotations()"
+            landmarkName = "getAllAnnotations()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -507,7 +507,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "177"
             endingLineNumber = "177"
-            landmarkName = "clusterAnnotations(_:)"
+            landmarkName = "updateVisibleAnnotations()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -572,7 +572,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "185"
             endingLineNumber = "185"
-            landmarkName = "clusterAnnotations(_:)"
+            landmarkName = "updateVisibleAnnotations()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -588,7 +588,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "233"
             endingLineNumber = "233"
-            landmarkName = "createClusteredAnnotation(_:annotations:)"
+            landmarkName = "clusterAnnotations(_:)"
             landmarkType = "5">
             <Locations>
                <Location
@@ -684,7 +684,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "279"
             endingLineNumber = "279"
-            landmarkName = "mapView(_:regionDidChangeAnimated:)"
+            landmarkName = "loadImage(_:indexPath:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

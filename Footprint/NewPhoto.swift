@@ -9,7 +9,9 @@
 import Foundation
 import CoreData
 
-class NewPhoto: NSManagedObject {
+@objc(NewPhoto)
+
+public class NewPhoto: NSManagedObject {
 
     @NSManaged var name: String
     @NSManaged var identifier: String

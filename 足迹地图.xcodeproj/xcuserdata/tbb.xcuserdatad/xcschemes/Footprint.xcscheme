@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "37BDB4B31ACED65500F73513"
-               BuildableName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;.app"
-               BlueprintName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;"
+               BuildableName = "Footprint.app"
+               BlueprintName = "Footprint"
                ReferencedContainer = "container:&#x8db3;&#x8ff9;&#x5730;&#x56fe;.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -57,8 +57,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "37BDB4B31ACED65500F73513"
-            BuildableName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;.app"
-            BlueprintName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;"
+            BuildableName = "Footprint.app"
+            BlueprintName = "Footprint"
             ReferencedContainer = "container:&#x8db3;&#x8ff9;&#x5730;&#x56fe;.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -77,8 +77,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "37BDB4B31ACED65500F73513"
-            BuildableName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;.app"
-            BlueprintName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;"
+            BuildableName = "Footprint.app"
+            BlueprintName = "Footprint"
             ReferencedContainer = "container:&#x8db3;&#x8ff9;&#x5730;&#x56fe;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -101,8 +101,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "37BDB4B31ACED65500F73513"
-            BuildableName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;.app"
-            BlueprintName = "&#x8db3;&#x8ff9;&#x5730;&#x56fe;"
+            BuildableName = "Footprint.app"
+            BlueprintName = "Footprint"
             ReferencedContainer = "container:&#x8db3;&#x8ff9;&#x5730;&#x56fe;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

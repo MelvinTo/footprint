@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--足迹-->
         <scene sceneID="rFe-hY-nQ0">
             <objects>
-                <tableViewController id="0Hr-vf-H9b" customClass="FootprintViewController" customModule="足迹地图" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="0Hr-vf-H9b" customClass="FootprintViewController" customModule="Footprint" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="180" sectionHeaderHeight="22" sectionFooterHeight="22" id="784-DG-R6t">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="footprintCell" rowHeight="330" id="H8M-H9-hgH" customClass="FootprintCell" customModule="足迹地图" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="footprintCell" rowHeight="330" id="H8M-H9-hgH" customClass="FootprintCell" customModule="Footprint" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="320" height="330"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H8M-H9-hgH" id="6LB-g0-OTV">
@@ -63,7 +63,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="trA-mZ-b6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="310" y="-448"/>
+            <point key="canvasLocation" x="366" y="-748"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="K9v-pq-9Ua">
@@ -84,7 +84,7 @@
         <!--Path Create View Controller-->
         <scene sceneID="gLk-AJ-dzx">
             <objects>
-                <viewController storyboardIdentifier="pathCreateViewController" id="ZYp-PP-5xC" customClass="PathCreateViewController" customModule="足迹地图" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pathCreateViewController" id="ZYp-PP-5xC" customClass="PathCreateViewController" customModule="Footprint" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eR1-eD-LT1"/>
                         <viewControllerLayoutGuide type="bottom" id="OZe-a4-mfY"/>
@@ -129,7 +129,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="C6R-p7-BnQ" customClass="PhotoCollectionCell" customModule="足迹地图" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="C6R-p7-BnQ" customClass="PhotoCollectionCell" customModule="Footprint" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -138,7 +138,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pkn-tO-p0G" customClass="PhotoCollectionCell" customModule="足迹地图" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pkn-tO-p0G" customClass="PhotoCollectionCell" customModule="Footprint" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -147,7 +147,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Waf-qz-6kf" customClass="PhotoCollectionCell" customModule="足迹地图" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Waf-qz-6kf" customClass="PhotoCollectionCell" customModule="Footprint" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -156,7 +156,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dEh-4i-qaN" customClass="PhotoCollectionCell" customModule="足迹地图" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dEh-4i-qaN" customClass="PhotoCollectionCell" customModule="Footprint" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -165,7 +165,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zxI-7y-2kh" customClass="PhotoCollectionCell" customModule="足迹地图" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zxI-7y-2kh" customClass="PhotoCollectionCell" customModule="Footprint" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -174,7 +174,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="HIk-KO-weA" customClass="PhotoCollectionCell" customModule="足迹地图" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="HIk-KO-weA" customClass="PhotoCollectionCell" customModule="Footprint" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -183,7 +183,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xaH-5H-biX" customClass="PhotoCollectionCell" customModule="足迹地图" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xaH-5H-biX" customClass="PhotoCollectionCell" customModule="Footprint" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -231,7 +231,7 @@
         <!--Root View Controller-->
         <scene sceneID="wET-Go-1of">
             <objects>
-                <tableViewController id="8Ox-Pk-n74" customClass="PathViewController" customModule="足迹地图" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="8Ox-Pk-n74" customClass="PathViewController" customModule="Footprint" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fTu-VB-Snm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -325,7 +325,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BOx-oB-td3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1187" y="-379"/>
+            <point key="canvasLocation" x="1035" y="-625"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="iHE-gN-Rfs">
@@ -350,7 +350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bd5-sr-LbA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1697" y="-380"/>
+            <point key="canvasLocation" x="1519" y="-564"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oEK-Oq-NBR">
@@ -367,12 +367,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WjS-WA-M0K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-401" y="-455"/>
+            <point key="canvasLocation" x="-261" y="-877"/>
         </scene>
         <!--Photo Map View Controller-->
         <scene sceneID="Ae9-U3-Ngr">
             <objects>
-                <viewController id="6gL-DL-M3a" customClass="PhotoMapViewController" customModule="足迹地图" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6gL-DL-M3a" customClass="PhotoMapViewController" customModule="Footprint" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="guI-HG-wxv"/>
                         <viewControllerLayoutGuide type="bottom" id="bCt-hF-6bp"/>
@@ -416,12 +416,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yJ-lc-IG9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048" y="429"/>
+            <point key="canvasLocation" x="156" y="181"/>
         </scene>
         <!--Photo Data View Controller-->
         <scene sceneID="p8g-OH-VNi">
             <objects>
-                <viewController storyboardIdentifier="PhotoDataViewController" id="uTe-CH-W97" customClass="PhotoDataViewController" customModule="足迹地图" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoDataViewController" id="uTe-CH-W97" customClass="PhotoDataViewController" customModule="Footprint" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QEm-lH-VI1"/>
                         <viewControllerLayoutGuide type="bottom" id="Pgc-4r-Orr"/>
@@ -475,7 +475,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RlF-Kp-BqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1758" y="426"/>
+            <point key="canvasLocation" x="992" y="181"/>
         </scene>
         <!--Item-->
         <scene sceneID="d2k-dF-BWc">
@@ -492,12 +492,29 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOg-KI-Rs2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-420" y="265"/>
+            <point key="canvasLocation" x="-752" y="181"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="5NQ-TA-ifC">
+            <objects>
+                <navigationController id="RCg-Fk-HnF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="mwd-Mu-3Rr"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VuD-Su-i1Q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fe8-ut-F5y" kind="relationship" relationship="rootViewController" id="orX-hU-y7T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LUD-rq-1YA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-752" y="974"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="足迹地图" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Footprint" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zxe-XC-Nam"/>
                         <viewControllerLayoutGuide type="bottom" id="S5k-8L-AxL"/>
@@ -556,7 +573,108 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-401" y="1054"/>
+            <point key="canvasLocation" x="-1726" y="1289"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="krQ-3W-YCw">
+            <objects>
+                <tableViewController id="fe8-ut-F5y" customClass="SettingsViewController" customModule="Footprint" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Edc-8l-l8Q">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection headerTitle="Overview" id="Vlw-bK-EmU">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ywc-RW-xft" detailTextLabel="fVG-yF-BSt" style="IBUITableViewCellStyleValue1" id="Rtk-Oh-eYP">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rtk-Oh-eYP" id="Awi-MJ-fIm">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Photo Count" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ywc-RW-xft">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fVG-yF-BSt">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mvc-oo-QLb">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mvc-oo-QLb" id="NUX-bk-65C">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="agq-uU-hJy">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="agq-uU-hJy" id="gzJ-m7-3Cg">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="插件" id="wWf-li-ykY">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="jih-wJ-6uQ" style="IBUITableViewCellStyleDefault" id="WJi-b1-49c">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WJi-b1-49c" id="xYh-MZ-IAL">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="照片库" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jih-wJ-6uQ">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="cQ4-eM-N8Z" style="IBUITableViewCellStyleDefault" id="bFf-cj-EVb">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bFf-cj-EVb" id="DPR-1K-Rc1">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Dropbox" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cQ4-eM-N8Z">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="u4Y-h0-fYU">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u4Y-h0-fYU" id="R8a-Bw-GqG">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="fe8-ut-F5y" id="zPd-5w-RMD"/>
+                            <outlet property="delegate" destination="fe8-ut-F5y" id="dYS-3U-vEA"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="XQR-VQ-TSy"/>
+                    <navigationItem key="navigationItem" id="Ntg-Zc-FqQ"/>
+                    <connections>
+                        <outlet property="dropboxCell" destination="bFf-cj-EVb" id="d0o-I4-ZJn"/>
+                        <outlet property="photoCount" destination="fVG-yF-BSt" id="cGR-xg-jUX"/>
+                        <outlet property="photoLibraryCell" destination="WJi-b1-49c" id="jHW-p2-izq"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nm6-n2-Y0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="112" y="974"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -570,11 +688,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="zQL-xA-aN9" kind="relationship" relationship="viewControllers" id="WHk-S7-TAO"/>
+                        <segue destination="RCg-Fk-HnF" kind="relationship" relationship="viewControllers" id="7Na-nc-UmJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1255" y="214"/>
+            <point key="canvasLocation" x="-1817" y="186"/>
         </scene>
     </scenes>
     <resources>

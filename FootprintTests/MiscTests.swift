@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import XCTest
-import 足迹地图
+import Footprint
 import MapKit
 
 class MiscTests: XCTestCase {

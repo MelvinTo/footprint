@@ -107,4 +107,20 @@ public class CoreDataHelper: NSObject{
             }
         }
     }
+    
+    
+    // NOT READY TO USE
+    func flushDatabase() {
+        self.managedObjectContext?.performBlockAndWait({ () -> Void in
+            let coordinator = self.managedObjectContext?.persistentStoreCoordinator
+            var stores = coordinator?.persistentStores
+            if let ss = stores as? [NSPersistentStore] {
+                for store in ss {
+                    coordinator?.removePersistentStore(store, error: nil)
+                    let url = store.URL!
+                    NSFileManager.defaultManager().removeItemAtPath(url.path!, error: nil)
+                }
+            }
+        })
+    }
 }

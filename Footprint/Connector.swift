@@ -8,11 +8,19 @@
 
 import Foundation
 
-protocol PhotoQueue {
-    func next() -> NewPhoto?
+public protocol ConnectorDelegate {
+    func addPhoto(photo: PhotoObject)
 }
 
-protocol Connector {
-    func getQueue() -> PhotoQueue?
-    func getRawImage(photo: NewPhoto) -> UIImage?
+public class Connector {
+    public var delegate: ConnectorDelegate? = nil
+    
+    init() {
+    }
+    
+    public func loadPhotos() {
+    }
+    
+    public func getRawImage(photo: PhotoObject, width: CGFloat, height: CGFloat, block: (UIImage?, NSError?) -> Void) {
+    }
 }
