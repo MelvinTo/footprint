@@ -7,13 +7,33 @@
 //
 
 import Foundation
+import CoreData
 
-class ConnectorManager {
-    class func getAvailableConnectors() -> [Connector] {
+public class ConnectorManager {
+    
+    public init() {
+        
+    }
+    
+    func getAvailableConnectors() -> [Connector] {
         return [PhotosConnector()]
     }
     
-    class func syncWithConnectors() {
+    func syncWithConnectors() {
         
+    }
+    
+    public func storeNewPhotos(connector: Connector, context: NSManagedObjectContext) {
+        var photoDBManager = NewPhotoDBManager(context: context)
+        connector.loadPhotos() { photo in
+            if !photoDBManager.photoExists(photo.identifier) {
+                let result = photoDBManager.insertPhoto(photo)
+                if result {
+                    NSLog("Photo \(photo.identifier) is added successfully")
+                } else {
+                    NSLog("Failed to add photo \(photo.identifier)")
+                }
+            }
+        }
     }
 }

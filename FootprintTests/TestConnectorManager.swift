@@ -11,7 +11,7 @@ import XCTest
 import Footprint
 import CoreData
 
-class TestConnectorManager: XCTestCase, ConnectorDelegate {
+class TestConnectorManager: XCTestCase {
     var context : NSManagedObjectContext? = nil
     var store : PhotoStore? = nil
     var photosConnector = PhotosConnector()
@@ -24,11 +24,12 @@ class TestConnectorManager: XCTestCase, ConnectorDelegate {
         context = cdh.managedObjectContext
         
         store = PhotoStore()
-        photosConnector.delegate = self
     }
     
     func testLoadPhotos() {
-        photosConnector.loadPhotos()
+        photosConnector.loadPhotos { (photo) -> Void in
+            NSLog("photo: \(photo.identifier)")
+        }
     }
     
     func testGetRawImage() {
@@ -56,5 +57,9 @@ class TestConnectorManager: XCTestCase, ConnectorDelegate {
         NSLog("New added photos: \(countAfterInsert-countBefortInsert)")
         XCTAssertEqual(countAfterInsert - countBefortInsert
             , 1, "Only one photo should be added")
+    }
+    
+    func testPhotosConnector() {
+        ConnectorManager().storeNewPhotos(PhotosConnector(), context: context!)
     }
 }    

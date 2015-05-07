@@ -358,12 +358,12 @@
                   moduleName = "Footprint"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tbb/Dropbox/workspace/Footprint/Footprint/PhotoAnnotation.swift"
-                  timestampString = "452626940.079886"
+                  timestampString = "452709554.837067"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -373,12 +373,12 @@
                   moduleName = "Footprint"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tbb/Dropbox/workspace/Footprint/Footprint/PhotoAnnotation.swift"
-                  timestampString = "452626940.080004"
+                  timestampString = "452709554.837205"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
                   endingLineNumber = "12"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>

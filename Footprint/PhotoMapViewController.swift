@@ -26,7 +26,6 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
     var allPhotosMapView: MKMapView = MKMapView(frame: CGRectZero)
 
     let reuseIdentifier = "photoCell"
-    let shanghaiLocation = CLLocation(latitude: 31.222587, longitude: 121.468513)
     var fetchAssetsResult: PHFetchResult? = nil
     var imageManager: PHCachingImageManager? = nil
     var queue = dispatch_queue_create("me.hatu.getAnnotations", DISPATCH_QUEUE_SERIAL)

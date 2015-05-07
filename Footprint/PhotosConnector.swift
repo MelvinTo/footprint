@@ -48,18 +48,18 @@ public class PhotosConnector : Connector {
         })
     }
     
-    public override func loadPhotos() {
+    public override func loadPhotos(block: (PhotoObject) -> Void) {
         let fetchAssetsResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: PHFetchOptions())
         var indexSet = NSIndexSet(indexesInRange: NSMakeRange(0, fetchAssetsResult!.count))
         fetchAssetsResult!.enumerateObjectsAtIndexes(indexSet, options: nil, usingBlock: { object, index, stop in
             if let p = object as? PHAsset {
-                var photoObject = PhotoObject(identifier: p.localIdentifier,
-                                                    timestamp: p.creationDate,
-                                                    latitude: p.location.coordinate.latitude,
-                                                    longitude: p.location.coordinate.longitude)
-                
-                if let d = self.delegate {
-                    d.addPhoto(photoObject)
+                if let l = p.location {
+                    var photoObject = PhotoObject(identifier: p.localIdentifier,
+                        timestamp: p.creationDate,
+                        latitude: p.location.coordinate.latitude,
+                        longitude: p.location.coordinate.longitude)
+                    
+                    block(photoObject)
                 }
             }
         })

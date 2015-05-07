@@ -43,8 +43,40 @@ public class NewPhotoDBManager {
         if let photos = result as? [NewPhoto] {
             return photos.count
         } else {
-            NSLog("Failed to get pathes")
+            NSLog("Failed to get number of photos")
             return -1
         }
+    }
+    
+    public func photoExists(identifier: String) -> Bool {
+        var error: NSError? = nil
+        var fReq: NSFetchRequest = NSFetchRequest(entityName: "NewPhoto")
+        
+        fReq.predicate = NSPredicate(format:"identifier == \"\(identifier)\"")
+        
+        var result = context.executeFetchRequest(fReq, error:&error)
+        
+        if let photos = result as? [NewPhoto] {
+            if(photos.count > 0) {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            NSLog("Failed to get photos")
+            return false
+        }
+    }
+    
+    public func insertPhoto(photo: PhotoObject) -> Bool {
+        var object = photo.toNewPhoto(self.context)
+        
+        var error: NSError? = nil
+        if context.hasChanges && !context.save(&error) {
+            NSLog("Unresolved error \(error), \(error!.userInfo)")
+            return false
+        }
+        
+        return true
     }
 }

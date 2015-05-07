@@ -8,17 +8,12 @@
 
 import Foundation
 
-public protocol ConnectorDelegate {
-    func addPhoto(photo: PhotoObject)
-}
-
-public class Connector {
-    public var delegate: ConnectorDelegate? = nil
-    
+public class Connector {    
     init() {
     }
     
-    public func loadPhotos() {
+    public func loadPhotos(block: (PhotoObject) -> Void) {
+        
     }
     
     public func getRawImage(photo: PhotoObject, width: CGFloat, height: CGFloat, block: (UIImage?, NSError?) -> Void) {
