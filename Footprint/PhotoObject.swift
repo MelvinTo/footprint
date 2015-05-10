@@ -7,6 +7,11 @@
 //
 
 import Foundation
+import MapKit
+
+func ==(left: PhotoObject, right: PhotoObject) -> Bool {
+    return left.identifier == right.identifier
+}
 
 public class PhotoObject : Printable {
     var name: String = ""
@@ -26,5 +31,25 @@ public class PhotoObject : Printable {
 
     public var description: String {
         return identifier
+    }
+    
+    public var location: String {
+        return "'\(latitude), \(longitude)'"
+    }
+    
+    public var cooridinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
+    
+    public var toMarsCoordinate: CLLocationCoordinate2D {
+        return self.cooridinate.toMars()
+    }
+    
+    public var clLocation: CLLocation {
+        return CLLocation(latitude: latitude, longitude: longitude)
+    }
+    
+    public var toMarsLocation: CLLocation {
+        return CLLocation(latitude: toMarsCoordinate.latitude, longitude: toMarsCoordinate.longitude)
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 
 class PhotoModelController : NSObject, UIPageViewControllerDataSource {
-    var pageData : [PHAsset] = []
+    var pageData : [PhotoObject] = []
     var currentController : PhotoDataViewController? = nil
     var currentIndex: Int = 0
     
@@ -76,12 +76,12 @@ class PhotoDataViewController : UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var location: UILabel!
 
-    var dataObject : PHAsset? = nil
+    var dataObject : PhotoObject? = nil
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.title = dataObject?.localIdentifier
+        self.title = dataObject?.identifier
 //        self.loadImage()
         self.updateLocation()
     }
@@ -96,18 +96,18 @@ class PhotoDataViewController : UIViewController {
     
     func loadImage() {
         let retinaMultiplier = UIScreen.mainScreen().scale
-        
-        var retinaSquare = CGSizeMake(imageView.bounds.size.width * retinaMultiplier, imageView.bounds.size.height * retinaMultiplier)
+        let width = imageView.bounds.size.width * retinaMultiplier
+        let height = imageView.bounds.size.height * retinaMultiplier
         
         dispatch_async(dispatch_get_main_queue(), {
-            println("Getting image \(self.dataObject!.localIdentifier) with background queue")
+            println("Getting image \(self.dataObject!.identifier) with background queue")
             
-            var manager = PHImageManager.defaultManager()
-            manager.requestImageForAsset(self.dataObject, targetSize: retinaSquare, contentMode: PHImageContentMode.AspectFit, options: nil, resultHandler: { (image : UIImage!, info:[NSObject : AnyObject]!) -> Void in
+            if let connector = ConnectorManager.getSharedConnectorManager().findConnectorManager(self.dataObject!) {
+                connector.getRawImage(self.dataObject!, width: width, height: height) { image, error in
                     self.imageView.image = image
                     self.imageView.clipsToBounds = true
-
-            })
+                }
+            }
         })
     }
     
@@ -118,13 +118,13 @@ class PhotoDataViewController : UIViewController {
     }
     
     func updateLocation() {
-        let time = self.dataObject?.creationDate
+        let time = self.dataObject?.timestamp
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         //                    dateFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
         let timestamp = dateFormatter.stringFromDate(time!)
 
-        if let l = dataObject?.location {
+        if let l = dataObject?.toMarsLocation {
             
             CLGeocoder().reverseGeocodeLocation(l, completionHandler: { (placemarks, error) -> Void in
                 if let pp = placemarks {
@@ -174,7 +174,7 @@ class PhotoViewController : UIViewController, UIPageViewControllerDelegate {
     var theStoryboard : UIStoryboard? = nil
     lazy var modelController : PhotoModelController = PhotoModelController()
     var pageAnimationFinished : Bool = true
-    var photos: [PHAsset]? = nil
+    var photos: [PhotoObject]? = nil
     
     override func viewDidLoad() {
         NSLog("viewDidLoad is called with \(photos!.count) photos")
@@ -234,7 +234,7 @@ class PhotoViewController : UIViewController, UIPageViewControllerDelegate {
             self.title = "Photos (\(modelController.currentIndex + 1) of \(modelController.pageData.count))"
         } else {
             let photo = self.modelController.pageData[modelController.currentIndex]
-            self.title = photo.localIdentifier
+            self.title = photo.identifier
         }
     }
     

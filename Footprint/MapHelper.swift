@@ -78,6 +78,12 @@ func gcj2wgs(coordinate: CLLocationCoordinate2D) -> CLLocationCoordinate2D {
     return CLLocationCoordinate2DMake(2 * coordinate.latitude - c2.latitude, 2 * coordinate.longitude - c2.longitude)
 }
 
+extension CLLocationCoordinate2D {
+    func toMars() -> CLLocationCoordinate2D {
+        return wgs2gcj(self)
+    }
+}
+
 //let x_M_PI = M_PI * 3000.0 / 180.0
 
 //// 火星坐标系 (GCJ-02) -> 百度坐标系 (BD-09)

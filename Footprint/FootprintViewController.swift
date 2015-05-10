@@ -70,31 +70,31 @@ class FootprintViewController: UITableViewController, GMImagePickerControllerDel
     }
 
     func assetsPickerController(picker: GMImagePickerController!, didFinishPickingAssets assets: [AnyObject]!) {
-        self.dismissViewControllerAnimated(true, completion: { () -> Void in
-            var photos : [PhotoMetadata] = []
-            for asset in assets as! [PHAsset] {
-                NSLog("image is \(asset), created at \(asset.creationDate), location: \(asset.location)")
-                var metadata = PhotoMetadata()
-                
-                if let location = asset.location {
-                    metadata.latitude = location.coordinate.latitude
-                    metadata.longitude = location.coordinate.longitude
-                } else {
-                    metadata.latitude = 39.908747
-                    metadata.longitude = 116.397410
-                }
-                
-                metadata.timestamp = asset.creationDate
-                metadata.url = "\(asset.localIdentifier)"
-                photos.append(metadata)
-            }
-            var footprint = Footprint(name: "test")
-            footprint.photos = photos
-            
-            NSLog("A new footprint is created: \(footprint)")
-            self.fp = footprint
-            self.performSegueWithIdentifier("PathCreate", sender: self)
-        })
+//        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+//            var photos : [PhotoMetadata] = []
+//            for asset in assets as! [PhotoObject] {
+//                NSLog("image is \(asset), created at \(asset.timestamp), location: \(asset.location)")
+//                var metadata = PhotoMetadata()
+//                
+//                if let location = asset.location {
+//                    metadata.latitude = location.coordinate.latitude
+//                    metadata.longitude = location.coordinate.longitude
+//                } else {
+//                    metadata.latitude = 39.908747
+//                    metadata.longitude = 116.397410
+//                }
+//                
+//                metadata.timestamp = asset.creationDate
+//                metadata.url = "\(asset.localIdentifier)"
+//                photos.append(metadata)
+//            }
+//            var footprint = Footprint(name: "test")
+//            footprint.photos = photos
+//            
+//            NSLog("A new footprint is created: \(footprint)")
+//            self.fp = footprint
+//            self.performSegueWithIdentifier("PathCreate", sender: self)
+//        })
     }
     
     func assetsPickerControllerDidCancel(picker: GMImagePickerController!) {

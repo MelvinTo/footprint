@@ -45,6 +45,7 @@
 		37E20EF01AF9271200EDDA30 /* PhotoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DB527B1AF922B800FC4749 /* PhotoObject.swift */; };
 		37E20EF21AFA745100EDDA30 /* PhotoObjectCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E20EF11AFA745100EDDA30 /* PhotoObjectCoreData.swift */; };
 		37E20EF51AFA867200EDDA30 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E20EF41AFA867200EDDA30 /* SettingsViewController.swift */; };
+		37E20EF81AFF61F500EDDA30 /* ConnectorConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E20EF71AFF61F500EDDA30 /* ConnectorConfigViewController.swift */; };
 		3F9642BAFA38590DF95641BA /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334BBD94344676C6D804E17E /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		410469781AF7D36F00EC71B4 /* NewPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410469771AF7D36F00EC71B4 /* NewPhoto.swift */; };
 		41660D3F1AF7C272002FEE8B /* DropboxConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41660D3E1AF7C272002FEE8B /* DropboxConnector.swift */; };
@@ -111,6 +112,7 @@
 		37DFF2FA1AD420B900686E74 /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
 		37E20EF11AFA745100EDDA30 /* PhotoObjectCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoObjectCoreData.swift; sourceTree = "<group>"; };
 		37E20EF41AFA867200EDDA30 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		37E20EF71AFF61F500EDDA30 /* ConnectorConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectorConfigViewController.swift; sourceTree = "<group>"; };
 		410469771AF7D36F00EC71B4 /* NewPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPhoto.swift; sourceTree = "<group>"; };
 		41660D3E1AF7C272002FEE8B /* DropboxConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropboxConnector.swift; sourceTree = "<group>"; };
 		41660D401AF7C27D002FEE8B /* Connector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connector.swift; sourceTree = "<group>"; };
@@ -198,8 +200,8 @@
 		37BDB4B61ACED65500F73513 /* Footprint */ = {
 			isa = PBXGroup;
 			children = (
+				37E20EF61AFEFAA200EDDA30 /* Objects */,
 				37E20EF31AFA846000EDDA30 /* DB */,
-				37DB527B1AF922B800FC4749 /* PhotoObject.swift */,
 				41660D3D1AF7C265002FEE8B /* Connector */,
 				37DFF2EE1AD1B9BA00686E74 /* Footprint-Bridging-Header.h */,
 				37BDB4B91ACED65500F73513 /* AppDelegate.swift */,
@@ -274,6 +276,7 @@
 				372D1E191AE28F46009D113D /* PhotoAnnotation.swift */,
 				372D1E1B1AE3ADC4009D113D /* PhotoViewController.swift */,
 				37E20EF41AFA867200EDDA30 /* SettingsViewController.swift */,
+				37E20EF71AFF61F500EDDA30 /* ConnectorConfigViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -295,6 +298,14 @@
 				37E20EF11AFA745100EDDA30 /* PhotoObjectCoreData.swift */,
 			);
 			name = DB;
+			sourceTree = "<group>";
+		};
+		37E20EF61AFEFAA200EDDA30 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				37DB527B1AF922B800FC4749 /* PhotoObject.swift */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 		41660D3D1AF7C265002FEE8B /* Connector */ = {
@@ -524,6 +535,7 @@
 				41660D411AF7C27D002FEE8B /* Connector.swift in Sources */,
 				37BDB4BC1ACED65500F73513 /* FootprintViewController.swift in Sources */,
 				37DFF2F21AD1C47500686E74 /* Path.swift in Sources */,
+				37E20EF81AFF61F500EDDA30 /* ConnectorConfigViewController.swift in Sources */,
 				41660D3F1AF7C272002FEE8B /* DropboxConnector.swift in Sources */,
 				3703363D1ADFFF8800EF9FE4 /* PhotoMapViewController.swift in Sources */,
 				372D1E1A1AE28F46009D113D /* PhotoAnnotation.swift in Sources */,

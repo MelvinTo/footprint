@@ -27,9 +27,9 @@ class TestConnectorManager: XCTestCase {
     }
     
     func testLoadPhotos() {
-        photosConnector.loadPhotos { (photo) -> Void in
+        photosConnector.loadPhotos({ (photo, index) -> Void in
             NSLog("photo: \(photo.identifier)")
-        }
+        }, completed: nil)
     }
     
     func testGetRawImage() {
@@ -60,6 +60,7 @@ class TestConnectorManager: XCTestCase {
     }
     
     func testPhotosConnector() {
-        ConnectorManager().storeNewPhotos(PhotosConnector(), context: context!)
+        let manager = ConnectorManager.getSharedConnectorManager()
+        manager.storeNewPhotos(PhotosConnector(), context: context!, progressBar: nil, completed: nil)
     }
 }    

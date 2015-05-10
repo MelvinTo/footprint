@@ -25,6 +25,13 @@ public extension PhotoObject {
         
         return photo
     }
+    
+    public class func fromNewPhoto(photo: NewPhoto) -> PhotoObject {
+        var photoObject = PhotoObject(identifier: photo.identifier, timestamp: photo.timestamp, latitude: photo.latitude.doubleValue, longitude: photo.longitude.doubleValue)
+        photoObject.source = photo.source
+        photoObject.name = photo.name
+        return photoObject
+    }
 }
 
 public class NewPhotoDBManager {
@@ -46,6 +53,23 @@ public class NewPhotoDBManager {
             NSLog("Failed to get number of photos")
             return -1
         }
+    }
+    
+    public func numberOfPhotos(source: String) -> Int {
+        var error: NSError? = nil
+        var fReq: NSFetchRequest = NSFetchRequest(entityName: "NewPhoto")
+        let predicate = NSPredicate(format: "source == %@", source)
+        fReq.predicate = predicate
+        
+        var result = context.executeFetchRequest(fReq, error:&error)
+        
+        if let photos = result as? [NewPhoto] {
+            return photos.count
+        } else {
+            NSLog("Failed to get number of photos")
+            return -1
+        }
+
     }
     
     public func photoExists(identifier: String) -> Bool {
@@ -77,6 +101,25 @@ public class NewPhotoDBManager {
             return false
         }
         
+        return true
+    }
+    
+    public func deletePhotos() -> Bool {
+        var error: NSError? = nil
+        var fReq: NSFetchRequest = NSFetchRequest(entityName: "NewPhoto")
+        var result = context.executeFetchRequest(fReq, error:&error)
+        if let photos = result as? [NewPhoto] {
+            for photo in photos {
+                context.deleteObject(photo)
+            }
+            
+            if context.hasChanges && !context.save(&error) {
+                NSLog("Unresolved error \(error), \(error!.userInfo)")
+                return false
+            } else {
+                NSLog("\(photos.count) photo(s) have been deleted from Core Data")
+            }
+        }
         return true
     }
 }

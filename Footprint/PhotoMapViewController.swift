@@ -8,6 +8,7 @@
 
 import Foundation
 import MapKit
+import CoreData
 
 extension Array {
     func find(includedElement: T -> Bool) -> Int? {
@@ -24,77 +25,53 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var locationButton: UIButton!
     var allPhotosMapView: MKMapView = MKMapView(frame: CGRectZero)
+    var fetchRequest: NSFetchRequest = NSFetchRequest(entityName:"NewPhoto")
+    var managedContext = CoreDataHelper().managedObjectContext
 
     let reuseIdentifier = "photoCell"
-    var fetchAssetsResult: PHFetchResult? = nil
-    var imageManager: PHCachingImageManager? = nil
-    var queue = dispatch_queue_create("me.hatu.getAnnotations", DISPATCH_QUEUE_SERIAL)
     var userLocation : CLLocation? = nil
     var locationManager : CLLocationManager? = nil
-
-    
-    deinit {
-        resetCachedAssets()
-    }
-    
-    func resetCachedAssets() {
-        if let i = imageManager {
-            i.stopCachingImagesForAllAssets()
-        }
-    }
-    
-    func checkAccess() -> Bool {
-        let status = PHPhotoLibrary.authorizationStatus()
-        
-        if status != .Authorized {
-            let alert = UIAlertView(title: "Attention", message: "Please give this app permission to access your photo library in your settings app!", delegate: nil, cancelButtonTitle: "Close")
-            alert.show()
-            return false
-        }
-        
-        return true
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        checkAccess()
-        
+
         // request to get user location
-        userLocation = CLLocation()
         locationManager = CLLocationManager()
         locationManager?.delegate = self
         locationManager?.desiredAccuracy = kCLLocationAccuracyBest
         locationManager?.requestWhenInUseAuthorization()
         locationManager?.startUpdatingLocation()
 
-        self.title = "足迹"
+        self.title = "PhotoMapViewController".localized
         self.mapView.delegate = self
         self.mapView.showsUserLocation = true
         
-//        self.collectionView.registerNib(UINib(nibName: "CollectionCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
-//        self.collectionView.bounces = true
-//        self.collectionView.alwaysBounceVertical = true
-
-        let newRegion = MKCoordinateRegionMake(shanghaiLocation.coordinate, MKCoordinateSpanMake(5.0, 5.0))
-        self.mapView.region = newRegion
-        
-        
-        var options = PHFetchOptions()
-        var sortDescriptors = NSSortDescriptor(key: "creationDate", ascending: false)
-        fetchAssetsResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: options)
-        NSLog("\(fetchAssetsResult!.count)")
-        
-        imageManager = PHCachingImageManager()
-                
-//        allPhotosMapView = MKMapView(frame: CGRectZero)
-        
-        // setup location button
-        
         dispatch_async(dispatch_get_main_queue(), {
-            self.getAllAnnotations()
+            self.loadExistingPhotos()
             self.updateVisibleAnnotations()
         })
+    }
+    
+    func loadExistingPhotos() {
+        // load all existing photos
+        if let mc = managedContext {
+            var error: NSError? = nil
+            let fetchedResults = mc.executeFetchRequest(fetchRequest, error: &error) as? [NewPhoto]
+            
+            if let e = error {
+                NSLog("Got error when loading all photos from Core Data database: \(e)")
+            } else {
+                var annotations : [PhotoAnnotation] = []
+
+                for newPhoto in fetchedResults! {
+                    let photoObject = PhotoObject.fromNewPhoto(newPhoto)
+                    let pa = PhotoAnnotation(photo: photoObject)
+                    annotations.append(pa)
+                }
+                
+                allPhotosMapView.addAnnotations(annotations)
+            }
+        }
     }
     
     @IBAction func locationButtonTapped() {
@@ -104,38 +81,6 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
         } else {
             NSLog("user location is not available")
         }
-    }
- 
-    func getAllAnnotations() {
-        var annotations : [PhotoAnnotation] = []
-//        if let photos = fetchAssetsResult {
-//            for photo in photos {
-//                if let p = photo as? PHAsset {
-//                    if let l = p.location {
-//                        let pa = PhotoAnnotation(location: l, photo: p)
-//                        annotations.append(pa)
-//                        //                    NSLog("Adding annotation to hidden map: \(pa)")
-//                    } else {
-//                        NSLog("No location info for photo \(p.description)")
-//                    }
-//                }
-//            }
-//        }
-        
-        var indexSet = NSIndexSet(indexesInRange: NSMakeRange(0, fetchAssetsResult!.count))
-        fetchAssetsResult!.enumerateObjectsAtIndexes(indexSet, options: nil, usingBlock: { object, index, stop in
-            if let p = object as? PHAsset {
-                if let l = p.location {
-                    let pa = PhotoAnnotation(location: l, photo: p)
-                    annotations.append(pa)
-//                    NSLog("Adding annotation to hidden map: \(pa)")
-                } else {
-                    NSLog("No location info for photo \(p.description)")
-                }
-            }
-        })
-        
-        allPhotosMapView.addAnnotations(annotations)
     }
     
     func updateVisibleAnnotations() {
@@ -267,23 +212,23 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
     }
     
     func loadImage(cell: PhotoCollectionCell, indexPath: NSIndexPath) {
-        var imageView = cell.imageView
-        let retinaMultiplier = UIScreen.mainScreen().scale
-        let index = indexPath.indexAtPosition(1)
-        var photo = fetchAssetsResult?.objectAtIndex(index) as! PHAsset
-        
-        var retinaSquare = CGSizeMake(imageView.bounds.size.width * retinaMultiplier, imageView.bounds.size.height * retinaMultiplier)
-        
-        var requestOptions = PHImageRequestOptions()
-        requestOptions.resizeMode = PHImageRequestOptionsResizeMode.Exact
-        
-        imageManager?.requestImageForAsset(photo,
-                                                targetSize: retinaSquare,
-                                                contentMode: PHImageContentMode.AspectFill,
-                                                options: requestOptions,
-                                                resultHandler: { (image: UIImage!, info: [NSObject : AnyObject]!) -> Void in
-            imageView.image = image
-        })
+//        var imageView = cell.imageView
+//        let retinaMultiplier = UIScreen.mainScreen().scale
+//        let index = indexPath.indexAtPosition(1)
+//        var photo = fetchAssetsResult?.objectAtIndex(index) as! PHAsset
+//        
+//        var retinaSquare = CGSizeMake(imageView.bounds.size.width * retinaMultiplier, imageView.bounds.size.height * retinaMultiplier)
+//        
+//        var requestOptions = PHImageRequestOptions()
+//        requestOptions.resizeMode = PHImageRequestOptionsResizeMode.Exact
+//        
+//        imageManager?.requestImageForAsset(photo,
+//                                                targetSize: retinaSquare,
+//                                                contentMode: PHImageContentMode.AspectFill,
+//                                                options: requestOptions,
+//                                                resultHandler: { (image: UIImage!, info: [NSObject : AnyObject]!) -> Void in
+//            imageView.image = image
+//        })
     }
     
     func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
@@ -351,7 +296,7 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
         if let annotation = view.annotation as? PhotoAnnotation {
             let photos = [annotation.photo!] + annotation.containedAnnotations!.map { $0.photo! }
-            let sortedPhotos = photos.sorted { $0.creationDate.isLessThanDate($1.creationDate) }
+            let sortedPhotos = photos.sorted { $0.timestamp.isLessThanDate($1.timestamp) }
             let photoViewController = PhotoViewController()
             photoViewController.photos = sortedPhotos
             photoViewController.theStoryboard = self.storyboard
@@ -370,7 +315,12 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        let oldUserLocation = userLocation
         userLocation = (locations[0] as! CLLocation)
+        if oldUserLocation == nil {
+            let newRegion = MKCoordinateRegionMake(userLocation!.coordinate, MKCoordinateSpanMake(1.0, 1.0))
+            self.mapView.region = newRegion
+        }
     }
 }
 

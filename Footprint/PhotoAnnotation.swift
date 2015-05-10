@@ -12,7 +12,7 @@ import MapKit
 class PhotoAnnotation : NSObject, MKAnnotation {
     var latitude : Double
     var longitude : Double
-    var photo: PHAsset? = nil
+    var photo: PhotoObject? = nil
     var clusterAnnocation : PhotoAnnotation? = nil
     var containedAnnotations : [PhotoAnnotation]? = nil
     var placemark: CLPlacemark? = nil
@@ -25,8 +25,16 @@ class PhotoAnnotation : NSObject, MKAnnotation {
         super.init()
     }
     
-    init(location: CLLocation, photo: PHAsset) {
-        let ll = wgs2gcj(location.coordinate)
+    init(photo: PhotoObject) {
+        let earthCoordinate = CLLocationCoordinate2D(latitude: photo.latitude, longitude: photo.longitude)
+        let marsCoordinate =  wgs2gcj(earthCoordinate)
+        self.latitude = marsCoordinate.latitude
+        self.longitude = marsCoordinate.longitude
+        self.photo = photo
+    }
+    
+    init(location: CLLocation, photo: PhotoObject) {
+        let ll = location.coordinate.toMars()
         self.latitude = ll.latitude
         self.longitude = ll.longitude
 //        self.latitude = location.coordinate.latitude
@@ -51,7 +59,7 @@ class PhotoAnnotation : NSObject, MKAnnotation {
     }
     
     override var description: String {
-        let identifier = self.photo?.localIdentifier
+        let identifier = self.photo?.identifier
         let shortIdentifier = identifier!.substringToIndex(advance(identifier!.startIndex, 8))
         return "photo: \(shortIdentifier) title: \(title) subtitle: \(subtitle) clustered: \(clusterAnnocation != nil)"
     }
@@ -64,8 +72,8 @@ class PhotoAnnotation : NSObject, MKAnnotation {
                 if let pms = placemarks {
                     if placemarks.count > 0 {
                         self.placemark = placemarks[0] as? CLPlacemark
-                        let identifier = self.photo!.localIdentifier
-                        let shortIdentifier = identifier.substringToIndex(advance(identifier!.startIndex, 8))
+                        let identifier = self.photo!.identifier
+                        let shortIdentifier = identifier.substringToIndex(advance(identifier.startIndex, 8))
                         self.title = "\(self.placemark!.toString())"
                         NSLog("got title: \(self.title)")
                     } else {
