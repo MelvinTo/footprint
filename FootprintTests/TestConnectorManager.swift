@@ -61,6 +61,6 @@ class TestConnectorManager: XCTestCase {
     
     func testPhotosConnector() {
         let manager = ConnectorManager.getSharedConnectorManager()
-        manager.storeNewPhotos(PhotosConnector(), context: context!, progressBar: nil, completed: nil)
+        manager.storeNewPhotos(PhotosConnector(), context: context!, progress: nil, completed: nil)
     }
 }    

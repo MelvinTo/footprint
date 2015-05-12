@@ -12,13 +12,15 @@ import Foundation
 
 class ConnectorConfigViewController : UITableViewController {
     var connector: Connector? = nil
-    var managedContext: NSManagedObjectContext? = nil
     
     @IBOutlet weak var manualSyncButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "connector.\(connector!.name)".localized
+        self.manualSyncButton.setTitle("connectorConfigViewController.manualSync".localized, forState: .Normal)
     }
     
     @IBAction func syncManually() {
@@ -29,14 +31,36 @@ class ConnectorConfigViewController : UITableViewController {
             self.progressBar.hidden = false
             self.progressBar.progress = 0.0
 
-            dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND,0)) {
-                ConnectorManager.getSharedConnectorManager().storeNewPhotos(c, context: self.managedContext!, progressBar: self.progressBar) {
-                    self.manualSyncButton.setTitle("ConnectorConfigViewController.SYNC".localized, forState: .Normal)
-                    self.manualSyncButton.setNeedsDisplay()
-                    self.progressBar.hidden = true
-                    self.progressBar.setNeedsDisplay()
+            var queue = dispatch_queue_create("storePhotos", DISPATCH_QUEUE_SERIAL)
+            dispatch_async(queue) {
+
+                var ctxt = CoreDataHelper.getSharedCoreDataHelper().backgroundContext
+                
+                // Register notifications for photo change
+                NSNotificationCenter.defaultCenter().addObserver(self, selector:"handlePhotoSave:", name: NSManagedObjectContextDidSaveNotification, object: ctxt)
+
+                
+                ConnectorManager.getSharedConnectorManager().storeNewPhotos(c, context: ctxt!, progress: { progress in
+                        self.progressBar.setProgress(progress, animated: true)
+                    }) {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.manualSyncButton.setTitle("ConnectorConfigViewController.SYNC".localized, forState: .Normal)
+                        self.manualSyncButton.setNeedsDisplay()
+                        self.progressBar.setProgress(1.0, animated: true)
+                        self.progressBar.hidden = true
+                        self.progressBar.setNeedsDisplay()
+                    }
                 }
             }
         }
+    }
+    
+    func handlePhotoSave(notification: NSNotification) {
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            var mainContext = CoreDataHelper.getSharedCoreDataHelper().managedObjectContext
+            mainContext?.mergeChangesFromContextDidSaveNotification(notification)
+        })
+        
     }
 }

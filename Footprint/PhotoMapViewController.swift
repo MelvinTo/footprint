@@ -26,7 +26,7 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
     @IBOutlet weak var locationButton: UIButton!
     var allPhotosMapView: MKMapView = MKMapView(frame: CGRectZero)
     var fetchRequest: NSFetchRequest = NSFetchRequest(entityName:"NewPhoto")
-    var managedContext = CoreDataHelper().managedObjectContext
+    var managedContext = CoreDataHelper.getSharedCoreDataHelper().managedObjectContext
 
     let reuseIdentifier = "photoCell"
     var userLocation : CLLocation? = nil
@@ -42,7 +42,7 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
         locationManager?.requestWhenInUseAuthorization()
         locationManager?.startUpdatingLocation()
 
-        self.title = "PhotoMapViewController".localized
+        self.title = "photoMapViewController.title".localized
         self.mapView.delegate = self
         self.mapView.showsUserLocation = true
         
@@ -50,6 +50,23 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
             self.loadExistingPhotos()
             self.updateVisibleAnnotations()
         })
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"handlePhotoChange:", name: NSManagedObjectContextObjectsDidChangeNotification, object: managedContext)
+        
+    }
+    
+    func handlePhotoChange(notification: NSNotification) {
+        NSLog("handlePHotoChange is called")
+        dispatch_async(dispatch_get_main_queue(), {
+            self.resetAnnotations()
+            self.loadExistingPhotos()
+            self.updateVisibleAnnotations()
+        })
+    }
+    
+    func resetAnnotations() {
+        self.mapView.removeAnnotations(self.mapView.annotations)
+        self.allPhotosMapView.removeAnnotations(self.allPhotosMapView.annotations)
     }
     
     func loadExistingPhotos() {

@@ -1,0 +1,13 @@
+"photoMapViewController.title" = "足迹";
+
+"settingsViewController.title" = "设置";
+
+"cleanDatabaseButton" = "清除本地数据库";
+
+"connectorConfigViewController.manualSync" = "手动同步照片";
+
+"connector.Photos" = "本地照片库";
+
+"ConnectorConfigViewController.SYNC" = "手动同步照片";
+
+"ConnectorConfigViewController.SYNCING" = "同步中";

@@ -16,17 +16,14 @@ class SettingsViewController : UITableViewController {
     @IBOutlet weak var cleanDatabaseButton: UIButton!
     @IBOutlet weak var boxCell: UITableViewCell!
     
-    var context : NSManagedObjectContext? = nil
-    var store : PhotoStore? = nil
     var photosConnector = PhotosConnector()
     
     override func viewDidLoad() {
-        self.title = "Settings"
+        super.viewDidLoad()
         
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        let cdstore = CoreDataStore()
-        let cdh = CoreDataHelper(store: cdstore)
-        context = cdh.managedObjectContext
+        // update texts
+        self.title = "settingsViewController.title".localized
+        self.cleanDatabaseButton.setTitle("cleanDatabaseButton".localized, forState: .Normal)
         
         reloadStats()
         
@@ -41,20 +38,28 @@ class SettingsViewController : UITableViewController {
 //        dropboxCell.selectionStyle = .None;
         
         // Register notifications for photo change
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"handlePhotoChange:", name: NSManagedObjectContextObjectsDidChangeNotification, object: context)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector:"handlePhotoChange:", name: NSManagedObjectContextDidSaveNotification, object: context)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        NSLog("ViewDidAppear is called")
+        reloadStats()
     }
     
     func reloadStats() {
+        var context = CoreDataHelper.getSharedCoreDataHelper().managedObjectContext
         var db = NewPhotoDBManager(context: context!)
-        self.photoCount.text = "\(db.numberOfNewPhotos())"
-        
-        let numberOfPhotosFromPhotoLibrary = db.numberOfPhotos("Photos")
-        let numberOfPhotosFromDropbox = db.numberOfPhotos("Dropbox")
-        let numberOfPhotosFromBox = db.numberOfPhotos("Box")
-        self.photoLibraryCell.detailTextLabel!.text = "\(numberOfPhotosFromPhotoLibrary)"
-        self.dropboxCell.detailTextLabel!.text = "\(numberOfPhotosFromDropbox)"
-        self.boxCell.detailTextLabel!.text = "\(numberOfPhotosFromBox)"
-
+        context?.performBlock({ () -> Void in
+            self.photoCount.text = "\(db.numberOfNewPhotos())"
+            
+            let numberOfPhotosFromPhotoLibrary = db.numberOfPhotos("Photos")
+            let numberOfPhotosFromDropbox = db.numberOfPhotos("Dropbox")
+            let numberOfPhotosFromBox = db.numberOfPhotos("Box")
+            self.photoLibraryCell.detailTextLabel!.text = "\(numberOfPhotosFromPhotoLibrary)"
+            self.dropboxCell.detailTextLabel!.text = "\(numberOfPhotosFromDropbox)"
+            self.boxCell.detailTextLabel!.text = "\(numberOfPhotosFromBox)"
+        })
     }
     
     func handlePhotoChange(notification: NSNotification) {
@@ -67,7 +72,8 @@ class SettingsViewController : UITableViewController {
         var alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
         
         var deleteAction = UIAlertAction(title: "Delete", style: .Destructive) { (action) -> Void in
-            var db = NewPhotoDBManager(context: self.context!)
+            var context = CoreDataHelper.getSharedCoreDataHelper().managedObjectContext
+            var db = NewPhotoDBManager(context: context!)
             let result = db.deletePhotos()
             if result {
                 NSLog("All photos are deleted successfully")
@@ -93,7 +99,6 @@ class SettingsViewController : UITableViewController {
                 if cell.textLabel?.text == "照片库" {
                     let source = "Photos"
                     connectorConfigViewController.connector = ConnectorManager.getSharedConnectorManager().findConnectorManager(source)
-                    connectorConfigViewController.managedContext = context
                 }
             }
         }

@@ -52,7 +52,7 @@ public class ConnectorManager {
         
     }
     
-    public func storeNewPhotos(connector: Connector, context: NSManagedObjectContext, progressBar: UIProgressView?, completed: (Void -> Void)? ) {
+    public func storeNewPhotos(connector: Connector, context: NSManagedObjectContext, progress: (Float -> Void)?, completed: (Void -> Void)? ) {
         var photoDBManager = NewPhotoDBManager(context: context)
         let count = connector.numberOfPhotos()
         var photosToBeAdded : [PhotoObject] = []
@@ -62,9 +62,9 @@ public class ConnectorManager {
                 photosToBeAdded.append(photo)
                 NSLog("Photo \(photo.identifier) is added")
             
-                if let pb = progressBar {
+                if let p = progress {
                     dispatch_async(dispatch_get_main_queue()) {
-                        pb.setProgress(Float(index)/Float(count)/2.0, animated: true)
+                        p(Float(index)/Float(count)/2.0)
                     }
                 }
             }
@@ -72,20 +72,19 @@ public class ConnectorManager {
             
             for var index = 0; index < photosToBeAdded.count; ++index {
                 photosToBeAdded[index].toNewPhoto(context)
-                if let pb = progressBar {
-                    pb.setProgress(0.5 + Float(index)/Float(photosToBeAdded.count)/2.0, animated: true)
+                NSLog("photo format transformmed: \(photosToBeAdded[index].identifier)")
+                if let p = progress {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        p(0.5 + Float(index)/Float(photosToBeAdded.count)/2.0)
+                    }
                 }
-            }
-            
-            for photo in photosToBeAdded {
-                photo.toNewPhoto(context)
             }
             
             var error: NSError? = nil
             if context.hasChanges && !context.save(&error) {
                 NSLog("Unresolved error \(error), \(error!.userInfo)")
             }
-            completed
+            completed!()
         })
     }
 }

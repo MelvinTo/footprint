@@ -11,6 +11,18 @@ import UIKit
 
 public class CoreDataHelper: NSObject{
     
+    static var sharedCoreDataHelper: CoreDataHelper? = nil
+    
+    public class func getSharedCoreDataHelper() -> CoreDataHelper {
+        
+        if let s = sharedCoreDataHelper {
+            return s
+        } else {
+            sharedCoreDataHelper = CoreDataHelper()
+            return sharedCoreDataHelper!
+        }
+    }
+    
     let store: CoreDataStore!
     
     override init(){
