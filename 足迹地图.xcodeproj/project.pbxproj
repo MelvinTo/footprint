@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		3703363D1ADFFF8800EF9FE4 /* PhotoMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3703363C1ADFFF8800EF9FE4 /* PhotoMapViewController.swift */; };
 		3703363F1AE003A700EF9FE4 /* MiscTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3703363E1AE003A700EF9FE4 /* MiscTests.swift */; };
+		370D92C31B03A40100ED9ED2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370D92C21B03A40100ED9ED2 /* Security.framework */; };
+		370D92C51B03A41100ED9ED2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370D92C41B03A41100ED9ED2 /* QuartzCore.framework */; };
+		370D92C91B03A53300ED9ED2 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370D92C81B03A53300ED9ED2 /* DropboxSDK.framework */; };
+		370D92CA1B03A6C000ED9ED2 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370D92C81B03A53300ED9ED2 /* DropboxSDK.framework */; };
+		370D92CC1B03AABC00ED9ED2 /* DropboxConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D92CB1B03AABC00ED9ED2 /* DropboxConfigViewController.swift */; };
 		372B58DB1AD03142000D2483 /* PhotoStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372B58DA1AD03142000D2483 /* PhotoStoreTests.swift */; };
 		372B58E11AD036F9000D2483 /* PhotoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372B58E01AD036F9000D2483 /* PhotoLoader.swift */; };
 		372B58E41AD03AAF000D2483 /* PhotoMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372B58E31AD03AAF000D2483 /* PhotoMetadata.swift */; };
@@ -71,6 +76,10 @@
 		334BBD94344676C6D804E17E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3703363C1ADFFF8800EF9FE4 /* PhotoMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoMapViewController.swift; sourceTree = "<group>"; };
 		3703363E1AE003A700EF9FE4 /* MiscTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscTests.swift; sourceTree = "<group>"; };
+		370D92C21B03A40100ED9ED2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		370D92C41B03A41100ED9ED2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		370D92C81B03A53300ED9ED2 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropboxSDK.framework; path = Pods/DropboxSDK.framework; sourceTree = "<group>"; };
+		370D92CB1B03AABC00ED9ED2 /* DropboxConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropboxConfigViewController.swift; sourceTree = "<group>"; };
 		372B58DA1AD03142000D2483 /* PhotoStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStoreTests.swift; sourceTree = "<group>"; };
 		372B58E01AD036F9000D2483 /* PhotoLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLoader.swift; sourceTree = "<group>"; };
 		372B58E31AD03AAF000D2483 /* PhotoMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoMetadata.swift; sourceTree = "<group>"; };
@@ -129,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				370D92CA1B03A6C000ED9ED2 /* DropboxSDK.framework in Frameworks */,
 				37364AD41AD1B18100A3396E /* Photos.framework in Frameworks */,
 				37BDB4E21ACF019700F73513 /* MapKit.framework in Frameworks */,
 				37BDB4E01ACEE63300F73513 /* AssetsLibrary.framework in Frameworks */,
@@ -141,6 +151,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				370D92C91B03A53300ED9ED2 /* DropboxSDK.framework in Frameworks */,
+				370D92C51B03A41100ED9ED2 /* QuartzCore.framework in Frameworks */,
+				370D92C31B03A40100ED9ED2 /* Security.framework in Frameworks */,
 				3F9642BAFA38590DF95641BA /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +164,9 @@
 		2F8095A170AA6D1C9DF899C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				370D92C81B03A53300ED9ED2 /* DropboxSDK.framework */,
+				370D92C41B03A41100ED9ED2 /* QuartzCore.framework */,
+				370D92C21B03A40100ED9ED2 /* Security.framework */,
 				37364AD31AD1B18100A3396E /* Photos.framework */,
 				37BDB4E11ACF019700F73513 /* MapKit.framework */,
 				37BDB4DF1ACEE63300F73513 /* AssetsLibrary.framework */,
@@ -277,6 +293,7 @@
 				372D1E1B1AE3ADC4009D113D /* PhotoViewController.swift */,
 				37E20EF41AFA867200EDDA30 /* SettingsViewController.swift */,
 				37E20EF71AFF61F500EDDA30 /* ConnectorConfigViewController.swift */,
+				370D92CB1B03AABC00ED9ED2 /* DropboxConfigViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -553,6 +570,7 @@
 				37BDB4E41ACF0B8700F73513 /* PathOrganizer.swift in Sources */,
 				3738AEA21ADC1E54003375ED /* PhotoUtility.swift in Sources */,
 				372D1E1C1AE3ADC4009D113D /* PhotoViewController.swift in Sources */,
+				370D92CC1B03AABC00ED9ED2 /* DropboxConfigViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,6 +702,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods",
+				);
 				INFOPLIST_FILE = Footprint/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -698,6 +720,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods",
+				);
 				INFOPLIST_FILE = Footprint/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -714,6 +740,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Pods",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -734,6 +761,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Pods",
 				);
 				INFOPLIST_FILE = FootprintTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

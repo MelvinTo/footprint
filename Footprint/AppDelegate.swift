@@ -46,6 +46,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     }
 
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        if DBSession.sharedSession().handleOpenURL(url) {
+            if DBSession.sharedSession().isLinked() {
+                NSLog("Dropbox is linked successfully")
+                NSNotificationCenter.defaultCenter().postNotificationName(DropboxConnector.linkNotification, object: self)
+            }
+            return true
+        }
+        return false
+    }
+
     lazy var cdstore: CoreDataStore = {
         let cdstore = CoreDataStore()
         return cdstore

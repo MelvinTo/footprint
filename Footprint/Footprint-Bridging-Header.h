@@ -10,5 +10,6 @@
 #define Footprint_Footprint_Bridging_Header_h
 
 #import "GMImagePicker/GMImagePickerController.h"
+#import <DropboxSDK/DropboxSDK.h>
 
 #endif

@@ -7,364 +7,280 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0104EBFFBD47285FDAAE56B7 /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 5851556B94D0F7FF836801AA /* it.lproj */; };
-		1DA677833D5549EE683BE494 /* GMGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB24E005127BC1227A952FC /* GMGridViewController.m */; };
-		20DB5767B4CC018C8E8450F4 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 3A6C227B424654C205301E58 /* en.lproj */; };
-		214518D8A4056DF670563F14 /* GMGridViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 653FD446EDDFC942B9A82D8D /* GMGridViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2849715E2084E7C607700393 /* GMSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = A3055F634EBE6251DCD38AC1 /* GMSelected.png */; };
-		4C67D694055202CDBD15AD56 /* GMVideoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0844A40BBD15155EEB58319 /* GMVideoIcon.png */; };
-		62C9D75030691357A0765C32 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3369F32043190C2115F63AB1 /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		69672389FF92391FA6C9411D /* GMImagePickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = F8111E1F664FB19B4A4AD74B /* GMImagePickerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		711EF61718DCE9CC112D9279 /* GMSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67055883312665F776441C10 /* GMSelected@2x.png */; };
-		7915596E7FD02DDFC8385DE2 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FAA39A16DD84CEBD755989C8 /* fr.lproj */; };
-		79A37C297A51F8E6BC5D3ACB /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = EE3186BC77483573C5C18B43 /* es.lproj */; };
-		86A4772DE9E29C0995A3B7DA /* GMEmptyFolder@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1449F534AF77B8D308709120 /* GMEmptyFolder@1x.png */; };
-		8952C5A9713C0AB81AE0A443 /* GMGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D46DEE8AF12337244ECBAC59 /* GMGridViewCell.m */; };
-		8E43B4F6E65C42E8C17C4FA1 /* GMGridViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FAF2C83B3B842DDBDEB0E9E /* GMGridViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9522DF44E6EE0FF942A04C09 /* Pods-GMImagePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 228D43D28BDE28983C5CE6C9 /* Pods-GMImagePicker-dummy.m */; };
-		99BDAD524EF7A4CE1D36222B /* GMAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B16EBBEFA5933514F9C528E1 /* GMAlbumsViewController.m */; };
-		A1CCB15F385A2DB1DF7FA2E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B030BCC549F3048465F58B81 /* Foundation.framework */; };
-		A69C0CEEB98CE64C45CE77D5 /* ca.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 651E09DF3951417866C753B2 /* ca.lproj */; };
-		A866444B68AE24BC22C122E9 /* GMAlbumsViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 45A1A9CF01F7C85084F266C8 /* GMAlbumsViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ADBE498BFD2753DAAD78E6C0 /* GMVideoIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFD865405B2F4B5570961586 /* GMVideoIcon@2x.png */; };
-		B2E24496F2B457DF28D923FC /* pt.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 0F125DD117A3D61FA29F9B68 /* pt.lproj */; };
-		B7C87A5120C495F53373DCE4 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBBA660A733387E4B993E4 /* Pods-dummy.m */; };
-		BB16715A375246ECB7B6C6D2 /* GMImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DDD5BDDAD518D1DA3055764 /* GMImagePickerController.m */; };
-		C9E041933AF8E00D4D643C24 /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 3D0AEDFADCD612809BBECEE2 /* de.lproj */; };
-		DB531F8A97112B14DFEFBA6C /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 1755205EE10A07B957AB5113 /* Base.lproj */; };
-		ED16AF3D7196E1220FE9C8F8 /* Pods-GMImagePicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A4C5B9578E96C5C5DAC3126 /* Pods-GMImagePicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ED7380B82A126BCDA38AA73B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B030BCC549F3048465F58B81 /* Foundation.framework */; };
-		FB6916713989C1A46E52270B /* GMAlbumsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66800C40EFEB32E0FDD0EA6F /* GMAlbumsViewCell.m */; };
-		FBD162C69A732BA2016B9F21 /* GMAlbumsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 85A05584B16F184D8BE29CE2 /* GMAlbumsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FBE2663E1C48389FBDFDE721 /* GMEmptyFolder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E2D95FD0D72B9FB3249F67A /* GMEmptyFolder@2x.png */; };
+		09128BD8BC89C657955D790E /* GMVideoIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0208ADCC38FA3D66AB23664 /* GMVideoIcon@2x.png */; };
+		1674CD149A1198A09FD78EE6 /* GMAlbumsViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = B2D6CFD102DEC559D4C34D50 /* GMAlbumsViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22AD3D948602C0CDE4E12AF1 /* GMImagePickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3D66740D1019234FF47806 /* GMImagePickerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29401B93A53D2F1CFA49B72F /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 212F1C3D7D516F9C46249355 /* it.lproj */; };
+		31D686A759E2F1A77B567F69 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4A3FD783EF91F9465C90D94E /* Base.lproj */; };
+		3E3409AE632195702883334B /* GMGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 228CA0357848541F5CD03A22 /* GMGridViewCell.m */; };
+		4482143B8F0AB56ED3955FB1 /* Pods-GMImagePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B61BE51614CC0531B9A9171 /* Pods-GMImagePicker-dummy.m */; };
+		46AAD4C9EBE687854CE82967 /* GMGridViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B00B792A7DD7CA79E7817F6A /* GMGridViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FB83C76446F1FCF359D427F /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 55B2F5A842537E44DCA4C823 /* es.lproj */; };
+		601CD70A75E3B3599CCE0CF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 391C4B5CD954D8D3B312E40B /* Foundation.framework */; };
+		64624A3C1CDDC38832A4D85E /* GMSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3930764CD8E2B1D35FFBC29 /* GMSelected@2x.png */; };
+		6D2C968FE590554D050903F2 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = EC25D7267B6DA0A31CB8AC51 /* en.lproj */; };
+		7E2E73A269126826AED78820 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 391C4B5CD954D8D3B312E40B /* Foundation.framework */; };
+		86341E7D1AD3086917DAEDD6 /* GMAlbumsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EFE6738187E02F6468EDD99 /* GMAlbumsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8FE568212CAAFB9E8F3D88DB /* GMAlbumsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EB2808ACC86F7797E60F04 /* GMAlbumsViewCell.m */; };
+		9B54351AF7C061DF128219D7 /* Pods-GMImagePicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FE53FB8D4E37397C50D17F9 /* Pods-GMImagePicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9BE2A7F92DF51853C9CB01EF /* GMSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 17D993EAF5CC2BFD9A995C24 /* GMSelected.png */; };
+		A03FE889F17F1FA3985186B2 /* pt.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E523729B12B50C538240EF62 /* pt.lproj */; };
+		A2CB41783E7BE9FFD652AC99 /* GMEmptyFolder@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF9CAF7EDABCADD653ACC50 /* GMEmptyFolder@1x.png */; };
+		A35FCBDDABB9C0A4CCB95109 /* GMAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B93B50B3AF8D3C6C69FAEF /* GMAlbumsViewController.m */; };
+		B4D2172EC2B149D85177EA2C /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = B1655AF97449CA605764CEB9 /* de.lproj */; };
+		C7F5945ADBB35C8D5199B7B5 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7EB19F3595D9FF660782BE /* Pods-dummy.m */; };
+		CA4A1A02CAD95119456587C0 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 9F47361BD27CBC97F53C6194 /* fr.lproj */; };
+		CEED0838B7832DAF26438836 /* GMGridViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 164BC15F796387A712625000 /* GMGridViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D222C62871A1CA87CC1F293B /* GMGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C8231D4C0527A7B24EA3D /* GMGridViewController.m */; };
+		E3CA7D69D65AB745B7C624A6 /* ca.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 81CB47C2DD8AAB495A30870F /* ca.lproj */; };
+		E6A04DFE7304DA6364033689 /* GMEmptyFolder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1ADF1BD4584A58418188084 /* GMEmptyFolder@2x.png */; };
+		EE2B1673F0D9FF303ABCA3F8 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 56CBE8396C95FD6B4B451D19 /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F78BE85EAF0D962F283016EC /* GMVideoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C24F6F13B0CBC72B8F564B6 /* GMVideoIcon.png */; };
+		F9C9ECA627BB177C830E95D1 /* GMImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0441C6E949BEA4FC0DCB3603 /* GMImagePickerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9B9021A098F8E030E38D2B08 /* PBXContainerItemProxy */ = {
+		3445E59A558DD39532FE2ED9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5448CEB9B6F5B77A77C2C20C /* Project object */;
+			containerPortal = 85F038097098B770961CB516 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3C328DE6C79FC6EDAF085340;
+			remoteGlobalIDString = 61C9AA36C5D3D153A9452A69;
 			remoteInfo = "Pods-GMImagePicker";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		016262683A075F67E28FD9EA /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
-		08C13E61643A4E5B3D143A2F /* DBDeltaEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBDeltaEntry.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/DBDeltaEntry.h"; sourceTree = "<group>"; };
-		0910A8ED01FD5719DD000BFF /* DBQuota.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBQuota.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/DBQuota.h"; sourceTree = "<group>"; };
-		0934A14686EA90FF55B7041F /* NSURL+MPURLParameterAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURL+MPURLParameterAdditions.h"; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/NSURL+MPURLParameterAdditions.h"; sourceTree = "<group>"; };
-		0F125DD117A3D61FA29F9B68 /* pt.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = pt.lproj; path = GMImagePicker/pt.lproj; sourceTree = "<group>"; };
-		0FAF2C83B3B842DDBDEB0E9E /* GMGridViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMGridViewCell.h; path = GMImagePicker/GMGridViewCell.h; sourceTree = "<group>"; };
-		1449F534AF77B8D308709120 /* GMEmptyFolder@1x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "GMEmptyFolder@1x.png"; path = "GMImagePicker/GMEmptyFolder@1x.png"; sourceTree = "<group>"; };
-		17208DC99C4AE4D4C95F6333 /* DBJsonWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBJsonWriter.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/DBJsonWriter.h"; sourceTree = "<group>"; };
-		1755205EE10A07B957AB5113 /* Base.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = Base.lproj; path = GMImagePicker/Base.lproj; sourceTree = "<group>"; };
-		178AED1D8C5AE0B65766F3D6 /* NSObject+DBJSON.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+DBJSON.h"; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/NSObject+DBJSON.h"; sourceTree = "<group>"; };
-		19DBCD822627F6CCD8D8F2AC /* MPDebug.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPDebug.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/MPDebug.h"; sourceTree = "<group>"; };
-		228D43D28BDE28983C5CE6C9 /* Pods-GMImagePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GMImagePicker-dummy.m"; sourceTree = "<group>"; };
-		2335C33FE72DD474C7BCFE36 /* DBError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBError.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/DBError.h"; sourceTree = "<group>"; };
-		271608282D213E217EC8E8CD /* NSURLResponse+Encoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURLResponse+Encoding.h"; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/NSURLResponse+Encoding.h"; sourceTree = "<group>"; };
-		2A4C5B9578E96C5C5DAC3126 /* Pods-GMImagePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GMImagePicker-umbrella.h"; sourceTree = "<group>"; };
-		2B211B7FFDE44CF08CBF9A13 /* Pods-GMImagePicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GMImagePicker.xcconfig"; sourceTree = "<group>"; };
-		2D47655C1C347E03F291E0BB /* MPOAuthAuthenticationMethodOAuth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPOAuthAuthenticationMethodOAuth.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/MPOAuthAuthenticationMethodOAuth.h"; sourceTree = "<group>"; };
-		2DDD5BDDAD518D1DA3055764 /* GMImagePickerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GMImagePickerController.m; path = GMImagePicker/GMImagePickerController.m; sourceTree = "<group>"; };
-		31144C5BC1E9D91CFDD85E30 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3369F32043190C2115F63AB1 /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
-		35E6E132EF2AD50DD5028359 /* MPOAuthAPIRequestLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPOAuthAPIRequestLoader.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/MPOAuthAPIRequestLoader.h"; sourceTree = "<group>"; };
-		3A6C227B424654C205301E58 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en.lproj; path = GMImagePicker/en.lproj; sourceTree = "<group>"; };
-		3BA01F21A77C44C2F6C878A7 /* MPOAuthCredentialStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPOAuthCredentialStore.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/MPOAuthCredentialStore.h"; sourceTree = "<group>"; };
-		3C467991667BCF6B6E79147D /* MPOAuthSignatureParameter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPOAuthSignatureParameter.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/MPOAuthSignatureParameter.h"; sourceTree = "<group>"; };
-		3D0AEDFADCD612809BBECEE2 /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = de.lproj; path = GMImagePicker/de.lproj; sourceTree = "<group>"; };
-		3E2D95FD0D72B9FB3249F67A /* GMEmptyFolder@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "GMEmptyFolder@2x.png"; path = "GMImagePicker/GMEmptyFolder@2x.png"; sourceTree = "<group>"; };
-		45A1A9CF01F7C85084F266C8 /* GMAlbumsViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMAlbumsViewCell.h; path = GMImagePicker/GMAlbumsViewCell.h; sourceTree = "<group>"; };
-		50302086ADEEB84C8BBA6438 /* DBJsonBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBJsonBase.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/DBJsonBase.h"; sourceTree = "<group>"; };
-		5138C885BE80CA740026418E /* NSDictionary+Dropbox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Dropbox.h"; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/NSDictionary+Dropbox.h"; sourceTree = "<group>"; };
-		54F4646CAC5D2FCD7510C708 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		5851556B94D0F7FF836801AA /* it.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = it.lproj; path = GMImagePicker/it.lproj; sourceTree = "<group>"; };
-		5B82B7FB3DBD7534C93BB5AB /* DBAccountInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBAccountInfo.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/DBAccountInfo.h"; sourceTree = "<group>"; };
-		5DBBBA660A733387E4B993E4 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		62F8A43DE662B8C7DE7BFF76 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		651E09DF3951417866C753B2 /* ca.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = ca.lproj; path = GMImagePicker/ca.lproj; sourceTree = "<group>"; };
-		653FD446EDDFC942B9A82D8D /* GMGridViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMGridViewController.h; path = GMImagePicker/GMGridViewController.h; sourceTree = "<group>"; };
-		664A8D5CE6E52EF916AE7A00 /* DBSession+iOS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DBSession+iOS.h"; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/DBSession+iOS.h"; sourceTree = "<group>"; };
-		66800C40EFEB32E0FDD0EA6F /* GMAlbumsViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GMAlbumsViewCell.m; path = GMImagePicker/GMAlbumsViewCell.m; sourceTree = "<group>"; };
-		67055883312665F776441C10 /* GMSelected@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "GMSelected@2x.png"; path = "GMImagePicker/GMSelected@2x.png"; sourceTree = "<group>"; };
-		68700D055668A755FD0A2515 /* MPOAuthCredentialConcreteStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPOAuthCredentialConcreteStore.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/MPOAuthCredentialConcreteStore.h"; sourceTree = "<group>"; };
-		689ADB679D5C45D478C62E26 /* Pods-GMImagePicker-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GMImagePicker-Private.xcconfig"; sourceTree = "<group>"; };
-		68F01CF03567B319B69872B4 /* MPOAuthURLRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPOAuthURLRequest.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/MPOAuthURLRequest.h"; sourceTree = "<group>"; };
-		6FE77EED8DFE0A07FFE986CE /* DBBase64Transcoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBBase64Transcoder.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/DBBase64Transcoder.h"; sourceTree = "<group>"; };
-		6FF37FF3C73B5F8D5573812F /* Pods-GMImagePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GMImagePicker-prefix.pch"; sourceTree = "<group>"; };
-		73BF8A1F065FDBF13E0BC319 /* MPOAuthAuthenticationMethod.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPOAuthAuthenticationMethod.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/MPOAuthAuthenticationMethod.h"; sourceTree = "<group>"; };
-		76690A7B75359515E9AC9919 /* DBSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBSession.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/DBSession.h"; sourceTree = "<group>"; };
-		7EE841B1456BABFB3BDD09CF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		7F3C84F1B5F0CBC24A9DE496 /* DBMetadata.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBMetadata.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/DBMetadata.h"; sourceTree = "<group>"; };
-		829807FCAD217DD05122CE2A /* NSString+DBJSON.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+DBJSON.h"; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/NSString+DBJSON.h"; sourceTree = "<group>"; };
-		85A05584B16F184D8BE29CE2 /* GMAlbumsViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMAlbumsViewController.h; path = GMImagePicker/GMAlbumsViewController.h; sourceTree = "<group>"; };
-		887F615DEB7EB412217ADFE8 /* MPOAuthParameterFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPOAuthParameterFactory.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/MPOAuthParameterFactory.h"; sourceTree = "<group>"; };
-		8E6D47E7615502925399B775 /* JSON.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/JSON.h"; sourceTree = "<group>"; };
-		907AB765BF82415BBF4D7E54 /* DBRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBRequest.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/DBRequest.h"; sourceTree = "<group>"; };
-		9FB24E005127BC1227A952FC /* GMGridViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GMGridViewController.m; path = GMImagePicker/GMGridViewController.m; sourceTree = "<group>"; };
-		A3055F634EBE6251DCD38AC1 /* GMSelected.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = GMSelected.png; path = GMImagePicker/GMSelected.png; sourceTree = "<group>"; };
-		A503CAF7E9ADF10B8D877F16 /* DropboxSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DropboxSDK.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/DropboxSDK.h"; sourceTree = "<group>"; };
-		A75A3EC86905CA07C70BD8CD /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
-		A84FAC122BE9D0AFC89F903E /* NSString+URLEscapingAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEscapingAdditions.h"; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/NSString+URLEscapingAdditions.h"; sourceTree = "<group>"; };
-		A969D9D26C087AB02FC84328 /* DBJSON.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBJSON.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/DBJSON.h"; sourceTree = "<group>"; };
-		AAFD41B796C8257BF79E19CB /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B030BCC549F3048465F58B81 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		B16EBBEFA5933514F9C528E1 /* GMAlbumsViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GMAlbumsViewController.m; path = GMImagePicker/GMAlbumsViewController.m; sourceTree = "<group>"; };
-		B9A99F4C7548DA4CBFCF75C9 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C63A5A00785DCF4394A0F9C4 /* MPURLRequestParameter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPURLRequestParameter.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/MPURLRequestParameter.h"; sourceTree = "<group>"; };
-		C9481A8375F28AAE024801F6 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		C9D0FB46FBEDAB9AB69E4FEF /* DBJsonParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBJsonParser.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/DBJsonParser.h"; sourceTree = "<group>"; };
-		D46DEE8AF12337244ECBAC59 /* GMGridViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GMGridViewCell.m; path = GMImagePicker/GMGridViewCell.m; sourceTree = "<group>"; };
-		D58B910643174938F3013195 /* MPOAuthConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPOAuthConnection.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/MPOAuthConnection.h"; sourceTree = "<group>"; };
-		D6E9F810731C9A1B0B657D01 /* GMImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GMImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB66B4A893F0B44C308CAA32 /* Pods-GMImagePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GMImagePicker.modulemap"; sourceTree = "<group>"; };
-		DB71D3A12D125DA677924298 /* MPOAuthAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPOAuthAPI.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/MPOAuthAPI.h"; sourceTree = "<group>"; };
-		DBDDD6B8B8C72C3BA66BF908 /* MPOAuthURLResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPOAuthURLResponse.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/MPOAuthURLResponse.h"; sourceTree = "<group>"; };
-		DFD865405B2F4B5570961586 /* GMVideoIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "GMVideoIcon@2x.png"; path = "GMImagePicker/GMVideoIcon@2x.png"; sourceTree = "<group>"; };
-		E0844A40BBD15155EEB58319 /* GMVideoIcon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = GMVideoIcon.png; path = GMImagePicker/GMVideoIcon.png; sourceTree = "<group>"; };
-		E17CBA5068681CAB17243E57 /* DBRestClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBRestClient.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/DBRestClient.h"; sourceTree = "<group>"; };
-		E2C5226B9BD77CEC5E5E2B79 /* NSString+Dropbox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+Dropbox.h"; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/NSString+Dropbox.h"; sourceTree = "<group>"; };
-		E6699600F7E8B9822FAAA740 /* MPOAuth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPOAuth.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/MPOAuth.h"; sourceTree = "<group>"; };
-		EE3186BC77483573C5C18B43 /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = es.lproj; path = GMImagePicker/es.lproj; sourceTree = "<group>"; };
-		EEFE5474213BBF2FCAA6ADD8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1EB2195BE4441C3A3BA8057 /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
-		F230A46AA26736DE23F771CD /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		F4CA892B3E424198AA589A7F /* MPOAuthCredentialConcreteStore+KeychainAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MPOAuthCredentialConcreteStore+KeychainAdditions.h"; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/MPOAuthCredentialConcreteStore+KeychainAdditions.h"; sourceTree = "<group>"; };
-		F8111E1F664FB19B4A4AD74B /* GMImagePickerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMImagePickerController.h; path = GMImagePicker/GMImagePickerController.h; sourceTree = "<group>"; };
-		FAA39A16DD84CEBD755989C8 /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = fr.lproj; path = GMImagePicker/fr.lproj; sourceTree = "<group>"; };
-		FE02D3F0254F9FB75B868920 /* DBLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DBLog.h; path = "dropbox-ios-sdk-1.3.13/DropboxSDK.framework/Headers/DBLog.h"; sourceTree = "<group>"; };
+		035C8E84A88C7D35EB0A0B28 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		0441C6E949BEA4FC0DCB3603 /* GMImagePickerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GMImagePickerController.m; path = GMImagePicker/GMImagePickerController.m; sourceTree = "<group>"; };
+		0C7EB19F3595D9FF660782BE /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		11B93B50B3AF8D3C6C69FAEF /* GMAlbumsViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GMAlbumsViewController.m; path = GMImagePicker/GMAlbumsViewController.m; sourceTree = "<group>"; };
+		14952EE174C74FE9675A82C1 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		164BC15F796387A712625000 /* GMGridViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMGridViewCell.h; path = GMImagePicker/GMGridViewCell.h; sourceTree = "<group>"; };
+		17D993EAF5CC2BFD9A995C24 /* GMSelected.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = GMSelected.png; path = GMImagePicker/GMSelected.png; sourceTree = "<group>"; };
+		212F1C3D7D516F9C46249355 /* it.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = it.lproj; path = GMImagePicker/it.lproj; sourceTree = "<group>"; };
+		228CA0357848541F5CD03A22 /* GMGridViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GMGridViewCell.m; path = GMImagePicker/GMGridViewCell.m; sourceTree = "<group>"; };
+		2C90DCEECB0B08A49FF53BB7 /* GMImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GMImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EFE6738187E02F6468EDD99 /* GMAlbumsViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMAlbumsViewController.h; path = GMImagePicker/GMAlbumsViewController.h; sourceTree = "<group>"; };
+		370D92C11B03A3F300ED9ED2 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
+		391C4B5CD954D8D3B312E40B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3C24F6F13B0CBC72B8F564B6 /* GMVideoIcon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = GMVideoIcon.png; path = GMImagePicker/GMVideoIcon.png; sourceTree = "<group>"; };
+		3D01D59D36FEE2D2AF2E853A /* Pods-GMImagePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GMImagePicker.modulemap"; sourceTree = "<group>"; };
+		4A3FD783EF91F9465C90D94E /* Base.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = Base.lproj; path = GMImagePicker/Base.lproj; sourceTree = "<group>"; };
+		4DBF025F78AE590291CD720E /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		55B2F5A842537E44DCA4C823 /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = es.lproj; path = GMImagePicker/es.lproj; sourceTree = "<group>"; };
+		56CBE8396C95FD6B4B451D19 /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
+		68847E339BA63A3B7C6FA567 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		7262ECDAE07EAD38F39F9F17 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
+		81CB47C2DD8AAB495A30870F /* ca.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = ca.lproj; path = GMImagePicker/ca.lproj; sourceTree = "<group>"; };
+		84A62388B3A87039C80D0141 /* Pods-GMImagePicker-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GMImagePicker-Private.xcconfig"; sourceTree = "<group>"; };
+		8B61BE51614CC0531B9A9171 /* Pods-GMImagePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GMImagePicker-dummy.m"; sourceTree = "<group>"; };
+		8FE53FB8D4E37397C50D17F9 /* Pods-GMImagePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GMImagePicker-umbrella.h"; sourceTree = "<group>"; };
+		97644138C15576BAA978A723 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D379991FC84AA46FEBD12DE /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9F47361BD27CBC97F53C6194 /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = fr.lproj; path = GMImagePicker/fr.lproj; sourceTree = "<group>"; };
+		A822B1A5CE049DC2BA01C79F /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		A9832D5BFAACA6D4174E4078 /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
+		B00B792A7DD7CA79E7817F6A /* GMGridViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMGridViewController.h; path = GMImagePicker/GMGridViewController.h; sourceTree = "<group>"; };
+		B1655AF97449CA605764CEB9 /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = de.lproj; path = GMImagePicker/de.lproj; sourceTree = "<group>"; };
+		B2D6CFD102DEC559D4C34D50 /* GMAlbumsViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMAlbumsViewCell.h; path = GMImagePicker/GMAlbumsViewCell.h; sourceTree = "<group>"; };
+		B95A8F34A451C16D6D64F83D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		C07752C7924CCCAC4A5680DF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA3D66740D1019234FF47806 /* GMImagePickerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMImagePickerController.h; path = GMImagePicker/GMImagePickerController.h; sourceTree = "<group>"; };
+		CD9E38E7719096C06164DF59 /* Pods-GMImagePicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GMImagePicker.xcconfig"; sourceTree = "<group>"; };
+		D0208ADCC38FA3D66AB23664 /* GMVideoIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "GMVideoIcon@2x.png"; path = "GMImagePicker/GMVideoIcon@2x.png"; sourceTree = "<group>"; };
+		D1ADF1BD4584A58418188084 /* GMEmptyFolder@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "GMEmptyFolder@2x.png"; path = "GMImagePicker/GMEmptyFolder@2x.png"; sourceTree = "<group>"; };
+		D8EB2808ACC86F7797E60F04 /* GMAlbumsViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GMAlbumsViewCell.m; path = GMImagePicker/GMAlbumsViewCell.m; sourceTree = "<group>"; };
+		DEF9CAF7EDABCADD653ACC50 /* GMEmptyFolder@1x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "GMEmptyFolder@1x.png"; path = "GMImagePicker/GMEmptyFolder@1x.png"; sourceTree = "<group>"; };
+		E3930764CD8E2B1D35FFBC29 /* GMSelected@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "GMSelected@2x.png"; path = "GMImagePicker/GMSelected@2x.png"; sourceTree = "<group>"; };
+		E523729B12B50C538240EF62 /* pt.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = pt.lproj; path = GMImagePicker/pt.lproj; sourceTree = "<group>"; };
+		E533C4914627AD64AB052176 /* Pods-GMImagePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GMImagePicker-prefix.pch"; sourceTree = "<group>"; };
+		E93C8231D4C0527A7B24EA3D /* GMGridViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GMGridViewController.m; path = GMImagePicker/GMGridViewController.m; sourceTree = "<group>"; };
+		EC25D7267B6DA0A31CB8AC51 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en.lproj; path = GMImagePicker/en.lproj; sourceTree = "<group>"; };
+		EEF5A148BB5983D99976EF82 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2A87EA465CF93BA863B19F7A /* Frameworks */ = {
+		A9C8DBD996BED706635DAF42 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1CCB15F385A2DB1DF7FA2E9 /* Foundation.framework in Frameworks */,
+				601CD70A75E3B3599CCE0CF0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A8F7371E5A9F5A0AF9DCC9A /* Frameworks */ = {
+		D3E0F8ABA3A796324EE469CF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED7380B82A126BCDA38AA73B /* Foundation.framework in Frameworks */,
+				7E2E73A269126826AED78820 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F46E61B05E36D9C7209AB5F /* Dropbox-iOS-SDK */ = {
+		34FDA24584CC74B933E508A6 = {
 			isa = PBXGroup;
 			children = (
-				5B82B7FB3DBD7534C93BB5AB /* DBAccountInfo.h */,
-				6FE77EED8DFE0A07FFE986CE /* DBBase64Transcoder.h */,
-				08C13E61643A4E5B3D143A2F /* DBDeltaEntry.h */,
-				2335C33FE72DD474C7BCFE36 /* DBError.h */,
-				A969D9D26C087AB02FC84328 /* DBJSON.h */,
-				50302086ADEEB84C8BBA6438 /* DBJsonBase.h */,
-				C9D0FB46FBEDAB9AB69E4FEF /* DBJsonParser.h */,
-				17208DC99C4AE4D4C95F6333 /* DBJsonWriter.h */,
-				FE02D3F0254F9FB75B868920 /* DBLog.h */,
-				7F3C84F1B5F0CBC24A9DE496 /* DBMetadata.h */,
-				0910A8ED01FD5719DD000BFF /* DBQuota.h */,
-				907AB765BF82415BBF4D7E54 /* DBRequest.h */,
-				E17CBA5068681CAB17243E57 /* DBRestClient.h */,
-				76690A7B75359515E9AC9919 /* DBSession.h */,
-				664A8D5CE6E52EF916AE7A00 /* DBSession+iOS.h */,
-				A503CAF7E9ADF10B8D877F16 /* DropboxSDK.h */,
-				8E6D47E7615502925399B775 /* JSON.h */,
-				19DBCD822627F6CCD8D8F2AC /* MPDebug.h */,
-				E6699600F7E8B9822FAAA740 /* MPOAuth.h */,
-				DB71D3A12D125DA677924298 /* MPOAuthAPI.h */,
-				35E6E132EF2AD50DD5028359 /* MPOAuthAPIRequestLoader.h */,
-				73BF8A1F065FDBF13E0BC319 /* MPOAuthAuthenticationMethod.h */,
-				2D47655C1C347E03F291E0BB /* MPOAuthAuthenticationMethodOAuth.h */,
-				D58B910643174938F3013195 /* MPOAuthConnection.h */,
-				68700D055668A755FD0A2515 /* MPOAuthCredentialConcreteStore.h */,
-				F4CA892B3E424198AA589A7F /* MPOAuthCredentialConcreteStore+KeychainAdditions.h */,
-				3BA01F21A77C44C2F6C878A7 /* MPOAuthCredentialStore.h */,
-				887F615DEB7EB412217ADFE8 /* MPOAuthParameterFactory.h */,
-				3C467991667BCF6B6E79147D /* MPOAuthSignatureParameter.h */,
-				68F01CF03567B319B69872B4 /* MPOAuthURLRequest.h */,
-				DBDDD6B8B8C72C3BA66BF908 /* MPOAuthURLResponse.h */,
-				C63A5A00785DCF4394A0F9C4 /* MPURLRequestParameter.h */,
-				5138C885BE80CA740026418E /* NSDictionary+Dropbox.h */,
-				178AED1D8C5AE0B65766F3D6 /* NSObject+DBJSON.h */,
-				829807FCAD217DD05122CE2A /* NSString+DBJSON.h */,
-				E2C5226B9BD77CEC5E5E2B79 /* NSString+Dropbox.h */,
-				A84FAC122BE9D0AFC89F903E /* NSString+URLEscapingAdditions.h */,
-				0934A14686EA90FF55B7041F /* NSURL+MPURLParameterAdditions.h */,
-				271608282D213E217EC8E8CD /* NSURLResponse+Encoding.h */,
+				14952EE174C74FE9675A82C1 /* Podfile */,
+				7845233DDD8A6AAE0C5DA6F6 /* Frameworks */,
+				678AA8FE9370FF77D1BE5C40 /* Pods */,
+				F7D41C824B934BED7F6485BB /* Products */,
+				F41FA119BA014298F6FA0087 /* Targets Support Files */,
 			);
-			path = "Dropbox-iOS-SDK";
 			sourceTree = "<group>";
 		};
-		3266AA66AED279B501F1F9F3 /* Pods */ = {
+		5286CCE27274BBF7A1AB0B82 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				31144C5BC1E9D91CFDD85E30 /* Info.plist */,
-				F1EB2195BE4441C3A3BA8057 /* Pods.modulemap */,
-				AAFD41B796C8257BF79E19CB /* Pods-acknowledgements.markdown */,
-				C9481A8375F28AAE024801F6 /* Pods-acknowledgements.plist */,
-				5DBBBA660A733387E4B993E4 /* Pods-dummy.m */,
-				016262683A075F67E28FD9EA /* Pods-environment.h */,
-				A75A3EC86905CA07C70BD8CD /* Pods-frameworks.sh */,
-				F230A46AA26736DE23F771CD /* Pods-resources.sh */,
-				3369F32043190C2115F63AB1 /* Pods-umbrella.h */,
-				7EE841B1456BABFB3BDD09CF /* Pods.debug.xcconfig */,
-				62F8A43DE662B8C7DE7BFF76 /* Pods.release.xcconfig */,
+				391C4B5CD954D8D3B312E40B /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		678AA8FE9370FF77D1BE5C40 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB98C299FDCC162843FF466F /* GMImagePicker */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7845233DDD8A6AAE0C5DA6F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				370D92C11B03A3F300ED9ED2 /* DropboxSDK.framework */,
+				5286CCE27274BBF7A1AB0B82 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4F424F2E2A999153AEDBADD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EEF5A148BB5983D99976EF82 /* Info.plist */,
+				A9832D5BFAACA6D4174E4078 /* Pods.modulemap */,
+				9D379991FC84AA46FEBD12DE /* Pods-acknowledgements.markdown */,
+				4DBF025F78AE590291CD720E /* Pods-acknowledgements.plist */,
+				0C7EB19F3595D9FF660782BE /* Pods-dummy.m */,
+				035C8E84A88C7D35EB0A0B28 /* Pods-environment.h */,
+				7262ECDAE07EAD38F39F9F17 /* Pods-frameworks.sh */,
+				A822B1A5CE049DC2BA01C79F /* Pods-resources.sh */,
+				56CBE8396C95FD6B4B451D19 /* Pods-umbrella.h */,
+				68847E339BA63A3B7C6FA567 /* Pods.debug.xcconfig */,
+				B95A8F34A451C16D6D64F83D /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			path = "Target Support Files/Pods";
 			sourceTree = "<group>";
 		};
-		44AEF6B1530326157537FAF7 /* Targets Support Files */ = {
+		D436C3C9FE8E27F8C74E2E3A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				3266AA66AED279B501F1F9F3 /* Pods */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		6F8ADB104C8F7FA5144DB10F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				97B02BF8A258998EC704F224 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		855C75D9F5CF79E1CB57D19B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				EEFE5474213BBF2FCAA6ADD8 /* Info.plist */,
-				DB66B4A893F0B44C308CAA32 /* Pods-GMImagePicker.modulemap */,
-				2B211B7FFDE44CF08CBF9A13 /* Pods-GMImagePicker.xcconfig */,
-				689ADB679D5C45D478C62E26 /* Pods-GMImagePicker-Private.xcconfig */,
-				228D43D28BDE28983C5CE6C9 /* Pods-GMImagePicker-dummy.m */,
-				6FF37FF3C73B5F8D5573812F /* Pods-GMImagePicker-prefix.pch */,
-				2A4C5B9578E96C5C5DAC3126 /* Pods-GMImagePicker-umbrella.h */,
+				C07752C7924CCCAC4A5680DF /* Info.plist */,
+				3D01D59D36FEE2D2AF2E853A /* Pods-GMImagePicker.modulemap */,
+				CD9E38E7719096C06164DF59 /* Pods-GMImagePicker.xcconfig */,
+				84A62388B3A87039C80D0141 /* Pods-GMImagePicker-Private.xcconfig */,
+				8B61BE51614CC0531B9A9171 /* Pods-GMImagePicker-dummy.m */,
+				E533C4914627AD64AB052176 /* Pods-GMImagePicker-prefix.pch */,
+				8FE53FB8D4E37397C50D17F9 /* Pods-GMImagePicker-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-GMImagePicker";
 			sourceTree = "<group>";
 		};
-		8AE539DCFF8C954DCBF4C4DD /* Products */ = {
+		DB98C299FDCC162843FF466F /* GMImagePicker */ = {
 			isa = PBXGroup;
 			children = (
-				D6E9F810731C9A1B0B657D01 /* GMImagePicker.framework */,
-				B9A99F4C7548DA4CBFCF75C9 /* Pods.framework */,
+				B2D6CFD102DEC559D4C34D50 /* GMAlbumsViewCell.h */,
+				D8EB2808ACC86F7797E60F04 /* GMAlbumsViewCell.m */,
+				2EFE6738187E02F6468EDD99 /* GMAlbumsViewController.h */,
+				11B93B50B3AF8D3C6C69FAEF /* GMAlbumsViewController.m */,
+				164BC15F796387A712625000 /* GMGridViewCell.h */,
+				228CA0357848541F5CD03A22 /* GMGridViewCell.m */,
+				B00B792A7DD7CA79E7817F6A /* GMGridViewController.h */,
+				E93C8231D4C0527A7B24EA3D /* GMGridViewController.m */,
+				CA3D66740D1019234FF47806 /* GMImagePickerController.h */,
+				0441C6E949BEA4FC0DCB3603 /* GMImagePickerController.m */,
+				FA319D591276A4E2C66A8E15 /* Resources */,
+				D436C3C9FE8E27F8C74E2E3A /* Support Files */,
+			);
+			path = GMImagePicker;
+			sourceTree = "<group>";
+		};
+		F41FA119BA014298F6FA0087 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B4F424F2E2A999153AEDBADD /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		F7D41C824B934BED7F6485BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C90DCEECB0B08A49FF53BB7 /* GMImagePicker.framework */,
+				97644138C15576BAA978A723 /* Pods.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		92DDCF7C331B679A1DA9EA80 /* Resources */ = {
+		FA319D591276A4E2C66A8E15 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1755205EE10A07B957AB5113 /* Base.lproj */,
-				1449F534AF77B8D308709120 /* GMEmptyFolder@1x.png */,
-				3E2D95FD0D72B9FB3249F67A /* GMEmptyFolder@2x.png */,
-				A3055F634EBE6251DCD38AC1 /* GMSelected.png */,
-				67055883312665F776441C10 /* GMSelected@2x.png */,
-				E0844A40BBD15155EEB58319 /* GMVideoIcon.png */,
-				DFD865405B2F4B5570961586 /* GMVideoIcon@2x.png */,
-				651E09DF3951417866C753B2 /* ca.lproj */,
-				3D0AEDFADCD612809BBECEE2 /* de.lproj */,
-				3A6C227B424654C205301E58 /* en.lproj */,
-				EE3186BC77483573C5C18B43 /* es.lproj */,
-				FAA39A16DD84CEBD755989C8 /* fr.lproj */,
-				5851556B94D0F7FF836801AA /* it.lproj */,
-				0F125DD117A3D61FA29F9B68 /* pt.lproj */,
+				4A3FD783EF91F9465C90D94E /* Base.lproj */,
+				DEF9CAF7EDABCADD653ACC50 /* GMEmptyFolder@1x.png */,
+				D1ADF1BD4584A58418188084 /* GMEmptyFolder@2x.png */,
+				17D993EAF5CC2BFD9A995C24 /* GMSelected.png */,
+				E3930764CD8E2B1D35FFBC29 /* GMSelected@2x.png */,
+				3C24F6F13B0CBC72B8F564B6 /* GMVideoIcon.png */,
+				D0208ADCC38FA3D66AB23664 /* GMVideoIcon@2x.png */,
+				81CB47C2DD8AAB495A30870F /* ca.lproj */,
+				B1655AF97449CA605764CEB9 /* de.lproj */,
+				EC25D7267B6DA0A31CB8AC51 /* en.lproj */,
+				55B2F5A842537E44DCA4C823 /* es.lproj */,
+				9F47361BD27CBC97F53C6194 /* fr.lproj */,
+				212F1C3D7D516F9C46249355 /* it.lproj */,
+				E523729B12B50C538240EF62 /* pt.lproj */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		97B02BF8A258998EC704F224 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				B030BCC549F3048465F58B81 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		9AEA1E44225502A7281CF177 = {
-			isa = PBXGroup;
-			children = (
-				54F4646CAC5D2FCD7510C708 /* Podfile */,
-				6F8ADB104C8F7FA5144DB10F /* Frameworks */,
-				B8616D33014997C263FF0C21 /* Pods */,
-				8AE539DCFF8C954DCBF4C4DD /* Products */,
-				44AEF6B1530326157537FAF7 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		B8616D33014997C263FF0C21 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2F46E61B05E36D9C7209AB5F /* Dropbox-iOS-SDK */,
-				C1CECE5DC1B1B12C2C2AD110 /* GMImagePicker */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		C1CECE5DC1B1B12C2C2AD110 /* GMImagePicker */ = {
-			isa = PBXGroup;
-			children = (
-				45A1A9CF01F7C85084F266C8 /* GMAlbumsViewCell.h */,
-				66800C40EFEB32E0FDD0EA6F /* GMAlbumsViewCell.m */,
-				85A05584B16F184D8BE29CE2 /* GMAlbumsViewController.h */,
-				B16EBBEFA5933514F9C528E1 /* GMAlbumsViewController.m */,
-				0FAF2C83B3B842DDBDEB0E9E /* GMGridViewCell.h */,
-				D46DEE8AF12337244ECBAC59 /* GMGridViewCell.m */,
-				653FD446EDDFC942B9A82D8D /* GMGridViewController.h */,
-				9FB24E005127BC1227A952FC /* GMGridViewController.m */,
-				F8111E1F664FB19B4A4AD74B /* GMImagePickerController.h */,
-				2DDD5BDDAD518D1DA3055764 /* GMImagePickerController.m */,
-				92DDCF7C331B679A1DA9EA80 /* Resources */,
-				855C75D9F5CF79E1CB57D19B /* Support Files */,
-			);
-			path = GMImagePicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		88CB15F4A3517021042DBF15 /* Headers */ = {
+		79C6DBF21C673FB54EECC797 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A866444B68AE24BC22C122E9 /* GMAlbumsViewCell.h in Headers */,
-				FBD162C69A732BA2016B9F21 /* GMAlbumsViewController.h in Headers */,
-				8E43B4F6E65C42E8C17C4FA1 /* GMGridViewCell.h in Headers */,
-				214518D8A4056DF670563F14 /* GMGridViewController.h in Headers */,
-				69672389FF92391FA6C9411D /* GMImagePickerController.h in Headers */,
-				ED16AF3D7196E1220FE9C8F8 /* Pods-GMImagePicker-umbrella.h in Headers */,
+				1674CD149A1198A09FD78EE6 /* GMAlbumsViewCell.h in Headers */,
+				86341E7D1AD3086917DAEDD6 /* GMAlbumsViewController.h in Headers */,
+				CEED0838B7832DAF26438836 /* GMGridViewCell.h in Headers */,
+				46AAD4C9EBE687854CE82967 /* GMGridViewController.h in Headers */,
+				22AD3D948602C0CDE4E12AF1 /* GMImagePickerController.h in Headers */,
+				9B54351AF7C061DF128219D7 /* Pods-GMImagePicker-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95AFCFDFC40DCCA7C41D804D /* Headers */ = {
+		BEBE3C63BD27F85DAE767B06 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62C9D75030691357A0765C32 /* Pods-umbrella.h in Headers */,
+				EE2B1673F0D9FF303ABCA3F8 /* Pods-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3C328DE6C79FC6EDAF085340 /* Pods-GMImagePicker */ = {
+		61C9AA36C5D3D153A9452A69 /* Pods-GMImagePicker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E0B1719F48B1C4097FBEBE1B /* Build configuration list for PBXNativeTarget "Pods-GMImagePicker" */;
+			buildConfigurationList = 165C6D1DCA31A7AFF5A15250 /* Build configuration list for PBXNativeTarget "Pods-GMImagePicker" */;
 			buildPhases = (
-				029DA578FCD4207300452147 /* Sources */,
-				2A87EA465CF93BA863B19F7A /* Frameworks */,
-				88CB15F4A3517021042DBF15 /* Headers */,
-				ED0C17519499389900B644F8 /* Resources */,
+				E06380EC53136B336E16F066 /* Sources */,
+				D3E0F8ABA3A796324EE469CF /* Frameworks */,
+				79C6DBF21C673FB54EECC797 /* Headers */,
+				FB7F2E14FADBD1E56AD17CB0 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -372,114 +288,148 @@
 			);
 			name = "Pods-GMImagePicker";
 			productName = "Pods-GMImagePicker";
-			productReference = D6E9F810731C9A1B0B657D01 /* GMImagePicker.framework */;
+			productReference = 2C90DCEECB0B08A49FF53BB7 /* GMImagePicker.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D2B840BCFDECD332D932ECAB /* Pods */ = {
+		E9DDF13B047C119D4E55F27A /* Pods */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 23C474EB62EF29BFA64D7AF6 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildConfigurationList = 6AA005F61D0820DDEAF903CC /* Build configuration list for PBXNativeTarget "Pods" */;
 			buildPhases = (
-				E263EC0D1CC19DADC7EFC356 /* Sources */,
-				5A8F7371E5A9F5A0AF9DCC9A /* Frameworks */,
-				95AFCFDFC40DCCA7C41D804D /* Headers */,
+				2D54E335A31ADC3952AFED26 /* Sources */,
+				A9C8DBD996BED706635DAF42 /* Frameworks */,
+				BEBE3C63BD27F85DAE767B06 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F4DB739188A41BB1415BDF7F /* PBXTargetDependency */,
+				A62261CE5EF7E9CE151E4762 /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
-			productReference = B9A99F4C7548DA4CBFCF75C9 /* Pods.framework */;
+			productReference = 97644138C15576BAA978A723 /* Pods.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		5448CEB9B6F5B77A77C2C20C /* Project object */ = {
+		85F038097098B770961CB516 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0510;
 			};
-			buildConfigurationList = AA45836BF7A1BA2D7D74ED99 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = E6F93E2AB77F80E62DB74A97 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 9AEA1E44225502A7281CF177;
-			productRefGroup = 8AE539DCFF8C954DCBF4C4DD /* Products */;
+			mainGroup = 34FDA24584CC74B933E508A6;
+			productRefGroup = F7D41C824B934BED7F6485BB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D2B840BCFDECD332D932ECAB /* Pods */,
-				3C328DE6C79FC6EDAF085340 /* Pods-GMImagePicker */,
+				E9DDF13B047C119D4E55F27A /* Pods */,
+				61C9AA36C5D3D153A9452A69 /* Pods-GMImagePicker */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		ED0C17519499389900B644F8 /* Resources */ = {
+		FB7F2E14FADBD1E56AD17CB0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB531F8A97112B14DFEFBA6C /* Base.lproj in Resources */,
-				86A4772DE9E29C0995A3B7DA /* GMEmptyFolder@1x.png in Resources */,
-				FBE2663E1C48389FBDFDE721 /* GMEmptyFolder@2x.png in Resources */,
-				2849715E2084E7C607700393 /* GMSelected.png in Resources */,
-				711EF61718DCE9CC112D9279 /* GMSelected@2x.png in Resources */,
-				4C67D694055202CDBD15AD56 /* GMVideoIcon.png in Resources */,
-				ADBE498BFD2753DAAD78E6C0 /* GMVideoIcon@2x.png in Resources */,
-				A69C0CEEB98CE64C45CE77D5 /* ca.lproj in Resources */,
-				C9E041933AF8E00D4D643C24 /* de.lproj in Resources */,
-				20DB5767B4CC018C8E8450F4 /* en.lproj in Resources */,
-				79A37C297A51F8E6BC5D3ACB /* es.lproj in Resources */,
-				7915596E7FD02DDFC8385DE2 /* fr.lproj in Resources */,
-				0104EBFFBD47285FDAAE56B7 /* it.lproj in Resources */,
-				B2E24496F2B457DF28D923FC /* pt.lproj in Resources */,
+				31D686A759E2F1A77B567F69 /* Base.lproj in Resources */,
+				A2CB41783E7BE9FFD652AC99 /* GMEmptyFolder@1x.png in Resources */,
+				E6A04DFE7304DA6364033689 /* GMEmptyFolder@2x.png in Resources */,
+				9BE2A7F92DF51853C9CB01EF /* GMSelected.png in Resources */,
+				64624A3C1CDDC38832A4D85E /* GMSelected@2x.png in Resources */,
+				F78BE85EAF0D962F283016EC /* GMVideoIcon.png in Resources */,
+				09128BD8BC89C657955D790E /* GMVideoIcon@2x.png in Resources */,
+				E3CA7D69D65AB745B7C624A6 /* ca.lproj in Resources */,
+				B4D2172EC2B149D85177EA2C /* de.lproj in Resources */,
+				6D2C968FE590554D050903F2 /* en.lproj in Resources */,
+				5FB83C76446F1FCF359D427F /* es.lproj in Resources */,
+				CA4A1A02CAD95119456587C0 /* fr.lproj in Resources */,
+				29401B93A53D2F1CFA49B72F /* it.lproj in Resources */,
+				A03FE889F17F1FA3985186B2 /* pt.lproj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		029DA578FCD4207300452147 /* Sources */ = {
+		2D54E335A31ADC3952AFED26 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB6916713989C1A46E52270B /* GMAlbumsViewCell.m in Sources */,
-				99BDAD524EF7A4CE1D36222B /* GMAlbumsViewController.m in Sources */,
-				8952C5A9713C0AB81AE0A443 /* GMGridViewCell.m in Sources */,
-				1DA677833D5549EE683BE494 /* GMGridViewController.m in Sources */,
-				BB16715A375246ECB7B6C6D2 /* GMImagePickerController.m in Sources */,
-				9522DF44E6EE0FF942A04C09 /* Pods-GMImagePicker-dummy.m in Sources */,
+				C7F5945ADBB35C8D5199B7B5 /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E263EC0D1CC19DADC7EFC356 /* Sources */ = {
+		E06380EC53136B336E16F066 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7C87A5120C495F53373DCE4 /* Pods-dummy.m in Sources */,
+				8FE568212CAAFB9E8F3D88DB /* GMAlbumsViewCell.m in Sources */,
+				A35FCBDDABB9C0A4CCB95109 /* GMAlbumsViewController.m in Sources */,
+				3E3409AE632195702883334B /* GMGridViewCell.m in Sources */,
+				D222C62871A1CA87CC1F293B /* GMGridViewController.m in Sources */,
+				F9C9ECA627BB177C830E95D1 /* GMImagePickerController.m in Sources */,
+				4482143B8F0AB56ED3955FB1 /* Pods-GMImagePicker-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F4DB739188A41BB1415BDF7F /* PBXTargetDependency */ = {
+		A62261CE5EF7E9CE151E4762 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-GMImagePicker";
-			target = 3C328DE6C79FC6EDAF085340 /* Pods-GMImagePicker */;
-			targetProxy = 9B9021A098F8E030E38D2B08 /* PBXContainerItemProxy */;
+			target = 61C9AA36C5D3D153A9452A69 /* Pods-GMImagePicker */;
+			targetProxy = 3445E59A558DD39532FE2ED9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2CECD7726E956DFC2C154C84 /* Debug */ = {
+		3BAA98A28611A936B947FCAF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 689ADB679D5C45D478C62E26 /* Pods-GMImagePicker-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6A30DA40AC095DB3A576A1B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84A62388B3A87039C80D0141 /* Pods-GMImagePicker-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -494,7 +444,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Pods-GMImagePicker/Pods-GMImagePicker.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = GMImagePicker;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -502,11 +452,11 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		4BCA43EFD4BAEB9AEFF01A58 /* Debug */ = {
+		7B5BB50A05B4CDB6F31899C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7EE841B1456BABFB3BDD09CF /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 68847E339BA63A3B7C6FA567 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -533,63 +483,7 @@
 			};
 			name = Debug;
 		};
-		97DBD5C5F6DE3E1C4E023EB4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 689ADB679D5C45D478C62E26 /* Pods-GMImagePicker-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-GMImagePicker/Pods-GMImagePicker-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-GMImagePicker/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-GMImagePicker/Pods-GMImagePicker.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = GMImagePicker;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		983768A12DE50BE1B5707E0A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62F8A43DE662B8C7DE7BFF76 /* Pods.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A625FB8CBDCCC55C96ADB622 /* Debug */ = {
+		B29643F08C1FB793F57D2281 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -628,71 +522,93 @@
 			};
 			name = Debug;
 		};
-		E52A457779768859653536C0 /* Release */ = {
+		BB29D8F393B8AB84C130DB88 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84A62388B3A87039C80D0141 /* Pods-GMImagePicker-Private.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-GMImagePicker/Pods-GMImagePicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-GMImagePicker/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-GMImagePicker/Pods-GMImagePicker.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = GMImagePicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E1CD67B0E5FF0A3E0D096D83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B95A8F34A451C16D6D64F83D /* Pods.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		23C474EB62EF29BFA64D7AF6 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		165C6D1DCA31A7AFF5A15250 /* Build configuration list for PBXNativeTarget "Pods-GMImagePicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4BCA43EFD4BAEB9AEFF01A58 /* Debug */,
-				983768A12DE50BE1B5707E0A /* Release */,
+				BB29D8F393B8AB84C130DB88 /* Debug */,
+				6A30DA40AC095DB3A576A1B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA45836BF7A1BA2D7D74ED99 /* Build configuration list for PBXProject "Pods" */ = {
+		6AA005F61D0820DDEAF903CC /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A625FB8CBDCCC55C96ADB622 /* Debug */,
-				E52A457779768859653536C0 /* Release */,
+				7B5BB50A05B4CDB6F31899C1 /* Debug */,
+				E1CD67B0E5FF0A3E0D096D83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E0B1719F48B1C4097FBEBE1B /* Build configuration list for PBXNativeTarget "Pods-GMImagePicker" */ = {
+		E6F93E2AB77F80E62DB74A97 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2CECD7726E956DFC2C154C84 /* Debug */,
-				97DBD5C5F6DE3E1C4E023EB4 /* Release */,
+				B29643F08C1FB793F57D2281 /* Debug */,
+				3BAA98A28611A936B947FCAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 5448CEB9B6F5B77A77C2C20C /* Project object */;
+	rootObject = 85F038097098B770961CB516 /* Project object */;
 }

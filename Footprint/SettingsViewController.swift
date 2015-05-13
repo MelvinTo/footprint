@@ -96,10 +96,14 @@ class SettingsViewController : UITableViewController {
         if segue.identifier == "connectorConfig" {
             var connectorConfigViewController = segue.destinationViewController as! ConnectorConfigViewController
             if let cell = sender as? UITableViewCell {
-                if cell.textLabel?.text == "照片库" {
-                    let source = "Photos"
-                    connectorConfigViewController.connector = ConnectorManager.getSharedConnectorManager().findConnectorManager(source)
-                }
+                let source = "Photos"
+                connectorConfigViewController.connector = ConnectorManager.getSharedConnectorManager().findConnectorManager(source)
+            }
+        } else if segue.identifier == "connectorConfigDropbox" {
+            var connectorConfigViewController = segue.destinationViewController as! ConnectorConfigViewController
+            if let cell = sender as? UITableViewCell {
+                let source = "Dropbox"
+                connectorConfigViewController.connector = ConnectorManager.getSharedConnectorManager().findConnectorManager(source)
             }
         }
     }

@@ -28,6 +28,9 @@ public class ConnectorManager {
         // PERFROMANCE IMPROVEMENT HERE
         let photosConnector = PhotosConnector()
         connectors[photosConnector.name] = photosConnector
+        
+        let dropboxConnector = DropboxConnector.getSharedDropboxConnector()
+        connectors[dropboxConnector.name] = dropboxConnector
     }
     
     func getAvailableConnectors() -> [Connector] {
