@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D131" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="DropboxFolderHash" representedClassName="PRODUCT_MODULE_NAME.DropboxFolderHash" syncable="YES">
+        <attribute name="folderHash" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="folderPath" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="NewPhoto" representedClassName="NewPhoto" syncable="YES">
         <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -26,5 +30,6 @@
         <element name="NewPhoto" positionX="99" positionY="54" width="128" height="150"/>
         <element name="Path" positionX="268" positionY="41" width="128" height="103"/>
         <element name="Photo" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="DropboxFolderHash" positionX="99" positionY="72" width="128" height="75"/>
     </elements>
 </model>

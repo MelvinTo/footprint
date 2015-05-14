@@ -14,6 +14,8 @@
 		370D92C91B03A53300ED9ED2 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370D92C81B03A53300ED9ED2 /* DropboxSDK.framework */; };
 		370D92CA1B03A6C000ED9ED2 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370D92C81B03A53300ED9ED2 /* DropboxSDK.framework */; };
 		370D92CC1B03AABC00ED9ED2 /* DropboxConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D92CB1B03AABC00ED9ED2 /* DropboxConfigViewController.swift */; };
+		370D92CE1B051CA900ED9ED2 /* DropboxFolderHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D92CD1B051CA900ED9ED2 /* DropboxFolderHash.swift */; };
+		370D92D01B051CC600ED9ED2 /* FolderHashCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D92CF1B051CC600ED9ED2 /* FolderHashCoreData.swift */; };
 		372B58DB1AD03142000D2483 /* PhotoStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372B58DA1AD03142000D2483 /* PhotoStoreTests.swift */; };
 		372B58E11AD036F9000D2483 /* PhotoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372B58E01AD036F9000D2483 /* PhotoLoader.swift */; };
 		372B58E41AD03AAF000D2483 /* PhotoMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372B58E31AD03AAF000D2483 /* PhotoMetadata.swift */; };
@@ -80,6 +82,8 @@
 		370D92C41B03A41100ED9ED2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		370D92C81B03A53300ED9ED2 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropboxSDK.framework; path = Pods/DropboxSDK.framework; sourceTree = "<group>"; };
 		370D92CB1B03AABC00ED9ED2 /* DropboxConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropboxConfigViewController.swift; sourceTree = "<group>"; };
+		370D92CD1B051CA900ED9ED2 /* DropboxFolderHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropboxFolderHash.swift; sourceTree = "<group>"; };
+		370D92CF1B051CC600ED9ED2 /* FolderHashCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderHashCoreData.swift; sourceTree = "<group>"; };
 		372B58DA1AD03142000D2483 /* PhotoStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStoreTests.swift; sourceTree = "<group>"; };
 		372B58E01AD036F9000D2483 /* PhotoLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLoader.swift; sourceTree = "<group>"; };
 		372B58E31AD03AAF000D2483 /* PhotoMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoMetadata.swift; sourceTree = "<group>"; };
@@ -275,6 +279,7 @@
 				37BDB4F61ACF72A800F73513 /* Photo.swift */,
 				37DFF2F11AD1C47500686E74 /* Path.swift */,
 				410469771AF7D36F00EC71B4 /* NewPhoto.swift */,
+				370D92CD1B051CA900ED9ED2 /* DropboxFolderHash.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 			children = (
 				37BDB4DB1ACED72B00F73513 /* PhotoStore.swift */,
 				37E20EF11AFA745100EDDA30 /* PhotoObjectCoreData.swift */,
+				370D92CF1B051CC600ED9ED2 /* FolderHashCoreData.swift */,
 			);
 			name = DB;
 			sourceTree = "<group>";
@@ -540,6 +546,7 @@
 			files = (
 				41A2E8E51AD70B6600240EB5 /* FootprintCell.swift in Sources */,
 				37BDB4E71ACF0CA700F73513 /* Photos.xcdatamodeld in Sources */,
+				370D92CE1B051CA900ED9ED2 /* DropboxFolderHash.swift in Sources */,
 				37DFF2F01AD1BEC800686E74 /* Footprint.swift in Sources */,
 				37BDB4BE1ACED65500F73513 /* SecondViewController.swift in Sources */,
 				37BDB4BA1ACED65500F73513 /* AppDelegate.swift in Sources */,
@@ -562,6 +569,7 @@
 				37E20EF51AFA867200EDDA30 /* SettingsViewController.swift in Sources */,
 				41660D451AF7C457002FEE8B /* ConnectorManager.swift in Sources */,
 				37DFF2F41AD22AD600686E74 /* PathCreateViewController.swift in Sources */,
+				370D92D01B051CC600ED9ED2 /* FolderHashCoreData.swift in Sources */,
 				37E20EF01AF9271200EDDA30 /* PhotoObject.swift in Sources */,
 				3734887C1AE943960068FC73 /* MapHelper.swift in Sources */,
 				37BDB4F71ACF72A800F73513 /* Photo.swift in Sources */,
