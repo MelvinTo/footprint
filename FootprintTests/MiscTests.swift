@@ -101,7 +101,9 @@ class MiscTests: XCTestCase {
         
         // "Wed, 28 Aug 2013 18:12:02 +0000"
         dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss Z"
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
         let x = dateFormatter.dateFromString("Fri, 23 Mar 2012 09:02:09 +0000")
+
         XCTAssertNotNil(x, "Date should not be nil")
     }
 

@@ -342,12 +342,12 @@
                   moduleName = "Footprint"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tbb/Dropbox/workspace/Footprint/Footprint/PhotoAnnotation.swift"
-                  timestampString = "453407233.354232"
+                  timestampString = "453408928.995479"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -357,12 +357,12 @@
                   moduleName = "Footprint"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tbb/Dropbox/workspace/Footprint/Footprint/PhotoAnnotation.swift"
-                  timestampString = "453407233.3544"
+                  timestampString = "453408928.995612"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
                   endingLineNumber = "12"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -855,11 +855,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/DropboxConnector.swift"
-            timestampString = "453405192.945049"
+            timestampString = "453408928.924793"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "restClient(_:loadedMetadata:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -871,11 +871,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/DropboxConnector.swift"
-            timestampString = "453405192.945049"
+            timestampString = "453408928.924793"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "restClient(_:loadMetadataFailedWithError:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -963,22 +963,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Footprint/DropboxConnector.swift"
-            timestampString = "453405192.945049"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "parseFileMetadata(_:blockForEachPhoto:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -990,6 +974,54 @@
             endingLineNumber = "152"
             landmarkName = "parseFileMetadata(_:blockForEachPhoto:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FootprintTests/MiscTests.swift"
+            timestampString = "453408837.03173"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "testDateFormatter()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FootprintTests.MiscTests.testDateFormatter (FootprintTests.MiscTests)() -&gt; ()"
+                  moduleName = "FootprintTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tbb/Dropbox/workspace/Footprint/FootprintTests/MiscTests.swift"
+                  timestampString = "453407934.442673"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "376">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FootprintTests.MiscTests.(testDateFormatter (FootprintTests.MiscTests) -&gt; () -&gt; ()).(implicit closure #1)"
+                  moduleName = "FootprintTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tbb/Dropbox/workspace/Footprint/FootprintTests/MiscTests.swift"
+                  timestampString = "453407934.442839"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

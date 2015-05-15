@@ -170,7 +170,8 @@ extension String {
     
     var toDropboxDate: NSDate? {
         var dateFormatter = NSDateFormatter()
-        
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
+
         // "Wed, 28 Aug 2013 18:12:02 +0000"
         dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss Z"
         return dateFormatter.dateFromString(self)

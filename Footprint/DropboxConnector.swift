@@ -157,12 +157,8 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
                     let source = "Dropbox"
                     let identifier = path
                     let name = path
-                    let createTimeString = photo_info["time_taken"] as! String
-                    var dateFormatter = NSDateFormatter()
-                    
-                    // "Wed, 28 Aug 2013 18:12:02 +0000"
-                    dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss Z"
-                    let createdDate = dateFormatter.dateFromString(createTimeString)
+                    let createdTimeString = photo_info["time_taken"] as! String
+                    let createdDate = createdTimeString.toDropboxDate
                     
                     var photoObject = PhotoObject(identifier: identifier, timestamp: createdDate!, latitude: latitude, longitude: longitude)
                     photoObject.source = source
