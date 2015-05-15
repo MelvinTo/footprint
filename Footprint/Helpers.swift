@@ -159,5 +159,21 @@ extension String {
     func localizedWithComment(comment:String) -> String {
         return NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: comment)
     }
+    
+    var floatValue: Float {
+        return (self as NSString).floatValue
+    }
+    
+    var doubleValue: Double {
+        return (self as NSString).doubleValue
+    }
+    
+    var toDropboxDate: NSDate? {
+        var dateFormatter = NSDateFormatter()
+        
+        // "Wed, 28 Aug 2013 18:12:02 +0000"
+        dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss Z"
+        return dateFormatter.dateFromString(self)
+    }
 }
 

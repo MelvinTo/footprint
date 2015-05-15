@@ -91,5 +91,18 @@ class MiscTests: XCTestCase {
         NSThread.sleepForTimeInterval(3.0)
 
     }
+    
+    func testToDropboxDate() {
+        XCTAssertNotNil("Fri, 23 Mar 2012 09:02:09 +0000".toDropboxDate, "DropboxDate should not be nil")
+    }
+    
+    func testDateFormatter() {
+        var dateFormatter = NSDateFormatter()
+        
+        // "Wed, 28 Aug 2013 18:12:02 +0000"
+        dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss Z"
+        let x = dateFormatter.dateFromString("Fri, 23 Mar 2012 09:02:09 +0000")
+        XCTAssertNotNil(x, "Date should not be nil")
+    }
 
 }

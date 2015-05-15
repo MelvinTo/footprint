@@ -52,7 +52,7 @@ public class PhotosConnector : Connector {
         })
     }
     
-    public func loadPhotos(blockForEachPhoto: (PhotoObject, Int) -> Void, completed: (Void -> Void)?) {
+    public func loadPhotos(blockForEachPhoto: (PhotoObject, Int?) -> Void, completed: (Void -> Void)?) {
         let fetchAssetsResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: PHFetchOptions())
         var indexSet = NSIndexSet(indexesInRange: NSMakeRange(0, fetchAssetsResult!.count))
         fetchAssetsResult!.enumerateObjectsAtIndexes(indexSet, options: nil, usingBlock: { object, index, stop in

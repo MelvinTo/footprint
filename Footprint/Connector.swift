@@ -10,7 +10,7 @@ import Foundation
 
 public protocol Connector {
     func numberOfPhotos() -> Int
-    func loadPhotos(blockForEachPhoto: (PhotoObject, Int) -> Void, completed: (Void -> Void)?)
+    func loadPhotos(blockForEachPhoto: (PhotoObject, Int?) -> Void, completed: (Void -> Void)?)
     func getRawImage(photo: PhotoObject, width: CGFloat, height: CGFloat, block: (UIImage?, NSError?) -> Void)
     var name: String {
         get

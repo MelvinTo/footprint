@@ -66,8 +66,10 @@ public class ConnectorManager {
                 NSLog("Photo \(photo.identifier) is added")
             
                 if let p = progress {
-                    dispatch_async(dispatch_get_main_queue()) {
-                        p(Float(index)/Float(count)/2.0)
+                    if let i = index {
+                        dispatch_async(dispatch_get_main_queue()) {
+                            p(Float(i)/Float(count)/2.0)
+                        }
                     }
                 }
             }

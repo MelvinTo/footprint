@@ -17,6 +17,9 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "Footprint.PathCreateViewController.viewDidLoad (Footprint.PathCreateViewController)() -&gt; ():PathCreateViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "Footprint.FootprintViewController.(assetsPickerController (Footprint.FootprintViewController) -&gt; (Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.GMImagePickerController&gt;, didFinishPickingAssets : Swift.ImplicitlyUnwrappedOptional&lt;Swift.Array&lt;Swift.AnyObject&gt;&gt;) -&gt; ()).(closure #1):FootprintViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -25,16 +28,36 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "Footprint.PathCreateViewController.viewDidLoad (Footprint.PathCreateViewController)() -&gt; ():PathCreateViewController.swift">
+         contextName = "Footprint.PathCreateViewController.loadImage (Footprint.PathCreateViewController)(Footprint.PhotoCollectionCell, photo : Footprint.PhotoMetadata) -&gt; ():PathCreateViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "Footprint.PathCreateViewController.loadImage (Footprint.PathCreateViewController)(Footprint.PhotoCollectionCell, photo : Footprint.PhotoMetadata) -&gt; ():PathCreateViewController.swift">
+         contextName = "Footprint.DropboxConnector.loadFileURL (Footprint.DropboxConnector)(Swift.String) -&gt; ():DropboxConnector.swift">
       </ContextState>
       <ContextState
          contextName = "Footprint.PhotoCollectionCell.init (Footprint.PhotoCollectionCell.Type)(coder : ObjectiveC.NSCoder) -&gt; Footprint.PhotoCollectionCell:PhotoCollectionCell.swift">
          <PersistentStrings>
             <PersistentString
                value = "NSBundle.mainBundle()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.SettingsViewController.viewDidLoad (Footprint.SettingsViewController)() -&gt; ():SettingsViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.DropboxConnector.loadPhotos (Footprint.DropboxConnector)((Footprint.PhotoObject, Swift.Int) -&gt; (), completed : Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ():DropboxConnector.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.DropboxConnector.parseFileMetadata (Footprint.DropboxConnector)(ObjectiveC.NSDictionary, blockForEachPhoto : (Footprint.PhotoObject, Swift.Optional&lt;Swift.Int&gt;) -&gt; ()) -&gt; ():DropboxConnector.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dateFormatter.dateFormat">
+            </PersistentString>
+            <PersistentString
+               value = "dateFormatter.dateFromString(createTimeString)">
+            </PersistentString>
+            <PersistentString
+               value = "photo_info[&quot;lat_long&quot;]![0]!">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
