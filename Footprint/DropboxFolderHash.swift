@@ -9,6 +9,8 @@
 import Foundation
 import CoreData
 
+@objc(DropboxFolderHash)
+
 class DropboxFolderHash: NSManagedObject {
 
     @NSManaged var folderPath: String

@@ -19,6 +19,8 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
     var dbRestClient: DBRestClient? = nil
     var activeConnectionCnt: Int = 0
     var semaphore: dispatch_semaphore_t? = nil
+    
+    var hashCache: [String: String] = [:]
 
 //    var queue = dispatch_queue_create("dropboxLoadPhotos", DISPATCH_QUEUE_SERIAL)
     
@@ -36,6 +38,19 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
         super.init()
         var dbSession = DBSession(appKey: DropboxConnector.appKey, appSecret: DropboxConnector.appSecret, root: kDBRootDropbox)
         DBSession.setSharedSession(dbSession)
+        
+        // load existing hashCaches from database
+        dispatch_async(dispatch_get_main_queue(), {
+            if let context = CoreDataHelper.getSharedCoreDataHelper().managedObjectContext {
+                let folderHashDB = FolderHashCoreData(context: context)
+                if let results = folderHashDB.loadAllFolderHashes() {
+                    for result in results {
+                        self.hashCache[result.folderPath] = result.folderHash
+                    }
+                }
+            }
+        })
+
     }
     
     public func numberOfPhotos() -> Int {
@@ -70,14 +85,19 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
     }
     
     func loadDirURL(dirURL: String, blockForEachPhoto: (PhotoObject, Int?) -> Void) {
-        var urlString = "https://api.dropbox.com/1/metadata/auto\(dirURL)?include_media_info=true&list=true".stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
         
-        if urlString == nil {
-            NSLog("Invalid URL: \(dirURL)")
-            return
+        var urlString = "https://api.dropbox.com/1/metadata/auto\(dirURL)?include_media_info=true&list=true"
+        if let hash = hashCache[dirURL] {
+            urlString += "&hash=\(hash)"
         }
-        
-        let url = NSURL(string: urlString!)
+        urlString = urlString.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+//        
+//        if urlString == nil {
+//            NSLog("Invalid URL: \(dirURL)")
+//            return
+//        }
+//        
+        let url = NSURL(string: urlString)
         if url == nil {
             NSLog("Failed to create NSURL based on: \(urlString)")
             return
@@ -102,10 +122,23 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
             if (jsonResult != nil) {
                 // process jsonResult
 //                NSLog("\(jsonResult)")
+                
+                // Successfully loaded the content of this folder
                 self.parseJSONResult(jsonResult, blockForEachPhoto: blockForEachPhoto)
+                
+                // update hash if needed
+                if let newHash = jsonResult["hash"] as? String {
+                    if let context = CoreDataHelper.getSharedCoreDataHelper().managedObjectContext {
+                        let folderHashDB = FolderHashCoreData(context: context)
+                        folderHashDB.createOrUpdateFolderHash(dirURL, hash: newHash)
+                    }
+                    // update local cache
+                    self.hashCache[dirURL] = newHash
+                }
+                
             } else {
                 // couldn't load JSON, look at error
-                NSLog("Error: \(error)")
+                NSLog("Error: \(error2)")
             }
             self.activeConnectionCnt--
             if self.activeConnectionCnt == 0 {
