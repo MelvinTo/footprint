@@ -39,6 +39,8 @@ class FolderHashCoreData {
                 .insertNewObjectForEntityForName(   "DropboxFolderHash",
                                                     inManagedObjectContext: context)
                 as! DropboxFolderHash)
+            folderHash?.folderPath = path
+            folderHash?.folderHash = hash
         }
         
         var error: NSError? = nil

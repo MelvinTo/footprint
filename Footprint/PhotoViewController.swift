@@ -87,11 +87,12 @@ class PhotoDataViewController : UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.loadImage()
+//        self.loadImage()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loadImage()
     }
     
     func loadImage() {
@@ -99,16 +100,16 @@ class PhotoDataViewController : UIViewController {
         let width = imageView.bounds.size.width * retinaMultiplier
         let height = imageView.bounds.size.height * retinaMultiplier
         
-        dispatch_async(dispatch_get_main_queue(), {
-            println("Getting image \(self.dataObject!.identifier) with background queue")
+        println("Getting image \(self.dataObject!.identifier) with background queue")
             
-            if let connector = ConnectorManager.getSharedConnectorManager().findConnectorManager(self.dataObject!) {
-                connector.getRawImage(self.dataObject!, width: width, height: height) { image, error in
+        if let connector = ConnectorManager.getSharedConnectorManager().findConnectorManager(self.dataObject!) {
+            connector.getRawImage(self.dataObject!, width: width, height: height) { image, error in
+                dispatch_async(dispatch_get_main_queue(), {
                     self.imageView.image = image
                     self.imageView.clipsToBounds = true
-                }
+                })
             }
-        })
+        }
     }
     
     func enableActivityViewController() {

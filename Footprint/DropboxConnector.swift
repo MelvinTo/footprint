@@ -57,7 +57,50 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
         return 0
     }
     
+    // setup request for use, including utf8 encoding and authentication
+    func prepareHTTPRequest(url: String) -> NSMutableURLRequest? {
+        let encodedURL = url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+        if encodedURL == nil {
+            NSLog("Failed to utf8-encode \(url)")
+            return nil
+        }
+        
+        let nsURL = NSURL(string: encodedURL!)
+        if nsURL == nil {
+            NSLog("Failed to create NSURL based on: \(encodedURL)")
+            return nil
+        }
+        
+        var request : NSMutableURLRequest = NSMutableURLRequest(URL: nsURL!)
+        request.HTTPMethod = "GET"
+        request.setValue(prepareHTTPRequestHeader(), forHTTPHeaderField: "Authorization")
+        
+        return request
+    }
+    
     public func getRawImage(photo: PhotoObject, width: CGFloat, height: CGFloat, block: (UIImage?, NSError?) -> Void) {
+        let thumbnailURL = "https://api-content.dropbox.com/1/thumbnails/auto\(photo.identifier)?size=xl"
+        
+        var request = prepareHTTPRequest(thumbnailURL)
+
+        if request == nil {
+            NSLog("Failed to create request for url: \(thumbnailURL)")
+            return
+        }
+        
+        NSLog("encoded url: \(request!.URL?.absoluteString)")
+        
+        NSURLConnection.sendAsynchronousRequest(request!, queue: NSOperationQueue(), completionHandler:{ (response:NSURLResponse!, data: NSData!, requestError: NSError!) -> Void in
+            if let e = requestError {
+                let url = request!.URL
+                NSLog("Got error \(e) when accessing url: \(url!.absoluteString)")
+                block(nil,requestError)
+            } else {
+                let image = UIImage(data: data)
+                block(image, nil)
+            }
+        })
+
     }
     
     func prepareHTTPRequestHeader() -> String? {
@@ -90,28 +133,18 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
         if let hash = hashCache[dirURL] {
             urlString += "&hash=\(hash)"
         }
-        urlString = urlString.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-//        
-//        if urlString == nil {
-//            NSLog("Invalid URL: \(dirURL)")
-//            return
-//        }
-//        
-        let url = NSURL(string: urlString)
-        if url == nil {
-            NSLog("Failed to create NSURL based on: \(urlString)")
+        
+        var request = prepareHTTPRequest(urlString)
+        
+        if request == nil {
+            NSLog("Failed to create request for url: \(urlString)")
             return
         }
         
-        var request : NSMutableURLRequest = NSMutableURLRequest(URL: url!)
-        request.HTTPMethod = "GET"
-        request.setValue(prepareHTTPRequestHeader(), forHTTPHeaderField: "Authorization")
-        let headers = request.valueForHTTPHeaderField("Authorization")
-        
         self.activeConnectionCnt++
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue(), completionHandler:{ (response:NSURLResponse!, data: NSData!, error2: NSError!) -> Void in
+        NSURLConnection.sendAsynchronousRequest(request!, queue: NSOperationQueue(), completionHandler:{ (response:NSURLResponse!, data: NSData!, error2: NSError!) -> Void in
             if let e = error2 {
-                let url = request.URL
+                let url = request!.URL
                 NSLog("Got error \(e) when accessing url: \(url!)")
                 return
             }
@@ -128,10 +161,17 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
                 
                 // update hash if needed
                 if let newHash = jsonResult["hash"] as? String {
-                    if let context = CoreDataHelper.getSharedCoreDataHelper().managedObjectContext {
-                        let folderHashDB = FolderHashCoreData(context: context)
-                        folderHashDB.createOrUpdateFolderHash(dirURL, hash: newHash)
+                    
+                    var queue = dispatch_queue_create("storeHash", DISPATCH_QUEUE_SERIAL)
+                    dispatch_async(queue) {
+                        
+                        if let ctxt = CoreDataHelper.getSharedCoreDataHelper().backgroundContext {
+                            let folderHashDB = FolderHashCoreData(context: ctxt)
+                            folderHashDB.createOrUpdateFolderHash(dirURL, hash: newHash)
+                        }
+                        
                     }
+
                     // update local cache
                     self.hashCache[dirURL] = newHash
                 }

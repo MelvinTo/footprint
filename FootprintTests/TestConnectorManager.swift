@@ -63,4 +63,15 @@ class TestConnectorManager: XCTestCase {
         let manager = ConnectorManager.getSharedConnectorManager()
         manager.storeNewPhotos(PhotosConnector(), context: context!, progress: nil, completed: nil)
     }
+    
+    func testDropboxGetRawImage() {
+        let photo = PhotoObject(identifier: "/Photos/小孩/甜甜/201203第一个月/2012-03-25/IMG_1599.JPG", timestamp: NSDate(), latitude: 0.0, longitude: 0.0)
+        var dropboxConnector = DropboxConnector.getSharedDropboxConnector()
+        dropboxConnector.getRawImage(photo, width: 0, height: 0) { (image, error) -> Void in
+            NSLog("image: \(image)")
+            XCTAssertNil(error, "should have no error to load test image")
+        }
+        
+        NSThread.sleepForTimeInterval(10.0)
+    }
 }    
