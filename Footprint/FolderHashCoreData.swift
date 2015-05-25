@@ -92,5 +92,25 @@ class FolderHashCoreData {
         }
 
     }
+    
+    func deleteHashes() -> Bool {
+        var error: NSError? = nil
+        var fReq: NSFetchRequest = NSFetchRequest(entityName: "DropboxFolderHash")
+        var result = context.executeFetchRequest(fReq, error:&error)
+        if let hashes = result as? [DropboxFolderHash] {
+            for hash in hashes {
+                context.deleteObject(hash)
+            }
+            
+            if context.hasChanges && !context.save(&error) {
+                NSLog("Unresolved error \(error), \(error!.userInfo)")
+                return false
+            } else {
+                NSLog("\(hashes.count) hash(es) have been deleted from Core Data")
+            }
+        }
+        return true
+    }
+
 
 }

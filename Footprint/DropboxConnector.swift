@@ -21,6 +21,9 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
     var semaphore: dispatch_semaphore_t? = nil
     
     var hashCache: [String: String] = [:]
+    
+    var queue = dispatch_queue_create("storeHash", DISPATCH_QUEUE_SERIAL)
+
 
 //    var queue = dispatch_queue_create("dropboxLoadPhotos", DISPATCH_QUEUE_SERIAL)
     
@@ -143,6 +146,23 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
         
         self.activeConnectionCnt++
         NSURLConnection.sendAsynchronousRequest(request!, queue: NSOperationQueue(), completionHandler:{ (response:NSURLResponse!, data: NSData!, error2: NSError!) -> Void in
+            
+            if let httpResponse = response as? NSHTTPURLResponse {
+                let statusCode = httpResponse.statusCode
+                switch statusCode {
+                case 200:
+                    // success
+                    NSLog("Got content for url: \(urlString)")
+                case 304:
+                    // not modified..
+                    NSLog("Folder \(urlString) is not changed")
+                    return
+                default:
+                    NSLog("Got http response code \(statusCode) when requesting url \(urlString)")
+                    return // do not run further..
+                }
+            }
+            
             if let e = error2 {
                 let url = request!.URL
                 NSLog("Got error \(e) when accessing url: \(url!)")
@@ -162,8 +182,7 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
                 // update hash if needed
                 if let newHash = jsonResult["hash"] as? String {
                     
-                    var queue = dispatch_queue_create("storeHash", DISPATCH_QUEUE_SERIAL)
-                    dispatch_async(queue) {
+                    dispatch_async(self.queue) {
                         
                         if let ctxt = CoreDataHelper.getSharedCoreDataHelper().backgroundContext {
                             let folderHashDB = FolderHashCoreData(context: ctxt)
@@ -213,7 +232,9 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
             } else {
                 // dir
                 if let dirPath = element["path"] as? String {
-                    loadDirURL(dirPath, blockForEachPhoto: blockForEachPhoto)
+                    dispatch_async(self.queue) {
+                        self.loadDirURL(dirPath, blockForEachPhoto: blockForEachPhoto)
+                    }
                 }
             }
         }
@@ -222,16 +243,23 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
     func parseFileMetadata(metadata: NSDictionary, blockForEachPhoto: (PhotoObject, Int?) -> Void) {
         if let path = metadata["path"] as? String {
             if let photo_info = metadata["photo_info"] as? NSDictionary {
-                NSLog("photo_info: \(photo_info)")
+//                NSLog("photo_info: \(photo_info)")
                 if let latlon = photo_info["lat_long"] as? Array<NSNumber> {
-                    NSLog("latlon: \(latlon)")
+//                    NSLog("latlon: \(latlon)")
                     let latitude = latlon[0].doubleValue
                     let longitude = latlon[1].doubleValue
                     let source = "Dropbox"
                     let identifier = path
                     let name = path
-                    let createdTimeString = photo_info["time_taken"] as! String
-                    let createdDate = createdTimeString.toDropboxDate
+                    var createdDate: NSDate? = nil
+                    
+                    if let timeTaken = photo_info["time_taken"] as? String {
+                        createdDate = timeTaken.toDropboxDate
+                    } else if let clientMTime = metadata["client_mtime"] as? String {
+                        createdDate = clientMTime.toDropboxDate
+                    } else if let modifiedDate = metadata["modified"] as? String {
+                        createdDate = modifiedDate.toDropboxDate // use modified date as created date becuase created date info is missing
+                    }
                     
                     var photoObject = PhotoObject(identifier: identifier, timestamp: createdDate!, latitude: latitude, longitude: longitude)
                     photoObject.source = source
@@ -240,7 +268,7 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
                     blockForEachPhoto(photoObject, nil)
                     
                     
-                    NSLog("\(latitude), \(longitude)")
+//                    NSLog("\(latitude), \(longitude)")
                 } else {
 //                    NSLog("NO GPS info on photo: \(path)")
                 }
@@ -253,9 +281,9 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
         semaphore = dispatch_semaphore_create(0)
         
         if self.isLinked() {
-            
-            loadDirURL("/Photos/小孩/甜甜/201203第一个月/", blockForEachPhoto: blockForEachPhoto)
-        
+            dispatch_async(self.queue) {
+                self.loadDirURL("/Photos/", blockForEachPhoto: blockForEachPhoto)
+            }
         } else {
             NSLog("Dropbox is not linked")
         }
@@ -294,5 +322,9 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
     
     public func restClient(client: DBRestClient!, loadMetadataFailedWithError error: NSError!) {
         NSLog("Failed to load metadata with error: \(error)")
+    }
+    
+    func cleanup() {
+        self.hashCache = [:]
     }
 }

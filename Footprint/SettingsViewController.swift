@@ -80,6 +80,14 @@ class SettingsViewController : UITableViewController {
             } else {
                 NSLog("Failed to delete all photos")
             }
+            
+            var hashDB = FolderHashCoreData(context: context!)
+            let result2 = hashDB.deleteHashes()
+            if result2 {
+                NSLog("All hashes are deleted successfully")
+            } else {
+                NSLog("Failed to delete all hashes")
+            }
         }
         
         var cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in

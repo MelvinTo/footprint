@@ -82,6 +82,25 @@
          contextName = "FootprintTests.MiscTests.testDateFormatter (FootprintTests.MiscTests)() -&gt; ():MiscTests.swift">
       </ContextState>
       <ContextState
+         contextName = "Footprint.DropboxConnector.(loadDirURL (Footprint.DropboxConnector) -&gt; (Swift.String, blockForEachPhoto : (Footprint.PhotoObject, Swift.Optional&lt;Swift.Int&gt;) -&gt; ()) -&gt; ()).(closure #1):DropboxConnector.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "request!.URL">
+            </PersistentString>
+            <PersistentString
+               value = "response as? NSHTTPURLResponse">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "function signature specialization &lt;Arg[3] = Dead, Arg[4] = Value Promoted from InOut&gt; of Footprint.DropboxConnector.(loadDirURL (Footprint.DropboxConnector) -&gt; (Swift.String, blockForEachPhoto : (Footprint.PhotoObject, Swift.Optional&lt;Swift.Int&gt;) -&gt; ()) -&gt; ()).(closure #1):DropboxConnector.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "error2.code">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = ":PhotoViewController.swift">
          <PersistentStrings>
             <PersistentString

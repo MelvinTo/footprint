@@ -56,7 +56,7 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
     }
     
     func handlePhotoChange(notification: NSNotification) {
-        NSLog("handlePHotoChange is called")
+//        NSLog("handlePHotoChange is called")
         dispatch_async(dispatch_get_main_queue(), {
             self.resetAnnotations()
             self.loadExistingPhotos()
@@ -249,7 +249,7 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
     }
     
     func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
-        NSLog("regionDidChangeAnimated is called")
+//        NSLog("regionDidChangeAnimated is called")
         dispatch_async(dispatch_get_main_queue()) {
             self.updateVisibleAnnotations()
 //            self.mapView.setRegion(self.mapView.region, animated: false)
