@@ -18,7 +18,6 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
     
     var dbRestClient: DBRestClient? = nil
     var activeConnectionCnt: Int = 0
-    var semaphore: dispatch_semaphore_t? = nil
     
     var hashCache: [String: String] = [:]
     
@@ -132,6 +131,8 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
     
     func loadDirURL(dirURL: String, blockForEachPhoto: (PhotoObject, Int?) -> Void) {
         
+        NSLog("Loading URL: \(dirURL)")
+        
         var urlString = "https://api.dropbox.com/1/metadata/auto\(dirURL)?include_media_info=true&list=true"
         if let hash = hashCache[dirURL] {
             urlString += "&hash=\(hash)"
@@ -144,37 +145,41 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
             return
         }
         
-        self.activeConnectionCnt++
-        NSURLConnection.sendAsynchronousRequest(request!, queue: NSOperationQueue(), completionHandler:{ (response:NSURLResponse!, data: NSData!, error2: NSError!) -> Void in
-            
-            if let httpResponse = response as? NSHTTPURLResponse {
-                let statusCode = httpResponse.statusCode
-                switch statusCode {
-                case 200:
-                    // success
-                    NSLog("Got content for url: \(urlString)")
-                case 304:
-                    // not modified..
-                    NSLog("Folder \(urlString) is not changed")
-                    return
-                default:
-                    NSLog("Got http response code \(statusCode) when requesting url \(urlString)")
-                    return // do not run further..
-                }
-            }
-            
-            if let e = error2 {
-                let url = request!.URL
-                NSLog("Got error \(e) when accessing url: \(url!)")
-                return
-            }
-            
-            var error: AutoreleasingUnsafeMutablePointer<NSError?> = nil
-            let jsonResult: NSDictionary! = NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions.MutableContainers, error: error) as? NSDictionary
+        var error: NSErrorPointer = nil
+        var response: NSURLResponse?
+        
+        let data = NSURLConnection.sendSynchronousRequest(request!, returningResponse: &response, error: error)
+        
+        NSLog("response: \(response)")
+//        if let httpResponse = response.memory as? NSHTTPURLResponse {
+//            let statusCode = httpResponse.statusCode
+//            switch statusCode {
+//            case 200:
+//                // success
+//                NSLog("Got content for url: \(urlString)")
+//            case 304:
+//                // not modified..
+//                NSLog("Folder \(urlString) is not changed")
+//                return
+//            default:
+//                NSLog("Got http response code \(statusCode) when requesting url \(urlString)")
+//                return // do not run further..
+//            }
+//        }
+
+        if error != nil {
+            let url = request!.URL
+            NSLog("Got error \(error.memory!.domain) - \(error.memory!.code) when accessing url: \(url!)")
+            return
+        }
+        
+        if let d = data {
+            var jsonError: AutoreleasingUnsafeMutablePointer<NSError?> = nil
+            let jsonResult: NSDictionary! = NSJSONSerialization.JSONObjectWithData(d, options:NSJSONReadingOptions.MutableContainers, error: jsonError) as? NSDictionary
             
             if (jsonResult != nil) {
                 // process jsonResult
-//                NSLog("\(jsonResult)")
+                //                NSLog("\(jsonResult)")
                 
                 // Successfully loaded the content of this folder
                 self.parseJSONResult(jsonResult, blockForEachPhoto: blockForEachPhoto)
@@ -182,28 +187,24 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
                 // update hash if needed
                 if let newHash = jsonResult["hash"] as? String {
                     
-                    dispatch_async(self.queue) {
-                        
-                        if let ctxt = CoreDataHelper.getSharedCoreDataHelper().backgroundContext {
-                            let folderHashDB = FolderHashCoreData(context: ctxt)
-                            folderHashDB.createOrUpdateFolderHash(dirURL, hash: newHash)
-                        }
-                        
-                    }
-
+                    //                    dispatch_async(self.queue) {
+                    //
+                    //                        if let ctxt = CoreDataHelper.getSharedCoreDataHelper().backgroundContext {
+                    //                            let folderHashDB = FolderHashCoreData(context: ctxt)
+                    //                            folderHashDB.createOrUpdateFolderHash(dirURL, hash: newHash)
+                    //                        }
+                    //
+                    //                    }
+                    
                     // update local cache
                     self.hashCache[dirURL] = newHash
                 }
                 
             } else {
                 // couldn't load JSON, look at error
-                NSLog("Error: \(error2)")
+                NSLog("Error: \(jsonError)")
             }
-            self.activeConnectionCnt--
-            if self.activeConnectionCnt == 0 {
-                dispatch_semaphore_signal(self.semaphore!)
-            }
-        })
+        }
     }
     
     func parseJSONResult(jsonResult: NSDictionary, blockForEachPhoto: (PhotoObject, Int?) -> Void) {
@@ -232,9 +233,7 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
             } else {
                 // dir
                 if let dirPath = element["path"] as? String {
-                    dispatch_async(self.queue) {
-                        self.loadDirURL(dirPath, blockForEachPhoto: blockForEachPhoto)
-                    }
+                    self.loadDirURL(dirPath, blockForEachPhoto: blockForEachPhoto)
                 }
             }
         }
@@ -278,18 +277,12 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
     
     public func loadPhotos(blockForEachPhoto: (PhotoObject, Int?) -> Void, completed: (Void -> Void)?) {
         NSLog("Load photo called!!")
-        semaphore = dispatch_semaphore_create(0)
         
         if self.isLinked() {
-            dispatch_async(self.queue) {
-                self.loadDirURL("/Photos/", blockForEachPhoto: blockForEachPhoto)
-            }
+            self.loadDirURL("/Photos/", blockForEachPhoto: blockForEachPhoto)
         } else {
             NSLog("Dropbox is not linked")
         }
-        
-        dispatch_semaphore_wait(semaphore!, dispatch_time(DISPATCH_TIME_NOW, 3600000000000))
-        semaphore = nil
         
         if let x = completed {
             x()

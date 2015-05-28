@@ -63,7 +63,7 @@ public class ConnectorManager {
         connector.loadPhotos({ photo, index in
             if !photoDBManager.photoExists(photo.identifier) {
                 photosToBeAdded.append(photo)
-                NSLog("Photo \(photo.identifier) is added")
+//                NSLog("Photo \(photo.identifier) is added")
             
                 if let p = progress {
                     if let i = index {
@@ -77,7 +77,7 @@ public class ConnectorManager {
             
             for var index = 0; index < photosToBeAdded.count; ++index {
                 photosToBeAdded[index].toNewPhoto(context)
-                NSLog("photo format transformmed: \(photosToBeAdded[index].identifier)")
+//                NSLog("photo format transformmed: \(photosToBeAdded[index].identifier)")
                 if let p = progress {
                     dispatch_async(dispatch_get_main_queue()) {
                         p(0.5 + Float(index)/Float(photosToBeAdded.count)/2.0)

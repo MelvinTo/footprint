@@ -21,13 +21,14 @@ class ConnectorConfigViewController : UITableViewController {
         
         self.title = "connector.\(connector!.name)".localized
         self.manualSyncButton.setTitle("connectorConfigViewController.manualSync".localized, forState: .Normal)
+        self.manualSyncButton.setTitle("ConnectorConfigViewController.SYNCING".localized, forState: .Disabled)
     }
     
     @IBAction func syncManually() {
         if let c = connector {
             
             
-            self.manualSyncButton.setTitle("ConnectorConfigViewController.SYNCING".localized, forState: .Normal)
+            self.manualSyncButton.enabled = false
             self.progressBar.hidden = false
             self.progressBar.progress = 0.0
 
@@ -44,7 +45,7 @@ class ConnectorConfigViewController : UITableViewController {
                         self.progressBar.setProgress(progress, animated: true)
                     }) {
                     dispatch_async(dispatch_get_main_queue()) {
-                        self.manualSyncButton.setTitle("ConnectorConfigViewController.SYNC".localized, forState: .Normal)
+                        self.manualSyncButton.enabled = true
                         self.manualSyncButton.setNeedsDisplay()
                         self.progressBar.setProgress(1.0, animated: true)
                         self.progressBar.hidden = true

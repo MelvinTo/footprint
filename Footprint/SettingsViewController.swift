@@ -88,6 +88,8 @@ class SettingsViewController : UITableViewController {
             } else {
                 NSLog("Failed to delete all hashes")
             }
+            
+            DropboxConnector.getSharedDropboxConnector().cleanup()
         }
         
         var cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in

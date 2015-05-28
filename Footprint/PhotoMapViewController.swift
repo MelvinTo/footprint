@@ -109,7 +109,7 @@ class PhotoMapViewController : UIViewController, MKMapViewDelegate, CLLocationMa
         // Adjust this roughly based on the dimensions of your annotations views.
         // Bigger numbers more aggressively coalesce annotations (fewer annotations displayed but better performance).
         // Numbers too small result in overlapping annotations views and too many annotations on screen.
-        let bucketSize = 60.0
+        let bucketSize = 30.0
 
         // find all the annotations in the visible area + a wide margin to avoid popping annotation views in and out while panning the map.
         let visibleMapRect = self.mapView.visibleMapRect
