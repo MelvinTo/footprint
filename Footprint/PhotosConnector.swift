@@ -27,7 +27,6 @@ public class PhotosConnector : Connector {
     }
 
     public func getRawImage(photo: PhotoObject, width: CGFloat, height: CGFloat, block: (UIImage?, NSError?) -> Void) {
-        let retinaMultiplier = UIScreen.mainScreen().scale
         let identifier = photo.identifier
         let fetchAssetsResult = PHAsset.fetchAssetsWithLocalIdentifiers([identifier], options: PHFetchOptions())
         
@@ -38,13 +37,13 @@ public class PhotosConnector : Connector {
         
         let photo = fetchAssetsResult.objectAtIndex(0) as! PHAsset
         
-        var retinaSquare = CGSizeMake(width * retinaMultiplier, height * retinaMultiplier)
+        var size = CGSizeMake(width, height)
         
         var requestOptions = PHImageRequestOptions()
         requestOptions.resizeMode = PHImageRequestOptionsResizeMode.Exact
         
         imageManager?.requestImageForAsset(photo,
-            targetSize: retinaSquare,
+            targetSize: size,
             contentMode: PHImageContentMode.AspectFill,
             options: requestOptions,
             resultHandler: { (image: UIImage!, info: [NSObject : AnyObject]!) -> Void in

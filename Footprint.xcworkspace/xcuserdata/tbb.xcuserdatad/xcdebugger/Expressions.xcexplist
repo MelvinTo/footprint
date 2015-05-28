@@ -3,43 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = ":PhotoViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.imageView.image">
-            </PersistentString>
-            <PersistentString
-               value = "self.storyboard">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "Footprint.PathCreateViewController.viewDidLoad (Footprint.PathCreateViewController)() -&gt; ():PathCreateViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "Footprint.DropboxConnector.(getRawImage (Footprint.DropboxConnector) -&gt; (Footprint.PhotoObject, width : CoreGraphics.CGFloat, height : CoreGraphics.CGFloat, block : (Swift.Optional&lt;ObjectiveC.UIImage&gt;, Swift.Optional&lt;ObjectiveC.NSError&gt;) -&gt; ()) -&gt; ()).(closure #1):DropboxConnector.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "requestError!.code">
-            </PersistentString>
-            <PersistentString
-               value = "request!.URL">
-            </PersistentString>
-            <PersistentString
-               value = "photo.identifier">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "Footprint.PhotoViewController.viewDidLoad (Footprint.PhotoViewController)() -&gt; ():PhotoViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.pageViewController?.gestureRecognizers">
-            </PersistentString>
-            <PersistentString
-               value = "self.modelController">
-            </PersistentString>
-            <PersistentString
-               value = "self.view.gestureRecognizers">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "Footprint.FootprintViewController.prepareForSegue (Footprint.FootprintViewController)(ObjectiveC.UIStoryboardSegue, sender : Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ():FootprintViewController.swift">
       </ContextState>
       <ContextState
          contextName = "Footprint.DropboxConnector.parseFileMetadata (Footprint.DropboxConnector)(ObjectiveC.NSDictionary, blockForEachPhoto : (Footprint.PhotoObject, Swift.Optional&lt;Swift.Int&gt;) -&gt; ()) -&gt; ():DropboxConnector.swift">
@@ -56,44 +23,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "Footprint.FootprintViewController.prepareForSegue (Footprint.FootprintViewController)(ObjectiveC.UIStoryboardSegue, sender : Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ():FootprintViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "Footprint.PathCreateViewController.viewDidLoad (Footprint.PathCreateViewController)() -&gt; ():PathCreateViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "Footprint.DropboxConnector.(init (Footprint.DropboxConnector.Type) -&gt; () -&gt; Footprint.DropboxConnector).(closure #1):DropboxConnector.swift">
-      </ContextState>
-      <ContextState
-         contextName = "Footprint.DropboxConnector.init (Footprint.DropboxConnector.Type)() -&gt; Footprint.DropboxConnector:DropboxConnector.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "result.folderPath">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "Footprint.DropboxConnector.loadFileURL (Footprint.DropboxConnector)(Swift.String) -&gt; ():DropboxConnector.swift">
-      </ContextState>
-      <ContextState
-         contextName = "Footprint.FootprintViewController.(assetsPickerController (Footprint.FootprintViewController) -&gt; (Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.GMImagePickerController&gt;, didFinishPickingAssets : Swift.ImplicitlyUnwrappedOptional&lt;Swift.Array&lt;Swift.AnyObject&gt;&gt;) -&gt; ()).(closure #1):FootprintViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "asset.location">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "Footprint.PathCreateViewController.loadImage (Footprint.PathCreateViewController)(Footprint.PhotoCollectionCell, photo : Footprint.PhotoMetadata) -&gt; ():PathCreateViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "Footprint.SettingsViewController.viewDidLoad (Footprint.SettingsViewController)() -&gt; ():SettingsViewController.swift">
-      </ContextState>
-      <ContextState
          contextName = "Footprint.DropboxConnector.loadPhotos (Footprint.DropboxConnector)((Footprint.PhotoObject, Swift.Int) -&gt; (), completed : Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ():DropboxConnector.swift">
       </ContextState>
       <ContextState
          contextName = "FootprintTests.MiscTests.testDateFormatter (FootprintTests.MiscTests)() -&gt; ():MiscTests.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.PhotoDataViewController.(loadImage (Footprint.PhotoDataViewController) -&gt; () -&gt; ()).(closure #1).(closure #1):PhotoViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "image!.scale">
+            </PersistentString>
+            <PersistentString
+               value = "image!.size">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "Footprint.DropboxConnector.(loadDirURL (Footprint.DropboxConnector) -&gt; (Swift.String, blockForEachPhoto : (Footprint.PhotoObject, Swift.Optional&lt;Swift.Int&gt;) -&gt; ()) -&gt; ()).(closure #1):DropboxConnector.swift">
@@ -115,6 +59,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = ":PhotoViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.imageView.image">
+            </PersistentString>
+            <PersistentString
+               value = "self.storyboard">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "Footprint.DropboxConnector.loadDirURL (Footprint.DropboxConnector)(Swift.String, blockForEachPhoto : (Footprint.PhotoObject, Swift.Optional&lt;Swift.Int&gt;) -&gt; ()) -&gt; ():DropboxConnector.swift">
          <PersistentStrings>
             <PersistentString
@@ -123,13 +78,80 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "Footprint.PhotoDataViewController.(loadImage (Footprint.PhotoDataViewController) -&gt; () -&gt; ()).(closure #1):PhotoViewController.swift">
-      </ContextState>
-      <ContextState
          contextName = "Footprint.PhotoCollectionCell.init (Footprint.PhotoCollectionCell.Type)(coder : ObjectiveC.NSCoder) -&gt; Footprint.PhotoCollectionCell:PhotoCollectionCell.swift">
          <PersistentStrings>
             <PersistentString
                value = "NSBundle.mainBundle()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.PhotosConnector.getRawImage (Footprint.PhotosConnector)(Footprint.PhotoObject, width : CoreGraphics.CGFloat, height : CoreGraphics.CGFloat, block : (Swift.Optional&lt;ObjectiveC.UIImage&gt;, Swift.Optional&lt;ObjectiveC.NSError&gt;) -&gt; ()) -&gt; ():PhotosConnector.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "width as Double">
+            </PersistentString>
+            <PersistentString
+               value = "String(retinaSquare)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.SettingsViewController.viewDidLoad (Footprint.SettingsViewController)() -&gt; ():SettingsViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.PathCreateViewController.loadImage (Footprint.PathCreateViewController)(Footprint.PhotoCollectionCell, photo : Footprint.PhotoMetadata) -&gt; ():PathCreateViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.DropboxConnector.(init (Footprint.DropboxConnector.Type) -&gt; () -&gt; Footprint.DropboxConnector).(closure #1):DropboxConnector.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.PhotoViewController.viewDidLoad (Footprint.PhotoViewController)() -&gt; ():PhotoViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.pageViewController?.gestureRecognizers">
+            </PersistentString>
+            <PersistentString
+               value = "self.modelController">
+            </PersistentString>
+            <PersistentString
+               value = "self.view.gestureRecognizers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.FootprintViewController.(assetsPickerController (Footprint.FootprintViewController) -&gt; (Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.GMImagePickerController&gt;, didFinishPickingAssets : Swift.ImplicitlyUnwrappedOptional&lt;Swift.Array&lt;Swift.AnyObject&gt;&gt;) -&gt; ()).(closure #1):FootprintViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "asset.location">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.PhotoDataViewController.(loadImage (Footprint.PhotoDataViewController) -&gt; () -&gt; ()).(closure #1):PhotoViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.DropboxConnector.loadFileURL (Footprint.DropboxConnector)(Swift.String) -&gt; ():DropboxConnector.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.DropboxConnector.init (Footprint.DropboxConnector.Type)() -&gt; Footprint.DropboxConnector:DropboxConnector.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "result.folderPath">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Footprint.DropboxConnector.(getRawImage (Footprint.DropboxConnector) -&gt; (Footprint.PhotoObject, width : CoreGraphics.CGFloat, height : CoreGraphics.CGFloat, block : (Swift.Optional&lt;ObjectiveC.UIImage&gt;, Swift.Optional&lt;ObjectiveC.NSError&gt;) -&gt; ()) -&gt; ()).(closure #1):DropboxConnector.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "requestError!.code">
+            </PersistentString>
+            <PersistentString
+               value = "request!.URL">
+            </PersistentString>
+            <PersistentString
+               value = "photo.identifier">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
