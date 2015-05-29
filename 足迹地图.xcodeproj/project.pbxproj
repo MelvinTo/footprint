@@ -53,6 +53,10 @@
 		37E20EF21AFA745100EDDA30 /* PhotoObjectCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E20EF11AFA745100EDDA30 /* PhotoObjectCoreData.swift */; };
 		37E20EF51AFA867200EDDA30 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E20EF41AFA867200EDDA30 /* SettingsViewController.swift */; };
 		37E20EF81AFF61F500EDDA30 /* ConnectorConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E20EF71AFF61F500EDDA30 /* ConnectorConfigViewController.swift */; };
+		37EB2BCC1B18C896009962EE /* SyncStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EB2BCB1B18C896009962EE /* SyncStatus.swift */; };
+		37EB2BCE1B18C8B7009962EE /* SyncStatusDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EB2BCD1B18C8B7009962EE /* SyncStatusDB.swift */; };
+		37EB2BD01B18D0E2009962EE /* SyncStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EB2BCF1B18D0E2009962EE /* SyncStatusCell.swift */; };
+		37EB2BD21B18D30D009962EE /* SyncStatusDBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EB2BD11B18D30D009962EE /* SyncStatusDBTest.swift */; };
 		3F9642BAFA38590DF95641BA /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334BBD94344676C6D804E17E /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		410469781AF7D36F00EC71B4 /* NewPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410469771AF7D36F00EC71B4 /* NewPhoto.swift */; };
 		41660D3F1AF7C272002FEE8B /* DropboxConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41660D3E1AF7C272002FEE8B /* DropboxConnector.swift */; };
@@ -126,6 +130,10 @@
 		37E20EF11AFA745100EDDA30 /* PhotoObjectCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoObjectCoreData.swift; sourceTree = "<group>"; };
 		37E20EF41AFA867200EDDA30 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		37E20EF71AFF61F500EDDA30 /* ConnectorConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectorConfigViewController.swift; sourceTree = "<group>"; };
+		37EB2BCB1B18C896009962EE /* SyncStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncStatus.swift; sourceTree = "<group>"; };
+		37EB2BCD1B18C8B7009962EE /* SyncStatusDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncStatusDB.swift; sourceTree = "<group>"; };
+		37EB2BCF1B18D0E2009962EE /* SyncStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncStatusCell.swift; sourceTree = "<group>"; };
+		37EB2BD11B18D30D009962EE /* SyncStatusDBTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncStatusDBTest.swift; sourceTree = "<group>"; };
 		410469771AF7D36F00EC71B4 /* NewPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPhoto.swift; sourceTree = "<group>"; };
 		41660D3E1AF7C272002FEE8B /* DropboxConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropboxConnector.swift; sourceTree = "<group>"; };
 		41660D401AF7C27D002FEE8B /* Connector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connector.swift; sourceTree = "<group>"; };
@@ -260,6 +268,7 @@
 				3738AE9C1ADC0014003375ED /* HelpersTest.swift */,
 				3703363E1AE003A700EF9FE4 /* MiscTests.swift */,
 				37DB52791AF9215B00FC4749 /* TestConnectorManager.swift */,
+				37EB2BD11B18D30D009962EE /* SyncStatusDBTest.swift */,
 			);
 			path = FootprintTests;
 			sourceTree = "<group>";
@@ -280,6 +289,7 @@
 				37DFF2F11AD1C47500686E74 /* Path.swift */,
 				410469771AF7D36F00EC71B4 /* NewPhoto.swift */,
 				370D92CD1B051CA900ED9ED2 /* DropboxFolderHash.swift */,
+				37EB2BCB1B18C896009962EE /* SyncStatus.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -299,6 +309,7 @@
 				37E20EF41AFA867200EDDA30 /* SettingsViewController.swift */,
 				37E20EF71AFF61F500EDDA30 /* ConnectorConfigViewController.swift */,
 				370D92CB1B03AABC00ED9ED2 /* DropboxConfigViewController.swift */,
+				37EB2BCF1B18D0E2009962EE /* SyncStatusCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -319,6 +330,7 @@
 				37BDB4DB1ACED72B00F73513 /* PhotoStore.swift */,
 				37E20EF11AFA745100EDDA30 /* PhotoObjectCoreData.swift */,
 				370D92CF1B051CC600ED9ED2 /* FolderHashCoreData.swift */,
+				37EB2BCD1B18C8B7009962EE /* SyncStatusDB.swift */,
 			);
 			name = DB;
 			sourceTree = "<group>";
@@ -551,6 +563,7 @@
 				37BDB4BE1ACED65500F73513 /* SecondViewController.swift in Sources */,
 				37BDB4BA1ACED65500F73513 /* AppDelegate.swift in Sources */,
 				372B58E11AD036F9000D2483 /* PhotoLoader.swift in Sources */,
+				37EB2BCE1B18C8B7009962EE /* SyncStatusDB.swift in Sources */,
 				41660D431AF7C411002FEE8B /* PhotosConnector.swift in Sources */,
 				372B58E41AD03AAF000D2483 /* PhotoMetadata.swift in Sources */,
 				37BDB4DC1ACED72B00F73513 /* PhotoStore.swift in Sources */,
@@ -560,6 +573,7 @@
 				37BDB4BC1ACED65500F73513 /* FootprintViewController.swift in Sources */,
 				37DFF2F21AD1C47500686E74 /* Path.swift in Sources */,
 				37E20EF81AFF61F500EDDA30 /* ConnectorConfigViewController.swift in Sources */,
+				37EB2BD01B18D0E2009962EE /* SyncStatusCell.swift in Sources */,
 				41660D3F1AF7C272002FEE8B /* DropboxConnector.swift in Sources */,
 				3703363D1ADFFF8800EF9FE4 /* PhotoMapViewController.swift in Sources */,
 				372D1E1A1AE28F46009D113D /* PhotoAnnotation.swift in Sources */,
@@ -576,6 +590,7 @@
 				37BDB4ED1ACF11A200F73513 /* CoreDataHelper.swift in Sources */,
 				37BDB4EB1ACF10E400F73513 /* CoreDataStore.swift in Sources */,
 				37BDB4E41ACF0B8700F73513 /* PathOrganizer.swift in Sources */,
+				37EB2BCC1B18C896009962EE /* SyncStatus.swift in Sources */,
 				3738AEA21ADC1E54003375ED /* PhotoUtility.swift in Sources */,
 				372D1E1C1AE3ADC4009D113D /* PhotoViewController.swift in Sources */,
 				370D92CC1B03AABC00ED9ED2 /* DropboxConfigViewController.swift in Sources */,
@@ -590,6 +605,7 @@
 				37DB527A1AF9215B00FC4749 /* TestConnectorManager.swift in Sources */,
 				3703363F1AE003A700EF9FE4 /* MiscTests.swift in Sources */,
 				3738AE9E1ADC01AB003375ED /* Helpers.swift in Sources */,
+				37EB2BD21B18D30D009962EE /* SyncStatusDBTest.swift in Sources */,
 				3738AE9D1ADC0014003375ED /* HelpersTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

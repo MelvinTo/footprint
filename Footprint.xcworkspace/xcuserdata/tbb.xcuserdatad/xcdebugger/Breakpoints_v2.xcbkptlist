@@ -342,12 +342,12 @@
                   moduleName = "Footprint"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tbb/Dropbox/workspace/Footprint/Footprint/PhotoAnnotation.swift"
-                  timestampString = "454530509.91472"
+                  timestampString = "454612068.979444"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "12">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -357,12 +357,12 @@
                   moduleName = "Footprint"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tbb/Dropbox/workspace/Footprint/Footprint/PhotoAnnotation.swift"
-                  timestampString = "454530509.914884"
+                  timestampString = "454612068.979564"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
                   endingLineNumber = "12"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -775,11 +775,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/ConnectorManager.swift"
-            timestampString = "453402174.821008"
+            timestampString = "454564459.629011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "storeNewPhotos(_:context:progress:completed:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -791,11 +791,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/ConnectorManager.swift"
-            timestampString = "453402174.821008"
+            timestampString = "454564459.629011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "storeNewPhotos(_:context:progress:completed:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -807,11 +807,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/ConnectorManager.swift"
-            timestampString = "453402174.821008"
+            timestampString = "454564459.629011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "storeNewPhotos(_:context:progress:completed:)"
             landmarkType = "5">
             <Locations>
@@ -855,11 +855,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/DropboxConnector.swift"
-            timestampString = "454527708.465946"
+            timestampString = "454563377.518445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "307"
-            endingLineNumber = "307"
+            startingLineNumber = "320"
+            endingLineNumber = "320"
             landmarkName = "DropboxConnector"
             landmarkType = "3">
          </BreakpointContent>
@@ -871,11 +871,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/DropboxConnector.swift"
-            timestampString = "454527708.465946"
+            timestampString = "454563377.518445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "315"
-            endingLineNumber = "315"
+            startingLineNumber = "328"
+            endingLineNumber = "328"
             landmarkName = "DropboxConnector"
             landmarkType = "3">
          </BreakpointContent>
@@ -887,11 +887,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/DropboxConnector.swift"
-            timestampString = "454527708.465946"
+            timestampString = "454563377.518445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "parseElement(_:blockForEachPhoto:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -903,11 +903,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/ConnectorManager.swift"
-            timestampString = "453404943.831684"
+            timestampString = "454564459.629011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "storeNewPhotos(_:context:progress:completed:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -919,11 +919,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/ConnectorManager.swift"
-            timestampString = "453404946.428518"
+            timestampString = "454564459.629011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "storeNewPhotos(_:context:progress:completed:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -935,11 +935,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/DropboxConnector.swift"
-            timestampString = "454527708.465946"
+            timestampString = "454563377.518445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
             landmarkName = "DropboxConnector"
             landmarkType = "3">
          </BreakpointContent>
@@ -951,11 +951,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/DropboxConnector.swift"
-            timestampString = "454527708.465946"
+            timestampString = "454563377.518445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
             landmarkName = "parseFileMetadata(_:blockForEachPhoto:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -967,11 +967,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Footprint/DropboxConnector.swift"
-            timestampString = "454527708.465946"
+            timestampString = "454563377.518445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "243"
-            endingLineNumber = "243"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
             landmarkName = "parseFileMetadata(_:blockForEachPhoto:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1102,6 +1102,22 @@
             endingLineNumber = "108"
             landmarkName = "loadImage()"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Footprint/ConnectorConfigViewController.swift"
+            timestampString = "454610488.35177"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "ConnectorConfigViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

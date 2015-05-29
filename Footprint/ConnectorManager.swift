@@ -55,6 +55,21 @@ public class ConnectorManager {
         
     }
     
+    func flushPhotos(photos: [PhotoObject], context: NSManagedObjectContext) -> Bool {
+        for var index = 0; index < photos.count; ++index {
+            photos[index].toNewPhoto(context)
+            //                NSLog("photo format transformmed: \(photosToBeAdded[index].identifier)")
+        }
+        
+        var error: NSError? = nil
+        if context.hasChanges && !context.save(&error) {
+            NSLog("Unresolved error \(error), \(error!.userInfo)")
+            return false
+        } else {
+            return true
+        }
+    }
+    
     public func storeNewPhotos(connector: Connector, context: NSManagedObjectContext, progress: (Float -> Void)?, completed: (Void -> Void)? ) {
         var photoDBManager = NewPhotoDBManager(context: context)
         let count = connector.numberOfPhotos()
@@ -64,14 +79,20 @@ public class ConnectorManager {
             if !photoDBManager.photoExists(photo.identifier) {
                 photosToBeAdded.append(photo)
 //                NSLog("Photo \(photo.identifier) is added")
-            
-                if let p = progress {
-                    if let i = index {
-                        dispatch_async(dispatch_get_main_queue()) {
-                            p(Float(i)/Float(count)/2.0)
-                        }
+                
+                if photosToBeAdded.count >= 10 {
+                    if self.flushPhotos(photosToBeAdded, context: context) {
+                        photosToBeAdded.removeAll(keepCapacity: true)
                     }
                 }
+            
+//                if let p = progress {
+//                    if let i = index {
+//                        dispatch_async(dispatch_get_main_queue()) {
+//                            p(Float(i)/Float(count)/2.0)
+//                        }
+//                    }
+//                }
             }
         }, completed: {
             

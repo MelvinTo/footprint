@@ -129,7 +129,7 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
         
     }
     
-    func loadDirURL(dirURL: String, blockForEachPhoto: (PhotoObject, Int?) -> Void) {
+    func loadDirURL(dirURL: String, blockForEachPhoto: (PhotoObject, Int?) -> Void) -> Bool {
         
         NSLog("Loading URL: \(dirURL)")
         
@@ -142,7 +142,7 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
         
         if request == nil {
             NSLog("Failed to create request for url: \(urlString)")
-            return
+            return false
         }
         
         var error: NSErrorPointer = nil
@@ -150,27 +150,26 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
         
         let data = NSURLConnection.sendSynchronousRequest(request!, returningResponse: &response, error: error)
         
-        NSLog("response: \(response)")
-//        if let httpResponse = response.memory as? NSHTTPURLResponse {
-//            let statusCode = httpResponse.statusCode
-//            switch statusCode {
-//            case 200:
-//                // success
-//                NSLog("Got content for url: \(urlString)")
-//            case 304:
-//                // not modified..
-//                NSLog("Folder \(urlString) is not changed")
-//                return
-//            default:
-//                NSLog("Got http response code \(statusCode) when requesting url \(urlString)")
-//                return // do not run further..
-//            }
-//        }
+        if let httpResponse = response as? NSHTTPURLResponse {
+            let statusCode = httpResponse.statusCode
+            switch statusCode {
+            case 200:
+                // success
+                NSLog("Got content for url: \(urlString)")
+            case 304:
+                // not modified..
+                NSLog("Folder \(urlString) is not changed")
+                return true
+            default:
+                NSLog("Got http response code \(statusCode) when requesting url \(urlString)")
+                return false // do not run further..
+            }
+        }
 
         if error != nil {
             let url = request!.URL
             NSLog("Got error \(error.memory!.domain) - \(error.memory!.code) when accessing url: \(url!)")
-            return
+            return false
         }
         
         if let d = data {
@@ -182,64 +181,75 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
                 //                NSLog("\(jsonResult)")
                 
                 // Successfully loaded the content of this folder
-                self.parseJSONResult(jsonResult, blockForEachPhoto: blockForEachPhoto)
+                let success = self.parseJSONResult(jsonResult, blockForEachPhoto: blockForEachPhoto)
                 
-                // update hash if needed
-                if let newHash = jsonResult["hash"] as? String {
-                    
-                    //                    dispatch_async(self.queue) {
-                    //
-                    //                        if let ctxt = CoreDataHelper.getSharedCoreDataHelper().backgroundContext {
-                    //                            let folderHashDB = FolderHashCoreData(context: ctxt)
-                    //                            folderHashDB.createOrUpdateFolderHash(dirURL, hash: newHash)
-                    //                        }
-                    //
-                    //                    }
-                    
-                    // update local cache
-                    self.hashCache[dirURL] = newHash
+                if success {
+                    // update hash if all sub directories are loaded successfully.
+                    if let newHash = jsonResult["hash"] as? String {
+                        
+                        dispatch_async(self.queue) {
+                            
+                            if let ctxt = CoreDataHelper.getSharedCoreDataHelper().backgroundContext {
+                                let folderHashDB = FolderHashCoreData(context: ctxt)
+                                folderHashDB.createOrUpdateFolderHash(dirURL, hash: newHash)
+                            }
+                            
+                        }
+                        
+                        // update local cache
+                        self.hashCache[dirURL] = newHash
+                    }
                 }
+                return success
                 
             } else {
                 // couldn't load JSON, look at error
                 NSLog("Error: \(jsonError)")
+                return false
             }
         }
+        
+        return false
     }
     
-    func parseJSONResult(jsonResult: NSDictionary, blockForEachPhoto: (PhotoObject, Int?) -> Void) {
+    func parseJSONResult(jsonResult: NSDictionary, blockForEachPhoto: (PhotoObject, Int?) -> Void) -> Bool {
         let isDir = jsonResult["is_dir"] as! Int?
         
         if isDir == nil || isDir == 0 {
-            return
+            return true // ignore non-directory
         }
         
         let folderHash = jsonResult["hash"] as! String
         let folderPath = jsonResult["path"] as! String
         NSLog("\(folderPath) : \(folderHash)")
         
+        var success = true
+        
         if let contents = jsonResult["contents"] as? Array<NSDictionary> {
             for element in contents {
-                parseElement(element, blockForEachPhoto: blockForEachPhoto)
+                success = parseElement(element, blockForEachPhoto: blockForEachPhoto) && success
             }
         }
+        
+        return success
     }
     
-    func parseElement(element: NSDictionary, blockForEachPhoto: (PhotoObject, Int?) -> Void) {
+    func parseElement(element: NSDictionary, blockForEachPhoto: (PhotoObject, Int?) -> Void) -> Bool {
         if let isDirectory = element["is_dir"] as? Int {
             if isDirectory == 0 {
                 // file
-                parseFileMetadata(element, blockForEachPhoto: blockForEachPhoto)
+                return parseFileMetadata(element, blockForEachPhoto: blockForEachPhoto)
             } else {
                 // dir
                 if let dirPath = element["path"] as? String {
-                    self.loadDirURL(dirPath, blockForEachPhoto: blockForEachPhoto)
+                    return self.loadDirURL(dirPath, blockForEachPhoto: blockForEachPhoto)
                 }
             }
         }
+        return false
     }
     
-    func parseFileMetadata(metadata: NSDictionary, blockForEachPhoto: (PhotoObject, Int?) -> Void) {
+    func parseFileMetadata(metadata: NSDictionary, blockForEachPhoto: (PhotoObject, Int?) -> Void) -> Bool {
         if let path = metadata["path"] as? String {
             if let photo_info = metadata["photo_info"] as? NSDictionary {
 //                NSLog("photo_info: \(photo_info)")
@@ -272,7 +282,10 @@ public class DropboxConnector : NSObject, Connector, DBRestClientDelegate {
 //                    NSLog("NO GPS info on photo: \(path)")
                 }
             }
+            return true
         }
+        
+        return false
     }
     
     public func loadPhotos(blockForEachPhoto: (PhotoObject, Int?) -> Void, completed: (Void -> Void)?) {
